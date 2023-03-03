@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="2b3104b4-e1b7-40e6-b2f0-be776c3d354c" name="@b48d76851fa9 2022-04-21 08:27:55" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2022-04-21T08:27:55.0977986+00:00" queuing="2022-04-21T08:27:55.0977986+00:00" start="2022-04-21T08:27:54.2676692+00:00" finish="2022-04-21T08:27:55.1526225+00:00" />
+  <TestSettings name="default" id="5403d47f-7ea7-4330-80e9-927755a6d6cf">
+    <Deployment runDeploymentRoot="_b48d76851fa9_2022-04-21_08_27_55" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="98c8790c-4b46-45b3-85c3-9665de5279a9" testId="86d25f1f-c956-187e-2e5a-88b08547f382" testName="WhenCreateWithEmptyPayloadField_Throws(null)" computerName="b48d76851fa9" duration="00:00:00.0001520" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="98c8790c-4b46-45b3-85c3-9665de5279a9" />
+    <UnitTestResult executionId="cf29e28b-6c92-4a0f-a915-e66da13f29e7" testId="841f476e-a8ba-1d1d-08b2-3c70ff547a40" testName="ColorWithDifferentId_ShouldNotBeEqual" computerName="b48d76851fa9" duration="00:00:00.0016660" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf29e28b-6c92-4a0f-a915-e66da13f29e7" />
+    <UnitTestResult executionId="7601b145-db0e-4944-a278-ed12a3214f81" testId="6387aca5-c4f7-4c69-3542-22cc277d5077" testName="WhenCreateWithEmptyEventType_Throws(null)" computerName="b48d76851fa9" duration="00:00:00.0001220" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7601b145-db0e-4944-a278-ed12a3214f81" />
+    <UnitTestResult executionId="9ec6dbdb-a23c-4e28-8174-d15abf9803e3" testId="5ec4bd9f-cf91-6bc8-66e9-e5931f0d0397" testName="WhenCreateWithEmptyPayloadField_Throws(&quot;\n&quot;)" computerName="b48d76851fa9" duration="00:00:00.0001170" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9ec6dbdb-a23c-4e28-8174-d15abf9803e3" />
+    <UnitTestResult executionId="83a71750-6c5f-4ac9-b4fb-abf9beb11744" testId="45248678-308b-b3ea-feb5-b74b2e1dfc15" testName="WhenCreateWithEventType_TrimsSetsProperty(&quot;AppStart&quot;,&quot;AppStart&quot;)" computerName="b48d76851fa9" duration="00:00:00.0002220" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="83a71750-6c5f-4ac9-b4fb-abf9beb11744" />
+    <UnitTestResult executionId="0869aa1c-0297-4d89-a1e1-412015b4d8af" testId="1dd40941-24b8-084f-2cea-b91842cd0499" testName="WhenCreateWithEventType_TrimsSetsProperty(&quot;Remote Session&quot;,&quot;Remote Session&quot;)" computerName="b48d76851fa9" duration="00:00:00.0000590" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0869aa1c-0297-4d89-a1e1-412015b4d8af" />
+    <UnitTestResult executionId="9cb54582-a61a-42a7-8a84-1d04c754bb9f" testId="a21b1a24-87a3-188a-dc4d-a6abc5f8b986" testName="Null_ShouldNotBeEqualToColor" computerName="b48d76851fa9" duration="00:00:00.0005210" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9cb54582-a61a-42a7-8a84-1d04c754bb9f" />
+    <UnitTestResult executionId="5d99896f-3c0a-4d9c-bbcc-fef12b853dc7" testId="a37ab19a-5cf0-d32b-e993-4c22eb7bbf36" testName="DefaultValueForEnvironment_ReturnsEnvironmentProduction" computerName="b48d76851fa9" duration="00:00:00.0058470" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5d99896f-3c0a-4d9c-bbcc-fef12b853dc7" />
+    <UnitTestResult executionId="ea422584-3ac0-4cfa-839e-665697ef9667" testId="b2a71bfa-5e68-cbc9-62da-4293eae4bdd5" testName="WhenConfigurationKeyIsCreated_IsNotEqualToOtherKeyWithDifferentValues" computerName="b48d76851fa9" duration="00:00:00.0002300" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ea422584-3ac0-4cfa-839e-665697ef9667" />
+    <UnitTestResult executionId="4a5bab3b-04e0-4251-a435-b94646960a13" testId="52d0f87b-6d5f-af3e-e353-4090d040e007" testName="WhenCreateWithEmptyEventType_Throws(&quot;&quot;)" computerName="b48d76851fa9" duration="00:00:00.0008040" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4a5bab3b-04e0-4251-a435-b94646960a13" />
+    <UnitTestResult executionId="a376b80c-aa71-4f4f-bc2a-8763f93beb22" testId="b0a8be0e-a5e2-ed4d-047d-84e5f8d6a7c2" testName="WhenConfigurationKeyIsCreated_HasSameHashCodeThanKeyWithSameValues" computerName="b48d76851fa9" duration="00:00:00.0001630" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a376b80c-aa71-4f4f-bc2a-8763f93beb22" />
+    <UnitTestResult executionId="bcb2cde6-1e09-47c5-b295-3112d97f5283" testId="c70700ca-0eee-d4c0-5c86-fca1798338cf" testName="WhenKeyNotMatchingType_DoesNotReturnValue" computerName="b48d76851fa9" duration="00:00:00.0003010" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bcb2cde6-1e09-47c5-b295-3112d97f5283" />
+    <UnitTestResult executionId="dcf68916-bdeb-4c22-aa25-094a1a4055cd" testId="9c7dc697-cc72-3ea9-a3d0-f53a879703b5" testName="WhenValueTypeIsSet_DoesStore" computerName="b48d76851fa9" duration="00:00:00.0011720" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dcf68916-bdeb-4c22-aa25-094a1a4055cd" />
+    <UnitTestResult executionId="0284919a-8e1c-4387-9951-0e1abdb4a470" testId="916e3042-449f-28b8-86da-407984935ade" testName="WhenConfigurationKeyIsCreatedWithoutConfigName_ThrowsArgumentNullException" computerName="b48d76851fa9" duration="00:00:00.0062790" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0284919a-8e1c-4387-9951-0e1abdb4a470" />
+    <UnitTestResult executionId="ad223568-2120-4344-aa1d-3c8381163fa2" testId="a0137360-5a32-f877-8a41-b7266ba34523" testName="WhenCreateWithEmptyPayloadField_Throws(&quot;\t&quot;)" computerName="b48d76851fa9" duration="00:00:00.0001160" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ad223568-2120-4344-aa1d-3c8381163fa2" />
+    <UnitTestResult executionId="e5a994e5-050d-443f-a2b3-1c7bbb221c87" testId="3150b238-392e-2290-444c-bf7a8221324a" testName="WhenCreateWithEventType_TrimsSetsProperty(&quot; FooBar &quot;,&quot;FooBar&quot;)" computerName="b48d76851fa9" duration="00:00:00.0000400" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e5a994e5-050d-443f-a2b3-1c7bbb221c87" />
+    <UnitTestResult executionId="ad3c7f90-8410-407d-911b-234c34ea504f" testId="545d6790-8f67-958c-8ae0-7d9fe72f5273" testName="WhenCreateWithEmptyEventType_Throws(&quot;    &quot;)" computerName="b48d76851fa9" duration="00:00:00.0000790" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ad3c7f90-8410-407d-911b-234c34ea504f" />
+    <UnitTestResult executionId="96bc9e2d-5d2e-4c04-9b48-4104195a4986" testId="265d0043-c9c9-6d77-726c-e51282f8e3ef" testName="WhenConstructorCalled_FieldsAreInitialized" computerName="b48d76851fa9" duration="00:00:00.0065600" startTime="2022-04-21T08:27:54.0000000+00:00" endTime="2022-04-21T08:27:54.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="96bc9e2d-5d2e-4c04-9b48-4104195a4986" />
+    <UnitTestResult executionId="00773564-7841-4ef8-a86d-ed74c4a2353b" testId="36d74a43-3bd6-dec9-defd-0a8c888e5d06" testName="WhenValueIsSetToNull_DoesStore" computerName="b48d76851fa9" duration="00:00:00.0002740" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="00773564-7841-4ef8-a86d-ed74c4a2353b" />
+    <UnitTestResult executionId="d42e2fec-70f0-4031-8845-f557885caa87" testId="e526663f-de0e-d850-58d0-ddaa93f30fc8" testName="WhenConfigurationKeyIsCreated_HasNotSameHashCodeThanWithDifferentValues" computerName="b48d76851fa9" duration="00:00:00.0005300" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d42e2fec-70f0-4031-8845-f557885caa87" />
+    <UnitTestResult executionId="6d66d6c3-31ae-4695-8b8a-be1d5eba5241" testId="55b6a852-2512-cd21-467a-f95b4484dfa6" testName="WhenConfigurationKeyIsCreatedWithoutServiceName_ThrowsArgumentNullException" computerName="b48d76851fa9" duration="00:00:00.0004620" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6d66d6c3-31ae-4695-8b8a-be1d5eba5241" />
+    <UnitTestResult executionId="87b8c27d-c656-4b62-a88b-cf5d20680b49" testId="d6aa7f76-e109-f314-b959-66e647e6398c" testName="ColorWithSameIds_ShouldBeEqual" computerName="b48d76851fa9" duration="00:00:00.0006810" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="87b8c27d-c656-4b62-a88b-cf5d20680b49" />
+    <UnitTestResult executionId="f8bde4da-1bb5-4a13-9c75-5b381c60b103" testId="0621f226-48df-d547-3f46-efcb4da213cd" testName="WhenFieldsAreSet_PropertyIsFilled" computerName="b48d76851fa9" duration="00:00:00.0029180" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f8bde4da-1bb5-4a13-9c75-5b381c60b103" />
+    <UnitTestResult executionId="55b72197-22d7-41f0-9a2b-cd6a838eee99" testId="1becde4c-8df2-2e1d-134f-660703a9865e" testName="WhenConfigurationKeyIsCreated_IsEqualToOtherKeyWithSameValues" computerName="b48d76851fa9" duration="00:00:00.0003060" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="55b72197-22d7-41f0-9a2b-cd6a838eee99" />
+    <UnitTestResult executionId="60807d70-194c-4330-8fef-484384f25504" testId="0cfe6c1c-678a-bc2f-f859-493617da2c0f" testName="WhenCreateWithEventType_TrimsSetsProperty(&quot;\tFooBar\n&quot;,&quot;FooBar&quot;)" computerName="b48d76851fa9" duration="00:00:00.0000320" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="60807d70-194c-4330-8fef-484384f25504" />
+    <UnitTestResult executionId="07a0f623-b89f-4771-a8a6-1d5ab96fd960" testId="61277f28-2f94-243d-648a-450f709b96ca" testName="WhenCreateWithEmptyEventType_Throws(&quot;\n&quot;)" computerName="b48d76851fa9" duration="00:00:00.0000730" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="07a0f623-b89f-4771-a8a6-1d5ab96fd960" />
+    <UnitTestResult executionId="311b99bb-4242-43e3-8f62-58ff470b1987" testId="2bf7af2c-10a2-bf68-1fee-455a941f4a18" testName="WhenCreateWithEmptyPayloadField_Throws(&quot;&quot;)" computerName="b48d76851fa9" duration="00:00:00.0005460" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="311b99bb-4242-43e3-8f62-58ff470b1987" />
+    <UnitTestResult executionId="82073bbe-249b-43eb-8139-ba2196add993" testId="a655c3bd-155e-58e3-da61-b2fd0d7a7659" testName="WhenConfigurationKeyIsCreatedWithoutDefaultValue_ContainsDefaultDefaultValue" computerName="b48d76851fa9" duration="00:00:00.0002660" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="82073bbe-249b-43eb-8139-ba2196add993" />
+    <UnitTestResult executionId="0907b4a0-7bcf-47e0-ab31-095f89e6687d" testId="07c70df7-d46b-5a0a-d9a6-c049ee4e28d3" testName="Color_ShouldNotBeEqualToNull" computerName="b48d76851fa9" duration="00:00:00.1162020" startTime="2022-04-21T08:27:54.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0907b4a0-7bcf-47e0-ab31-095f89e6687d" />
+    <UnitTestResult executionId="333ebc63-e254-4156-a2dd-330980740b57" testId="856056ff-15eb-091f-4251-e4667d138d96" testName="WhenCreateWithEmptyEventType_Throws(&quot;\t&quot;)" computerName="b48d76851fa9" duration="00:00:00.0000740" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="333ebc63-e254-4156-a2dd-330980740b57" />
+    <UnitTestResult executionId="deec839f-d578-4d57-8b9f-ad31853ebd55" testId="68fed661-3247-62c5-3e51-2905b02503e5" testName="WhenToString_ColorsAreIncluded" computerName="b48d76851fa9" duration="00:00:00.0011800" startTime="2022-04-21T08:27:54.0000000+00:00" endTime="2022-04-21T08:27:54.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="deec839f-d578-4d57-8b9f-ad31853ebd55" />
+    <UnitTestResult executionId="c14f1183-1750-413a-81d6-ef19479cbaba" testId="bb9b44d1-ef7d-c7f4-fe32-0b9813fef85c" testName="WhenConstructorCalled_ClassIsInstantiated" computerName="b48d76851fa9" duration="00:00:00.0006410" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c14f1183-1750-413a-81d6-ef19479cbaba" />
+    <UnitTestResult executionId="0a8da456-87ee-4609-971a-e912d6fcf069" testId="62cf455e-b680-709f-8249-0a4916e3c206" testName="WhenCreateWithEmptyPayloadField_Throws(&quot;    &quot;)" computerName="b48d76851fa9" duration="00:00:00.0001090" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0a8da456-87ee-4609-971a-e912d6fcf069" />
+    <UnitTestResult executionId="2af74a81-200b-43bb-9d58-56431c83fb90" testId="db450767-46a8-6137-75c5-e64a83eb1f50" testName="WhenKeyNotMatching_DoesNotReturnValue" computerName="b48d76851fa9" duration="00:00:00.0013480" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2af74a81-200b-43bb-9d58-56431c83fb90" />
+    <UnitTestResult executionId="f1b3b51d-e3de-485d-b9a3-1341f9990123" testId="20a85244-14a8-16df-ce38-7502db36db31" testName="WhenConfigurationKeyIsCreatedWithDefaultValue_ContainsDefaultValue" computerName="b48d76851fa9" duration="00:00:00.0021560" startTime="2022-04-21T08:27:55.0000000+00:00" endTime="2022-04-21T08:27:55.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f1b3b51d-e3de-485d-b9a3-1341f9990123" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="WhenConstructorCalled_FieldsAreInitialized" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="265d0043-c9c9-6d77-726c-e51282f8e3ef">
+      <Execution id="96bc9e2d-5d2e-4c04-9b48-4104195a4986" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.BrandColorsTests" name="WhenConstructorCalled_FieldsAreInitialized" />
+    </UnitTest>
+    <UnitTest name="WhenCreateWithEmptyPayloadField_Throws(&quot;\n&quot;)" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="5ec4bd9f-cf91-6bc8-66e9-e5931f0d0397">
+      <Execution id="9ec6dbdb-a23c-4e28-8174-d15abf9803e3" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenCreateWithEmptyPayloadField_Throws(&quot;\n&quot;)" />
+    </UnitTest>
+    <UnitTest name="ColorWithSameIds_ShouldBeEqual" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="d6aa7f76-e109-f314-b959-66e647e6398c">
+      <Execution id="87b8c27d-c656-4b62-a88b-cf5d20680b49" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ColorKeyTests" name="ColorWithSameIds_ShouldBeEqual" />
+    </UnitTest>
+    <UnitTest name="WhenConfigurationKeyIsCreatedWithoutConfigName_ThrowsArgumentNullException" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="916e3042-449f-28b8-86da-407984935ade">
+      <Execution id="0284919a-8e1c-4387-9951-0e1abdb4a470" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ConfigurationKeyTests" name="WhenConfigurationKeyIsCreatedWithoutConfigName_ThrowsArgumentNullException" />
+    </UnitTest>
+    <UnitTest name="WhenCreateWithEmptyPayloadField_Throws(&quot;\t&quot;)" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="a0137360-5a32-f877-8a41-b7266ba34523">
+      <Execution id="ad223568-2120-4344-aa1d-3c8381163fa2" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenCreateWithEmptyPayloadField_Throws(&quot;\t&quot;)" />
+    </UnitTest>
+    <UnitTest name="WhenCreateWithEmptyEventType_Throws(&quot;&quot;)" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="52d0f87b-6d5f-af3e-e353-4090d040e007">
+      <Execution id="4a5bab3b-04e0-4251-a435-b94646960a13" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenCreateWithEmptyEventType_Throws(&quot;&quot;)" />
+    </UnitTest>
+    <UnitTest name="Color_ShouldNotBeEqualToNull" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="07c70df7-d46b-5a0a-d9a6-c049ee4e28d3">
+      <Execution id="0907b4a0-7bcf-47e0-ab31-095f89e6687d" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ColorKeyTests" name="Color_ShouldNotBeEqualToNull" />
+    </UnitTest>
+    <UnitTest name="WhenConfigurationKeyIsCreated_IsNotEqualToOtherKeyWithDifferentValues" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="b2a71bfa-5e68-cbc9-62da-4293eae4bdd5">
+      <Execution id="ea422584-3ac0-4cfa-839e-665697ef9667" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ConfigurationKeyTests" name="WhenConfigurationKeyIsCreated_IsNotEqualToOtherKeyWithDifferentValues" />
+    </UnitTest>
+    <UnitTest name="WhenCreateWithEventType_TrimsSetsProperty(&quot;\tFooBar\n&quot;,&quot;FooBar&quot;)" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="0cfe6c1c-678a-bc2f-f859-493617da2c0f">
+      <Execution id="60807d70-194c-4330-8fef-484384f25504" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenCreateWithEventType_TrimsSetsProperty(&quot;\tFooBar\n&quot;,&quot;FooBar&quot;)" />
+    </UnitTest>
+    <UnitTest name="Null_ShouldNotBeEqualToColor" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="a21b1a24-87a3-188a-dc4d-a6abc5f8b986">
+      <Execution id="9cb54582-a61a-42a7-8a84-1d04c754bb9f" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ColorKeyTests" name="Null_ShouldNotBeEqualToColor" />
+    </UnitTest>
+    <UnitTest name="WhenConfigurationKeyIsCreatedWithDefaultValue_ContainsDefaultValue" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="20a85244-14a8-16df-ce38-7502db36db31">
+      <Execution id="f1b3b51d-e3de-485d-b9a3-1341f9990123" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ConfigurationKeyTests" name="WhenConfigurationKeyIsCreatedWithDefaultValue_ContainsDefaultValue" />
+    </UnitTest>
+    <UnitTest name="WhenCreateWithEmptyPayloadField_Throws(&quot;    &quot;)" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="62cf455e-b680-709f-8249-0a4916e3c206">
+      <Execution id="0a8da456-87ee-4609-971a-e912d6fcf069" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenCreateWithEmptyPayloadField_Throws(&quot;    &quot;)" />
+    </UnitTest>
+    <UnitTest name="WhenConfigurationKeyIsCreated_IsEqualToOtherKeyWithSameValues" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="1becde4c-8df2-2e1d-134f-660703a9865e">
+      <Execution id="55b72197-22d7-41f0-9a2b-cd6a838eee99" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ConfigurationKeyTests" name="WhenConfigurationKeyIsCreated_IsEqualToOtherKeyWithSameValues" />
+    </UnitTest>
+    <UnitTest name="WhenConfigurationKeyIsCreated_HasNotSameHashCodeThanWithDifferentValues" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="e526663f-de0e-d850-58d0-ddaa93f30fc8">
+      <Execution id="d42e2fec-70f0-4031-8845-f557885caa87" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ConfigurationKeyTests" name="WhenConfigurationKeyIsCreated_HasNotSameHashCodeThanWithDifferentValues" />
+    </UnitTest>
+    <UnitTest name="WhenCreateWithEventType_TrimsSetsProperty(&quot;Remote Session&quot;,&quot;Remote Session&quot;)" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="1dd40941-24b8-084f-2cea-b91842cd0499">
+      <Execution id="0869aa1c-0297-4d89-a1e1-412015b4d8af" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenCreateWithEventType_TrimsSetsProperty(&quot;Remote Session&quot;,&quot;Remote Session&quot;)" />
+    </UnitTest>
+    <UnitTest name="WhenCreateWithEventType_TrimsSetsProperty(&quot;AppStart&quot;,&quot;AppStart&quot;)" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="45248678-308b-b3ea-feb5-b74b2e1dfc15">
+      <Execution id="83a71750-6c5f-4ac9-b4fb-abf9beb11744" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenCreateWithEventType_TrimsSetsProperty(&quot;AppStart&quot;,&quot;AppStart&quot;)" />
+    </UnitTest>
+    <UnitTest name="WhenKeyNotMatching_DoesNotReturnValue" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="db450767-46a8-6137-75c5-e64a83eb1f50">
+      <Execution id="2af74a81-200b-43bb-9d58-56431c83fb90" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ConfigurationChangedEventArgsTests" name="WhenKeyNotMatching_DoesNotReturnValue" />
+    </UnitTest>
+    <UnitTest name="WhenToString_ColorsAreIncluded" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="68fed661-3247-62c5-3e51-2905b02503e5">
+      <Execution id="deec839f-d578-4d57-8b9f-ad31853ebd55" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.BrandColorsTests" name="WhenToString_ColorsAreIncluded" />
+    </UnitTest>
+    <UnitTest name="WhenConstructorCalled_ClassIsInstantiated" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="bb9b44d1-ef7d-c7f4-fe32-0b9813fef85c">
+      <Execution id="c14f1183-1750-413a-81d6-ef19479cbaba" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.FeatureStatusChangedEventArgsTests" name="WhenConstructorCalled_ClassIsInstantiated" />
+    </UnitTest>
+    <UnitTest name="WhenCreateWithEmptyPayloadField_Throws(&quot;&quot;)" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="2bf7af2c-10a2-bf68-1fee-455a941f4a18">
+      <Execution id="311b99bb-4242-43e3-8f62-58ff470b1987" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenCreateWithEmptyPayloadField_Throws(&quot;&quot;)" />
+    </UnitTest>
+    <UnitTest name="WhenValueTypeIsSet_DoesStore" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="9c7dc697-cc72-3ea9-a3d0-f53a879703b5">
+      <Execution id="dcf68916-bdeb-4c22-aa25-094a1a4055cd" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ConfigurationChangedEventArgsTests" name="WhenValueTypeIsSet_DoesStore" />
+    </UnitTest>
+    <UnitTest name="WhenKeyNotMatchingType_DoesNotReturnValue" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="c70700ca-0eee-d4c0-5c86-fca1798338cf">
+      <Execution id="bcb2cde6-1e09-47c5-b295-3112d97f5283" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ConfigurationChangedEventArgsTests" name="WhenKeyNotMatchingType_DoesNotReturnValue" />
+    </UnitTest>
+    <UnitTest name="WhenCreateWithEmptyEventType_Throws(&quot;    &quot;)" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="545d6790-8f67-958c-8ae0-7d9fe72f5273">
+      <Execution id="ad3c7f90-8410-407d-911b-234c34ea504f" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenCreateWithEmptyEventType_Throws(&quot;    &quot;)" />
+    </UnitTest>
+    <UnitTest name="ColorWithDifferentId_ShouldNotBeEqual" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="841f476e-a8ba-1d1d-08b2-3c70ff547a40">
+      <Execution id="cf29e28b-6c92-4a0f-a915-e66da13f29e7" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ColorKeyTests" name="ColorWithDifferentId_ShouldNotBeEqual" />
+    </UnitTest>
+    <UnitTest name="WhenCreateWithEmptyEventType_Throws(&quot;\t&quot;)" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="856056ff-15eb-091f-4251-e4667d138d96">
+      <Execution id="333ebc63-e254-4156-a2dd-330980740b57" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenCreateWithEmptyEventType_Throws(&quot;\t&quot;)" />
+    </UnitTest>
+    <UnitTest name="WhenCreateWithEventType_TrimsSetsProperty(&quot; FooBar &quot;,&quot;FooBar&quot;)" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="3150b238-392e-2290-444c-bf7a8221324a">
+      <Execution id="e5a994e5-050d-443f-a2b3-1c7bbb221c87" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenCreateWithEventType_TrimsSetsProperty(&quot; FooBar &quot;,&quot;FooBar&quot;)" />
+    </UnitTest>
+    <UnitTest name="DefaultValueForEnvironment_ReturnsEnvironmentProduction" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="a37ab19a-5cf0-d32b-e993-4c22eb7bbf36">
+      <Execution id="5d99896f-3c0a-4d9c-bbcc-fef12b853dc7" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.GlobalConfigurationKeysTests" name="DefaultValueForEnvironment_ReturnsEnvironmentProduction" />
+    </UnitTest>
+    <UnitTest name="WhenCreateWithEmptyPayloadField_Throws(null)" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="86d25f1f-c956-187e-2e5a-88b08547f382">
+      <Execution id="98c8790c-4b46-45b3-85c3-9665de5279a9" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenCreateWithEmptyPayloadField_Throws(null)" />
+    </UnitTest>
+    <UnitTest name="WhenConfigurationKeyIsCreated_HasSameHashCodeThanKeyWithSameValues" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="b0a8be0e-a5e2-ed4d-047d-84e5f8d6a7c2">
+      <Execution id="a376b80c-aa71-4f4f-bc2a-8763f93beb22" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ConfigurationKeyTests" name="WhenConfigurationKeyIsCreated_HasSameHashCodeThanKeyWithSameValues" />
+    </UnitTest>
+    <UnitTest name="WhenCreateWithEmptyEventType_Throws(null)" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="6387aca5-c4f7-4c69-3542-22cc277d5077">
+      <Execution id="7601b145-db0e-4944-a278-ed12a3214f81" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenCreateWithEmptyEventType_Throws(null)" />
+    </UnitTest>
+    <UnitTest name="WhenCreateWithEmptyEventType_Throws(&quot;\n&quot;)" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="61277f28-2f94-243d-648a-450f709b96ca">
+      <Execution id="07a0f623-b89f-4771-a8a6-1d5ab96fd960" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenCreateWithEmptyEventType_Throws(&quot;\n&quot;)" />
+    </UnitTest>
+    <UnitTest name="WhenConfigurationKeyIsCreatedWithoutDefaultValue_ContainsDefaultDefaultValue" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="a655c3bd-155e-58e3-da61-b2fd0d7a7659">
+      <Execution id="82073bbe-249b-43eb-8139-ba2196add993" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ConfigurationKeyTests" name="WhenConfigurationKeyIsCreatedWithoutDefaultValue_ContainsDefaultDefaultValue" />
+    </UnitTest>
+    <UnitTest name="WhenConfigurationKeyIsCreatedWithoutServiceName_ThrowsArgumentNullException" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="55b6a852-2512-cd21-467a-f95b4484dfa6">
+      <Execution id="6d66d6c3-31ae-4695-8b8a-be1d5eba5241" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ConfigurationKeyTests" name="WhenConfigurationKeyIsCreatedWithoutServiceName_ThrowsArgumentNullException" />
+    </UnitTest>
+    <UnitTest name="WhenValueIsSetToNull_DoesStore" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="36d74a43-3bd6-dec9-defd-0a8c888e5d06">
+      <Execution id="00773564-7841-4ef8-a86d-ed74c4a2353b" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.ConfigurationChangedEventArgsTests" name="WhenValueIsSetToNull_DoesStore" />
+    </UnitTest>
+    <UnitTest name="WhenFieldsAreSet_PropertyIsFilled" storage="/__w/9/s/source/contracts/contracts.unittest/bin/debug/netcoreapp3.1/component.contracts.unittests.dll" id="0621f226-48df-d547-3f46-efcb4da213cd">
+      <Execution id="f8bde4da-1bb5-4a13-9c75-5b381c60b103" />
+      <TestMethod codeBase="/__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Component.Contracts.UnitTests.Models.DataTrackingEventTests" name="WhenFieldsAreSet_PropertyIsFilled" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="86d25f1f-c956-187e-2e5a-88b08547f382" executionId="98c8790c-4b46-45b3-85c3-9665de5279a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="841f476e-a8ba-1d1d-08b2-3c70ff547a40" executionId="cf29e28b-6c92-4a0f-a915-e66da13f29e7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6387aca5-c4f7-4c69-3542-22cc277d5077" executionId="7601b145-db0e-4944-a278-ed12a3214f81" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5ec4bd9f-cf91-6bc8-66e9-e5931f0d0397" executionId="9ec6dbdb-a23c-4e28-8174-d15abf9803e3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="45248678-308b-b3ea-feb5-b74b2e1dfc15" executionId="83a71750-6c5f-4ac9-b4fb-abf9beb11744" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1dd40941-24b8-084f-2cea-b91842cd0499" executionId="0869aa1c-0297-4d89-a1e1-412015b4d8af" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a21b1a24-87a3-188a-dc4d-a6abc5f8b986" executionId="9cb54582-a61a-42a7-8a84-1d04c754bb9f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a37ab19a-5cf0-d32b-e993-4c22eb7bbf36" executionId="5d99896f-3c0a-4d9c-bbcc-fef12b853dc7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b2a71bfa-5e68-cbc9-62da-4293eae4bdd5" executionId="ea422584-3ac0-4cfa-839e-665697ef9667" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="52d0f87b-6d5f-af3e-e353-4090d040e007" executionId="4a5bab3b-04e0-4251-a435-b94646960a13" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b0a8be0e-a5e2-ed4d-047d-84e5f8d6a7c2" executionId="a376b80c-aa71-4f4f-bc2a-8763f93beb22" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c70700ca-0eee-d4c0-5c86-fca1798338cf" executionId="bcb2cde6-1e09-47c5-b295-3112d97f5283" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9c7dc697-cc72-3ea9-a3d0-f53a879703b5" executionId="dcf68916-bdeb-4c22-aa25-094a1a4055cd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="916e3042-449f-28b8-86da-407984935ade" executionId="0284919a-8e1c-4387-9951-0e1abdb4a470" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a0137360-5a32-f877-8a41-b7266ba34523" executionId="ad223568-2120-4344-aa1d-3c8381163fa2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3150b238-392e-2290-444c-bf7a8221324a" executionId="e5a994e5-050d-443f-a2b3-1c7bbb221c87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="545d6790-8f67-958c-8ae0-7d9fe72f5273" executionId="ad3c7f90-8410-407d-911b-234c34ea504f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="265d0043-c9c9-6d77-726c-e51282f8e3ef" executionId="96bc9e2d-5d2e-4c04-9b48-4104195a4986" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="36d74a43-3bd6-dec9-defd-0a8c888e5d06" executionId="00773564-7841-4ef8-a86d-ed74c4a2353b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e526663f-de0e-d850-58d0-ddaa93f30fc8" executionId="d42e2fec-70f0-4031-8845-f557885caa87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="55b6a852-2512-cd21-467a-f95b4484dfa6" executionId="6d66d6c3-31ae-4695-8b8a-be1d5eba5241" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d6aa7f76-e109-f314-b959-66e647e6398c" executionId="87b8c27d-c656-4b62-a88b-cf5d20680b49" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0621f226-48df-d547-3f46-efcb4da213cd" executionId="f8bde4da-1bb5-4a13-9c75-5b381c60b103" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1becde4c-8df2-2e1d-134f-660703a9865e" executionId="55b72197-22d7-41f0-9a2b-cd6a838eee99" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0cfe6c1c-678a-bc2f-f859-493617da2c0f" executionId="60807d70-194c-4330-8fef-484384f25504" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="61277f28-2f94-243d-648a-450f709b96ca" executionId="07a0f623-b89f-4771-a8a6-1d5ab96fd960" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2bf7af2c-10a2-bf68-1fee-455a941f4a18" executionId="311b99bb-4242-43e3-8f62-58ff470b1987" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a655c3bd-155e-58e3-da61-b2fd0d7a7659" executionId="82073bbe-249b-43eb-8139-ba2196add993" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="07c70df7-d46b-5a0a-d9a6-c049ee4e28d3" executionId="0907b4a0-7bcf-47e0-ab31-095f89e6687d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="856056ff-15eb-091f-4251-e4667d138d96" executionId="333ebc63-e254-4156-a2dd-330980740b57" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="68fed661-3247-62c5-3e51-2905b02503e5" executionId="deec839f-d578-4d57-8b9f-ad31853ebd55" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bb9b44d1-ef7d-c7f4-fe32-0b9813fef85c" executionId="c14f1183-1750-413a-81d6-ef19479cbaba" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="62cf455e-b680-709f-8249-0a4916e3c206" executionId="0a8da456-87ee-4609-971a-e912d6fcf069" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="db450767-46a8-6137-75c5-e64a83eb1f50" executionId="2af74a81-200b-43bb-9d58-56431c83fb90" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="20a85244-14a8-16df-ce38-7502db36db31" executionId="f1b3b51d-e3de-485d-b9a3-1341f9990123" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="35" executed="35" passed="35" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 3.15.1.0: Test execution started
+Running all tests in /__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll
+   NUnit3TestExecutor converted 35 of 35 NUnit test cases
+NUnit Adapter 3.15.1.0: Test execution complete
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

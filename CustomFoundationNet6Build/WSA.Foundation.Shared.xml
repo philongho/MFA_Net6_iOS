@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Shared</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.Shared.Internal.VolumeConverter">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Internal.VolumeConverter.FromVolume(WSA.Foundation.Shared.Abstractions.Contracts.IVolume,System.Int32)">
+             <summary>
+            
+             </summary>
+             <param name="volume"></param>
+             <param name="maxValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Internal.VolumeConverter.FromExtendedVolume(WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume)">
+             <summary>
+            
+             </summary>
+             <param name="extendedVolume"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Internal.VolumeConverter.GetMaxSteps(WSA.Foundation.Shared.Abstractions.Models.Platform,System.Version)">
+             <summary>
+            
+             </summary>
+             <param name="platform"></param>
+             <param name="firmwareVersion"></param>
+             <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Internal.VolumeConverter.RequiresExplicitMuteChange(WSA.Foundation.Shared.Abstractions.Models.Platform,System.Version)">
+             <summary>
+            
+             </summary>
+             <param name="platform"></param>
+             <param name="firmwareVersion"></param>
+             <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Models.CrosVolume">
+            <inheritdoc cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolume"/>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.CrosVolume.Percentage">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.CrosVolume.SliderValue">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.CrosVolume.#ctor(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+                Creates a new instance if <see cref="T:WSA.Foundation.Shared.Models.CrosVolume"/>.
+            </summary>
+            <param name="sliderValue"></param>
+            <param name="percentage"></param>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException"></exception>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.CrosVolume.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:WSA.Foundation.Shared.Models.ExtendedCrosVolume">
+            <inheritdoc cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedCrosVolume"/>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Models.ExtendedCrosVolume.MaxSteps">
+            <summary>
+                Returns the maximum number of step values.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.ExtendedCrosVolume.Percentage">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.ExtendedCrosVolume.Position">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.ExtendedCrosVolume.SliderValue">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.ExtendedCrosVolume.#ctor(WSA.Foundation.Shared.Abstractions.Models.ValueType,System.Int32,System.Version)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Shared.Models.ExtendedCrosVolume"/>.
+            </summary>
+            <param name="valueType"></param>
+            <param name="value"></param>
+            <param name="activeProgramInfoVersion"></param>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException"></exception>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.ExtendedCrosVolume.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:WSA.Foundation.Shared.Models.ExtendedSoundBalance">
+            <inheritdoc cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedSoundBalance"/>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Models.ExtendedSoundBalance.MaxSteps">
+            <summary>
+                Returns the maximum number of step values.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.ExtendedSoundBalance.Percentage">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.ExtendedSoundBalance.Position">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.ExtendedSoundBalance.SliderValue">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.ExtendedSoundBalance.#ctor(WSA.Foundation.Shared.Abstractions.Models.ValueType,System.Int32,System.Byte)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Shared.Models.ExtendedSoundBalance"/>.
+            </summary>
+            <param name="valueType"></param>
+            <param name="value"></param>
+            <param name="soundControlShape"></param>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException"></exception>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.ExtendedSoundBalance.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:WSA.Foundation.Shared.Models.ExtendedTinnitusVolume">
+            <inheritdoc cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedTinnitusVolume"/>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Models.ExtendedTinnitusVolume.MaxSteps">
+            <summary>
+                Returns the maximum number of step values.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.ExtendedTinnitusVolume.Percentage">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.ExtendedTinnitusVolume.Position">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.ExtendedTinnitusVolume.SliderValue">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.ExtendedTinnitusVolume.#ctor(WSA.Foundation.Shared.Abstractions.Models.ValueType,System.Int32)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Shared.Models.ExtendedTinnitusVolume"/>.
+            </summary>
+            <param name="valueType"></param>
+            <param name="value"></param>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException"></exception>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.ExtendedTinnitusVolume.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:WSA.Foundation.Shared.Models.ExtendedVolume">
+            <inheritdoc cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume"/>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.ExtendedVolume.Percentage">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.ExtendedVolume.Position">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.ExtendedVolume.ReceiverState">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.ExtendedVolume.SliderValue">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.ExtendedVolume.#ctor(WSA.Foundation.Shared.Abstractions.Models.ValueType,System.Int32,System.Int32,WSA.Foundation.Shared.Abstractions.Models.ReceiverMute)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Shared.Models.ExtendedVolume"/>.
+            </summary>
+            <param name="valueType"></param>
+            <param name="value"></param>
+            <param name="maxValue"></param>
+            <param name="receiverMute"></param>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException"></exception>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.ExtendedVolume.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:WSA.Foundation.Shared.Models.SoundBalance">
+            <inheritdoc cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalance"/>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.SoundBalance.Percentage">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.SoundBalance.SliderValue">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.SoundBalance.#ctor(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Shared.Models.SoundBalance"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.SoundBalance.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:WSA.Foundation.Shared.Models.TinnitusVolume">
+            <inheritdoc cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolume"/>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.TinnitusVolume.Percentage">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.TinnitusVolume.SliderValue">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.TinnitusVolume.#ctor(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Shared.Models.TinnitusVolume"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.TinnitusVolume.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:WSA.Foundation.Shared.Models.Volume">
+            <inheritdoc cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IVolume"/>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.Volume.Percentage">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Shared.Models.Volume.SliderValue">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.Volume.#ctor(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Shared.Models.Volume"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Models.Volume.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:WSA.Foundation.Shared.Shared">
+            <summary>
+                Entry point of the Shared component. This class provides methods to initialize this component.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Shared.Init(WSA.Foundation.Locator.Basic.IBasicServiceCollection,WSA.Foundation.Locator.Basic.IBasicLocator)">
+            <summary>
+                Initializes Shared Component and its dependencies.
+            </summary>
+            <param name="collection"></param>
+            <param name="basicLocator"></param>
+        </member>
+    </members>
+</doc>

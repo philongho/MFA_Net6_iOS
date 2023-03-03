@@ -1,0 +1,23 @@
+System:    Host: b48d76851fa9 Kernel: 5.4.0-100-generic x86_64 bits: 64 Console: N/A 
+           Distro: Debian GNU/Linux 10 (buster) 
+Machine:   Type: Vmware System: VMware product: VMware Virtual Platform v: N/A serial: <filter> 
+           Mobo: Intel model: 440BX Desktop Reference Platform serial: <filter> BIOS: Phoenix 
+           v: 6.00 date: 07/28/2017 
+CPU:       Topology: 8x Single Core model: Intel Xeon Gold 5217 bits: 64 type: SMP 
+           L2 cache: 88.0 MiB 
+           Speed: 2993 MHz min/max: N/A Core speeds (MHz): 1: 2993 2: 2993 3: 2993 4: 2993 5: 2993 
+           6: 2993 7: 2993 8: 2993 
+Graphics:  Device-1: VMware SVGA II Adapter driver: vmwgfx v: 2.15.0.0 
+           Display: server: No display server data found. Headless machine? tty: N/A 
+           Message: Advanced graphics data unavailable in console. Try -G --display 
+Audio:     Message: No Device data found. 
+Network:   Device-1: Intel 82371AB/EB/MB PIIX4 ACPI type: network bridge driver: N/A 
+           Device-2: Intel 82545EM Gigabit Ethernet driver: e1000 
+           IF-ID-1: eth0 state: up speed: 10000 Mbps duplex: full mac: <filter> 
+Drives:    Local Storage: total: 250.00 GiB used: 221.80 GiB (88.7%) 
+           ID-1: /dev/sda model: Virtual disk size: 50.00 GiB 
+           ID-2: /dev/sdb model: Virtual disk size: 200.00 GiB 
+Partition: ID-1: / size: 195.86 GiB used: 97.52 GiB (49.8%) fs: overlay source: ERR-102 
+Sensors:   Message: No sensors data was found. Is sensors configured? 
+Info:      Processes: 13 Uptime: 56d 3h 39m Memory: 7.77 GiB used: 1.68 GiB (21.6%) Init: N/A 
+           Client: shell wrapper inxi: 3.0.32 

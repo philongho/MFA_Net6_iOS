@@ -1,0 +1,818 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Persistency.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder">
+            <summary>
+                An interface that allows to provide data to the Foundation persistency layer.
+            </summary>
+            <remarks>
+                This enables persisting and reading out data for cases where data can't be read out from the Device (Eg.Pure Acoustic Scenarios).
+            </remarks>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.BuildAsync">
+            <summary>
+                Stores all the data provided within the builder.
+            </summary>
+            <returns>Whether the data provided is stored or not.</returns>
+            <exception cref="T:System.Threading.Tasks.TaskCanceledException">Thrown if the task to build the parameters was cancelled by the CancellationToken passed via <see cref="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithCancellationToken(System.Threading.CancellationToken)"/></exception>
+            <exception cref="T:System.OperationCanceledException">Thrown if the task to build the parameters was cancelled</exception>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if no devices were set using <see cref="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.ForDevices(System.Collections.Generic.IDictionary{WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid})"/></exception>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.ForDevices(System.Collections.Generic.IDictionary{WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid})">
+            <summary>
+                To feed <see cref="!:IDictionary&lt;WSA.Foundation.Shared.Abstractions.Models.Side,Guid&gt;"/> of the devices for which information needs to be stored. This information is not optional.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithBabyBoomerAtSlots(System.Collections.Generic.IList{WSA.Foundation.Shared.Abstractions.Models.ProgramSlot})">
+            <summary>
+                To feed information about the configured baby boomer availability within the device for the passed
+                <paramref name="programSlots"/> information.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithCancellationToken(System.Threading.CancellationToken)">
+            <summary>
+                To feed the information about cancellationToken passed as argument <paramref name="cancellationToken"/>.
+            </summary>
+            <remarks>To cancel the storage operation when calling <see cref="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.BuildAsync"/>.</remarks>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithCrosVolumeAtSlots(System.Collections.Generic.IList{WSA.Foundation.Shared.Abstractions.Models.ProgramSlot})">
+            <summary>
+                To feed the information about cros volume availability within the device for the passed
+                <paramref name="programSlots"/> information.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithFirmwareVersion(System.Version)">
+            <summary>
+                To feed the information about FW version of the devices passed as an argument <paramref name="firmwareVersion"/>.
+            </summary>
+            <param name="firmwareVersion"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithIntelliZoomAvailable(System.Boolean)">
+            <summary>
+                To feed the information whether the intelli zoom feature is available or not by passing
+                <paramref name="intelliZoomAvailable"/>.
+            </summary>
+            <param name="intelliZoomAvailable"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithIsBiCros(System.Boolean)">
+            <summary>
+                To feed the information whether the setup is BiCros configured or not by passing
+                <paramref name ="isBiCros"/>.
+            </summary>
+            <param name="isBiCros"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithIsCros(System.Boolean)">
+            <summary>
+                To feed the information whether the setup is Cros configured or not by passing
+                <paramref name="isCros"></paramref>.
+            </summary>
+            <param name="isCros"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithIsRechargeable(System.Boolean)">
+            <summary>
+                To feed the information whether the devices are rechargeable or not by passing
+                <paramref name="isRechargeable"></paramref>
+            </summary>
+            <param name="isRechargeable"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithNumberOfPrograms(System.Byte)">
+            <summary>
+                To feed the number of programs which the devices are having passed as argument
+                <paramref name="numberOfPrograms"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithPlatform(WSA.Foundation.Shared.Abstractions.Models.Platform)">
+            <summary>
+                To feed the platform information of the device passed as argument <paramref name="platform"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithProgramNameLabelsAtSlot(System.Collections.Generic.IDictionary{WSA.Foundation.Shared.Abstractions.Models.ProgramSlot,WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel})">
+            <summary>
+                To feed information about the configured listening situations within the device by passing
+                <paramref name="programNameLabels"/>
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithSideLookNarrowFocusAvailable(System.Boolean)">
+            <summary>
+                To feed the information whether side look narrow focus is available or not by passing
+                <param name="sideLookNarrowFocusAvailable"></param>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithSoundBalanceShape(System.Byte)">
+            <summary>
+                To feed the information whether the sound balance shape is configured or not by passing
+                <paramref name="soundBalanceShape"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithSoundControlAtSlots(System.Collections.Generic.IList{WSA.Foundation.Shared.Abstractions.Models.ProgramSlot})">
+            <summary>
+                To feed the information about configured sound control availability within the device for the passed
+                <paramref name="programSlots"/> information.
+            </summary>
+            <param name="programSlots"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithSoundControlStepSize(WSA.Foundation.Shared.Abstractions.Models.VolumeControlStepSize)">
+            <summary>
+                To feed the information about step size for sound control passed as <paramref name="soundControlStepSize"/>.
+            </summary>
+            <param name="soundControlStepSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithTemporaryHearingInstrumentSettingsAtSlots(System.Collections.Generic.IList{WSA.Foundation.Shared.Abstractions.Models.ProgramSlot})">
+            <summary>
+                To feed information about the configured Temporary Hearing Instrument Settings availability within the device by
+                passing <paramref name="programSlots"/>
+            </summary>
+            <param name="programSlots"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithTinnitusDecoupled(System.Boolean)">
+            <summary>
+                To feed the information whether tinnitus is decoupled or not by passing <paramref name="tinnitusDecoupled"/>.
+            </summary>
+            <param name="tinnitusDecoupled"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithTinnitusProgramAtSlots(System.Collections.Generic.IList{WSA.Foundation.Shared.Abstractions.Models.ProgramSlot})">
+            <summary>
+                To feed the information about configured tinnitus volume availability for the passed
+                <paramref name="programSlots"/> information.
+            </summary>
+            <param name="programSlots"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithTinnitusVolumeStepSize(WSA.Foundation.Shared.Abstractions.Models.VolumeControlStepSize)">
+            <summary>
+                To feed the information about step size for tinnitus passed as <paramref name="tinnitusVolumeControlStepSize"/>.
+            </summary>
+            <param name="tinnitusVolumeControlStepSize"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithVolumeAtSlots(System.Collections.Generic.IList{WSA.Foundation.Shared.Abstractions.Models.ProgramSlot})">
+            <summary>
+                To feed the information about configured volume control availability for the passed
+                <paramref name="programSlots"/> information.
+            </summary>
+            <param name="programSlots"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithVolumeDecoupled(System.Boolean)">
+            <summary>
+                To feed the information whether the volume is decoupled or not by passing <paramref name="volumeDecoupled"/>
+            </summary>
+            <param name="volumeDecoupled"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterBuilder.WithVolumeStepSize(WSA.Foundation.Shared.Abstractions.Models.VolumeControlStepSize)">
+            <summary>
+                To feed the information about step size for volume passed as <paramref name="volumeControlStepSize"/>.
+            </summary>
+            <param name="volumeControlStepSize"></param>
+        </member>
+        <member name="T:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterChecker">
+            <summary>
+                An interface that is responsible to set and get hearing instrument parameter value.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterChecker.GetValueAvailabilityAsync``1(WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey{``0},System.Threading.CancellationToken)">
+            <summary>
+                Returns <see cref="T:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterAvailability`1"/> for a specific parameter whose <paramref name="key"/> is passed.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:System.OperationCanceledException">Thrown if the tasks get cancelled</exception>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterChecker.SetValueAsync``1(WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey{``0},WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter{``0},System.Threading.CancellationToken)">
+            <summary>
+                Sets the passed <paramref name="value"/> for the hearing instrument parameter whose <paramref name="key"/> is passed.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="cancellationToken"></param>
+            <returns>Whether the value is set successfully or not.</returns>
+            <exception cref="T:System.OperationCanceledException">Thrown if the tasks get cancelled</exception>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.IHearingInstrumentParameterChecker.DeleteValueAsync``1(WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey{``0},System.Threading.CancellationToken)">
+             <summary>
+            		Deletes persisted key.
+             </summary>
+             <param name="key"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter`1">
+            <summary>
+                This class provides information about hearing instrument parameter's value and the checksum tied to it.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter`1.Checksum">
+            <summary>
+                Returns Checksum of configuration at the time the value(s) were updated last.
+            </summary>
+            <remarks>
+                This is helpful in identifying when to read the configuration again and is done when the checksum has changed from
+                its previous value.
+                Default Checksum is '-1'.
+            </remarks>
+        </member>
+        <member name="P:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter`1.Value">
+            <summary>
+                Returns the value <see cref="!:T"/> of the parameter.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter`1.#ctor(`0,System.Nullable{System.Int32})">
+            <summary>
+                A constructor for <see cref="T:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter`1"/>.
+            </summary>
+            <param name="value"></param>
+            <param name="checksum"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter`1.#ctor">
+            <summary>
+                A default constructor for <see cref="T:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter`1"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter`1.Equals(WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter{`0})">
+            <inheritdoc></inheritdoc>
+            <see cref="M:System.Object.Equals(System.Object)"/>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter`1.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter`1.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter`1.op_Explicit(WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter{System.Object})~WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter{`0}">
+            <summary>
+                Explicit Converter.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter`1.op_Implicit(WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter{`0})~WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter{System.Object}">
+            <summary>
+                Implicit converter.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter`1.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterAvailability`1">
+            <summary>
+                This class provides information about the hearing aid parameter availability such as whether it is up to date and
+                what is its value.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterAvailability`1.IsUpToDate">
+            <summary>
+                Returns whether the parameter is up to date or not.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterAvailability`1.Parameter">
+            <summary>
+                Returns <see cref="T:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter`1"/> containing information like value and checksum of the
+                parameter.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterAvailability`1.#ctor(System.Boolean,WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameter{`0})">
+            <summary>
+                A constructor for <see cref="T:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterAvailability`1"/>.
+            </summary>
+            <param name="isUpToDate"></param>
+            <param name="parameter"></param>
+        </member>
+        <member name="T:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey`1">
+            <summary>
+                Hearing Instrument Parameter Key which is used to uniquely identify a parameter.
+            </summary>
+            <remarks>
+                This class contains all the information about a parameter, meaning - to which side it belongs,
+                whether it is program dependent, guid, etc which makes it unique.
+            </remarks>
+            <typeparam name="T"> Type of value that the Key holds</typeparam>
+        </member>
+        <member name="P:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey`1.DefaultValue">
+            <summary>
+                Default Value of the parameter.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey`1.Guid">
+            <summary>
+                GUID of the hearing aid.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey`1.Id">
+            <summary>
+                Unique Id for parameter.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey`1.Key">
+            <summary>
+                Key to identify parameter.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey`1.ProgramSlot">
+            <summary>
+                Program Slot meaning if the parameter is set for a specific program or is program independent.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey`1.Side">
+            <summary>
+                Side of the hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey`1.#ctor(System.String,WSA.Foundation.Shared.Abstractions.Models.ProgramSlot,WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                A constructor for Hearing Instrument Parameter Key.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey`1.Equals(WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey{`0})">
+            <inheritdoc cref="M:System.Object.Equals(System.Object)"/>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey`1.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey`1.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey`1.op_Explicit(WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey{System.Object})~WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey{`0}">
+            <summary>
+            	Explicit Converter.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey`1.op_Implicit(WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey{`0})~WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey{System.Object}">
+            <summary>
+            	Implicit Converter.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKey`1.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys">
+            <summary>
+                This class contains information about all the hearing instrument parameter keys which can be persisted in
+                Foundation.
+            </summary>
+            
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.AcousticEnabled(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Acoustic is
+                enabled or not for the
+                provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                AcousticEnabled is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.AcousticPairingOverRfDisabled(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Acoustic Pairing
+                Over Rf is Disabled or not for the
+                provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                AcousticPairingOverRfDisabled is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.AutomaticActivityDetectionEnabled(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Automatic Activity
+                Detection is Enabled or not for the
+                provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                AutomaticActivityDetectionEnabled is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.BabyBoomerFeatureSupported(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.ProgramSlot,System.Guid)">
+            <summary>
+                <summary>
+                    Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Baby Boomer
+                    Feature is Supported or not for the
+                    provided <paramref name="side"/> , <paramref name="programSlot"/> and <paramref name="guid"/>.
+                </summary>
+                <remarks>
+                    BabyBoomerFeatureSupported is program slot dependent.
+                </remarks>
+            </summary>
+            <param name="side"></param>
+            <param name="programSlot"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.BrandInformation(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;WSA.Foundation.Persistency.Abstractions.Models.Brand&gt;"/> for
+                persisting information about the Brand for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                BrandInformation is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.ConfiguredAcousticAddress(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;byte&gt;"/> for persisting information about the Configured
+                Acoustic Address for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                ConfiguredAcousticAddress is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.CurrentlyActiveChecksum(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;int&gt;"/> for persisting information about the Currently Active
+                Checksum for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                CurrentlyActiveChecksum is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.CustomProgramName(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.ProgramSlot,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;string&gt;"/> for persisting information about Custom Program
+                Name for
+                provided <paramref name="side"/> , <paramref name="programSlot"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                CustomProgramName is program slot dependent.
+            </remarks>
+            <param name="side"></param>
+            <param name="programSlot"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.CustomProgramNamesSupported(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Custom Program
+                Names are Supported or not for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                CustomProgramNamesSupported is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.FirmwareVersion(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;string&gt;"/> for persisting information about Firmware Version
+                for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                FirmwareVersion is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.HearingProgramChangeIndicatorEnabled(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Hearing Program
+                Change Indicator is Enabled or not for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                HearingProgramChangeIndicatorEnabled is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.IntelliZoomAvailable(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether IntelliZoom is
+                Available or not for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                IntelliZoomAvailable is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.IsBiCros(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether the hearing aid is
+                configured as BiCros for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                IsBiCros is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.IsCros(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether the hearing aid is
+                configured as Cros for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                IsCros is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.IsCrosStreamingAvailable(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.ProgramSlot,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Cros Streaming is
+                Available for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                IsCrosStreamingAvailable is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="programSlot"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.IsRechargeable(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether battery Is
+                Rechargeable for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                IsRechargeable is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.IsSelectable(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.ProgramSlot,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether program Is
+                Selectable or not for provided <paramref name="side"/>, <paramref name="programSlot"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                IsSelectable is program slot dependent.
+            </remarks>
+            <param name="side"></param>
+            <param name="programSlot"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.LowBatteryIndicatorEnabled(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Low Battery
+                Indicator is Enabled or not for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                LowBatteryIndicatorEnabled is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.NeleAvailable(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Nele is Available
+                or not for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                NeleAvailable is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.NumberOfPrograms(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;byte&gt;"/> for persisting information about Number Of Programs
+                for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                NumberOfPrograms is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.Platform(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;WSA.Foundation.Shared.Abstractions.Models.Platform&gt;"/> for
+                persisting information about Platform for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                Platform is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.ProgramNameLabel(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.ProgramSlot,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel&gt;"/>
+                for persisting information about Program Name Label for provided <paramref name="side"/>,
+                <paramref name="programSlot"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                ProgramNameLabel is program slot dependent.
+            </remarks>
+            <param name="side"></param>
+            <param name="programSlot"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.SideLookNarrowFocusAvailable(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Side Look Narrow
+                Focus is Available or not for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                SideLookNarrowFocusAvailable is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.SoundBalanceAvailable(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.ProgramSlot,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Sound Balance is
+                Available or not for provided <paramref name="side"/>, <paramref name="programSlot"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                SoundBalanceAvailable is program slot dependent.
+            </remarks>
+            <param name="side"></param>
+            <param name="programSlot"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.SoundBalanceShape(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Sound Balance
+                Shape is available or not for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                SoundBalanceShape is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.SoundBalanceStepSize(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Sound Balance
+                StepSize is available or not for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                SoundBalanceStepSize is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.TemporaryHearingInstrumentSettingSupported(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.ProgramSlot,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Temporary Hearing
+                Instrument Setting feature is Supported or not for provided <paramref name="side"/>, <paramref name="programSlot"/>
+                and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                TemporaryHearingInstrumentSettingSupported is program slot dependent.
+            </remarks>
+            <param name="side"></param>
+            <param name="programSlot"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.TinnitusVolumeControlAvailable(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.ProgramSlot,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Tinnitus Volume
+                Control is available or not for provided <paramref name="side"/>, <paramref name="programSlot"/> and
+                <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                TinnitusVolumeControlAvailable is program slot dependent.
+            </remarks>
+            <param name="side"></param>
+            <param name="programSlot"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.TinnitusVolumeControlDecoupled(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Tinnitus Volume
+                Control is Decoupled or not for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                TinnitusVolumeControlDecoupled is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.TinnitusVolumeControlStepSize(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Tinnitus Volume
+                Control Step Size is available or not for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                TinnitusVolumeControlStepSize is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.VcChangeIndicatorEnabled(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Vc Change
+                Indicator is Enabled or not for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                VcChangeIndicatorEnabled is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.VcLimitIndicatorEnabled(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Vc Limit Indicator
+                is Enabled or not for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                VcLimitIndicatorEnabled is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.VcPowerOnPosIndicatorEnabled(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Vc Power On
+                Position Indicator is Enabled or not for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                VcPowerOnPosIndicatorEnabled is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.VolumeControlAvailable(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.ProgramSlot,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Volume Control is
+                available or not for provided <paramref name="side"/>, <paramref name="programSlot"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                VolumeControlAvailable is program slot dependent.
+            </remarks>
+            <param name="side"></param>
+            <param name="programSlot"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.VolumeControlDecoupled(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key <see cref="!:HearingInstrumentParameterKey&lt;bool&gt;"/> for persisting information whether Volume Control is
+                Decoupled or not for provided <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                VolumeControlDecoupled is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.Abstractions.Models.HearingInstrumentParameterKeys.VolumeControlStepSize(WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid)">
+            <summary>
+                Returns key
+                <see cref="!:HearingInstrumentParameterKey&lt;WSA.Foundation.Persistency.Abstractions.Models.VolumeControlStepSize&gt;"/>
+                for persisting information whether Volume Control Step Size is available or not for provided
+                <paramref name="side"/> and <paramref name="guid"/>.
+            </summary>
+            <remarks>
+                VolumeControlStepSize is independent of program slot.
+            </remarks>
+            <param name="side"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Persistency</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.Persistency.PersistencyBase">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.PersistencyBase.Init(WSA.Foundation.Locator.Basic.IBasicServiceCollection,WSA.Foundation.Locator.Basic.IBasicLocator,Component.Contracts.IConfigurationService)">
+            <summary>
+            
+            </summary>
+            <param name="collection"></param>
+            <param name="basicLocator"></param>
+            <param name="configurationService"></param>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.PersistencyBase.Init(WSA.Foundation.Locator.Basic.IBasicServiceCollection,WSA.Foundation.Locator.Basic.IBasicLocator)">
+            <summary>
+            
+            </summary>
+            <param name="collection"></param>
+            <param name="basicLocator"></param>
+        </member>
+    </members>
+</doc>

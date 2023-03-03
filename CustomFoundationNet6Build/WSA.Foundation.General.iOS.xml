@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.General.iOS</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.General.iOS.ApplicationInfo">
+            <summary>
+                Class contains definition for Application Info methods.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.ApplicationInfo.GetAppVersion">
+            <summary>
+                Returns the application version including the alpha version.
+            </summary>
+            <remarks>
+                This is for the App database migration.
+            </remarks>
+            <returns>
+                Application version name.
+            </returns>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.ApplicationInfo.GetDeviceName">
+            <summary>
+                Returns the device type.
+            </summary>
+            <returns>
+                Vendor Name and model number of the device.
+            </returns>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.ApplicationInfo.GetOsName">
+            <summary>
+                Returns the operating system name.
+            </summary>
+            <returns>
+                Name of Android installed in the device.
+            </returns>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.ApplicationInfo.GetOsVersion">
+            <summary>
+                Returns the operating system version.
+            </summary>
+            <returns>
+                Version of Android installed on the device.
+            </returns>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.ApplicationInfo.GetVersion">
+            <summary>
+                Returns the application version.
+            </summary>
+            <remarks>
+                This is for the App version update check.
+            </remarks>
+            <returns>
+                Application <see cref="T:System.Version"/> name.
+            </returns>
+        </member>
+        <member name="T:WSA.Foundation.General.iOS.General">
+            <summary>
+                Entry point of the General component. This class provides methods to initialize this component.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.General.Init(WSA.Foundation.Locator.Basic.IBasicServiceCollection,WSA.Foundation.Locator.Basic.IBasicLocator)">
+            <summary>
+                Initializes General Component and its dependencies.
+            </summary>
+            <param name="serviceCollection"></param>
+            <param name="basicLocator"></param>
+        </member>
+        <member name="T:WSA.Foundation.General.iOS.SharedPreference">
+            <summary>
+                Class contains definition for Shared Preference methods.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.General.iOS.SharedPreference._standardDefaults">
+            <summary>
+                NSDefaults.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.SharedPreference.ClearValue(System.String)">
+            <summary>
+                Method to Clear Value for a Key from shared preference.
+            </summary>
+            <param name="key">Key.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.SharedPreference.GetBoolean(System.String)">
+            <summary>
+                Method to gets the boolean from shared preference.
+            </summary>
+            <returns>The value as boolean.</returns>
+            <param name="key">Key.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.SharedPreference.GetByteArray(System.String)">
+            <summary>
+                Returns the Byte Array from shared preference.
+            </summary>
+            <param name="key">Key.</param>
+            <returns>
+                the value as a byte[].
+            </returns>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.SharedPreference.GetInteger(System.String)">
+            <summary>
+                Method to gets the Integer from shared preference.
+            </summary>
+            <returns>The value as integer.</returns>
+            <param name="key">Key.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.SharedPreference.GetString(System.String)">
+            <summary>
+                Method to gets the value from shared preference.
+            </summary>
+            <returns>The value as string.</returns>
+            <param name="key">Key.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.SharedPreference.GetStringList(System.String)">
+            <summary>
+                Method to gets the value as String set from shared preference.
+            </summary>
+            <returns>The value as string.</returns>
+            <param name="key">Key.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.SharedPreference.SetBoolean(System.String,System.Boolean)">
+            <summary>
+                Method to set the Boolean to shared preference.
+            </summary>
+            <param name="key">Key.</param>
+            <param name="value">Value as Boolean.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.SharedPreference.SetByteArray(System.String,System.Byte[])">
+            <summary>
+                Sets the Byte Array value to shared preference.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.SharedPreference.SetInteger(System.String,System.Int32)">
+            <summary>
+                Method to set the Integer to shared preference.
+            </summary>
+            <param name="key">Key.</param>
+            <param name="value">Value as Integer.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.SharedPreference.SetString(System.String,System.String)">
+            <summary>
+                Method to set the String to shared preference.
+            </summary>
+            <param name="key">Key.</param>
+            <param name="value">Value as string.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.iOS.SharedPreference.SetStringList(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+                Method to set the value as string list to shared preference.
+            </summary>
+            <param name="key">Key.</param>
+            <param name="values">Value as string.</param>
+        </member>
+    </members>
+</doc>

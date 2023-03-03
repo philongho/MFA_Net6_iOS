@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.MetaInformation</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.MetaInformation.IMetaInformationManager">
+            <summary>
+                An interface that provides information about the component(s).
+            </summary>
+            <remarks>Information like component name and version can be registered and retrieved using this interface.</remarks>
+        </member>
+        <member name="P:WSA.Foundation.MetaInformation.IMetaInformationManager.MetaInformation">
+            <summary>
+                Returns an an observable collection of <see cref="T:WSA.Foundation.MetaInformation.MetaInformationData"/> of components that are registered.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.MetaInformation.IMetaInformationManager.RegisterInformation(WSA.Foundation.MetaInformation.MetaInformationData)">
+            <summary>
+                Registers a component whose details are provided in <paramref name="metaInformationToRegister"/>.
+            </summary>
+            /// <remarks>
+                To generate this <paramref name="metaInformationToRegister"/> make use of <seealso cref="M:WSA.Foundation.MetaInformation.MetaInformationData.FromType(System.Type)"/> that
+                requires <see cref="T:System.Type"/> of the component.
+            </remarks>
+            <param name="metaInformationToRegister"></param>
+        </member>
+        <member name="T:WSA.Foundation.MetaInformation.MetaInformation">
+            <summary>
+            	Entry point of the Meta Information component. This class provides methods to initialize this component.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.MetaInformation.MetaInformation.Init(WSA.Foundation.Locator.Basic.IBasicServiceCollection,WSA.Foundation.Locator.Basic.IBasicLocator)">
+            <summary>
+            	Initializes Meta Information Component and its dependencies.
+            </summary>
+            <param name="collection"></param>
+            <param name="basicLocator"></param>
+        </member>
+        <member name="T:WSA.Foundation.MetaInformation.MetaInformationData">
+            <summary>
+            	This class provides all the information about a component.
+            </summary>
+            <remarks>
+            	 A component that wishes to register itself can make use of <see cref="M:WSA.Foundation.MetaInformation.MetaInformationData.FromType(System.Type)"/> in order to generate <see cref="T:WSA.Foundation.MetaInformation.MetaInformationData"/>.
+            </remarks>
+        </member>
+        <member name="P:WSA.Foundation.MetaInformation.MetaInformationData.ComponentName">
+            <summary>
+            	Name of the Component.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.MetaInformation.MetaInformationData.ComponentVersion">
+            <summary>
+            	Version of the Component.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.MetaInformation.MetaInformationData.#ctor(System.Version,System.String)">
+            <summary>
+            	A constructor for <see cref="T:WSA.Foundation.MetaInformation.MetaInformationData"/>.
+            </summary>
+            <param name="componentVersion"></param>
+            <param name="componentName"></param>
+        </member>
+        <member name="M:WSA.Foundation.MetaInformation.MetaInformationData.FromType(System.Type)">
+            <summary>
+            	Returns generated <see cref="T:WSA.Foundation.MetaInformation.MetaInformationData"/> of the component whose <see cref="T:System.Type"/> is passed as an argument.
+            </summary>
+            <param name="type"></param>
+        </member>
+    </members>
+</doc>

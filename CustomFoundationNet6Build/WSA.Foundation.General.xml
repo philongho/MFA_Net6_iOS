@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.General</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.General.AppBaseException">
+            <summary>
+                Base Exception for all foundation related components.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.General.AppBaseException.#ctor(System.String)">
+            <summary>
+                Base Exception for all foundation related components.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.General.IApplicationInfo">
+            <summary>
+                Interface contains declaration for Application Info.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.General.IApplicationInfo.GetAppVersion">
+            <summary>
+                Returns the application version including the alpha version.
+            </summary>
+            <remarks>
+                This is for the App database migration.
+            </remarks>
+            <returns>
+                Application version name.
+            </returns>
+        </member>
+        <member name="M:WSA.Foundation.General.IApplicationInfo.GetDeviceName">
+            <summary>
+                Returns the device type.
+            </summary>
+            <returns>
+                Vendor Name and model number of the device.
+            </returns>
+        </member>
+        <member name="M:WSA.Foundation.General.IApplicationInfo.GetOsName">
+            <summary>
+                Returns the operating system name.
+            </summary>
+            <returns>
+                Name of Android installed in the device.
+            </returns>
+        </member>
+        <member name="M:WSA.Foundation.General.IApplicationInfo.GetOsVersion">
+            <summary>
+                Returns the operating system version.
+            </summary>
+            <returns>
+                Version of Android installed on the device.
+            </returns>
+        </member>
+        <member name="M:WSA.Foundation.General.IApplicationInfo.GetVersion">
+            <summary>
+                Returns the application version.
+            </summary>
+            <remarks>
+                This is for the App version update check.
+            </remarks>
+            <returns>
+                Application <see cref="T:System.Version"/> name.
+            </returns>
+        </member>
+        <member name="T:WSA.Foundation.General.ISharedPreference">
+            <summary>
+                Interface contains declaration for Shared Preference methods.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.General.ISharedPreference.ClearValue(System.String)">
+            <summary>
+                Method to Clear Value for a Key from shared preference.
+            </summary>
+            <param name="key">Key.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.ISharedPreference.GetBoolean(System.String)">
+            <summary>
+                Returns the boolean value from shared preference.
+            </summary>
+            <returns>
+                The value as bool.
+            </returns>
+            <param name="key">Key.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.ISharedPreference.GetByteArray(System.String)">
+            <summary>
+                Returns the Byte Array from shared preference.
+            </summary>
+            <param name="key">Key.</param>
+            <returns>
+                the value as a byte[].
+            </returns>
+        </member>
+        <member name="M:WSA.Foundation.General.ISharedPreference.GetInteger(System.String)">
+            <summary>
+                Returns the Integer value from shared preference.
+            </summary>
+            <returns>
+                The value as int.
+            </returns>
+            <param name="key">Key.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.ISharedPreference.GetString(System.String)">
+            <summary>
+                Returns the string value from shared preference.
+            </summary>
+            <returns>
+                The value as string.
+            </returns>
+            <param name="key">Key.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.ISharedPreference.GetStringList(System.String)">
+            <summary>
+                Returns the value as List from shared preference.
+            </summary>
+            <returns>
+                The value as string.
+            </returns>
+            <param name="key">Key.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.ISharedPreference.SetBoolean(System.String,System.Boolean)">
+            <summary>
+                Sets the boolean value to shared preference.
+            </summary>
+            <param name="key">Key.</param>
+            <param name="value">Value as bool.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.ISharedPreference.SetByteArray(System.String,System.Byte[])">
+            <summary>
+                Sets the Byte Array value to shared preference.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:WSA.Foundation.General.ISharedPreference.SetInteger(System.String,System.Int32)">
+            <summary>
+                Sets the integer value to shared preference.
+            </summary>
+            <param name="key">Key.</param>
+            <param name="value">Value as integer.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.ISharedPreference.SetString(System.String,System.String)">
+            <summary>
+                Sets the string value to shared preference.
+            </summary>
+            <param name="key">Key.</param>
+            <param name="value">Value as string.</param>
+        </member>
+        <member name="M:WSA.Foundation.General.ISharedPreference.SetStringList(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+                Sets the value as Json string in shared preference.
+            </summary>
+            <param name="key">Key.</param>
+            <param name="values">Value as string.</param>
+        </member>
+    </members>
+</doc>

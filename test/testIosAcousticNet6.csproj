@@ -53,6 +53,8 @@
 		<CodesignKey>iPhone Developer</CodesignKey>
 		<MtouchDebug>true</MtouchDebug>
 		<CreatePackage>false</CreatePackage>
+		<CodesignProvision>Automatic</CodesignProvision>
+		<MtouchLink>None</MtouchLink>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
 		<DebugType>none</DebugType>
@@ -72,10 +74,24 @@
 		<CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
-		<PackageReference Include="WSA.Foundation.Acoustic" Version="1.1.0.151" />
-	</ItemGroup>
-	<ItemGroup>
-	  <None Remove="WSA.Foundation.Acoustic" />
+		<PackageReference Include="WSA.Foundation.Audio.iOS" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Logger.iOS" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.General.iOS" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Persistency" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Persistency.Abstractions" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Audio" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Shared.Abstractions" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Shared" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Logger" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Acoustic.Abstractions" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Audio.Abstractions" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Locator.Basic" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Locator.Autofac" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Locator.DryIoc" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.MetaInformation" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Logger.AppCenter" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Acoustic" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.Persistency.iOS" Version="10.0.0" />
+		<PackageReference Include="WSA.Foundation.General" Version="10.0.0" />
 	</ItemGroup>
 </Project>

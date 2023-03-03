@@ -1,0 +1,361 @@
+
+Welcome to .NET Core 3.1!
+---------------------
+SDK Version: 3.1.412
+
+Telemetry
+---------
+The .NET Core tools collect usage data in order to help us improve your experience. It is collected by Microsoft and shared with the community. You can opt-out of telemetry by setting the DOTNET_CLI_TELEMETRY_OPTOUT environment variable to '1' or 'true' using your favorite shell.
+
+Read more about .NET Core CLI Tools telemetry: https://aka.ms/dotnet-cli-telemetry
+
+----------------
+Explore documentation: https://aka.ms/dotnet-docs
+Report issues and find source on GitHub: https://github.com/dotnet/core
+Find out what's new: https://aka.ms/dotnet-whats-new
+Learn about the installed HTTPS developer cert: https://aka.ms/aspnet-core-https
+Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cli-docs
+Write your first app: https://aka.ms/first-net-core-app
+--------------------------------------------------------------------------------------
+Tools directory '/home/srvtfsbuild_azpcontainer/.dotnet/tools' is not currently on the PATH environment variable.
+If you are using bash, you can add it to your profile by running the following command:
+
+cat << \EOF >> ~/.bash_profile
+# Add .NET Core SDK tools
+export PATH="$PATH:/home/srvtfsbuild_azpcontainer/.dotnet/tools"
+EOF
+
+You can add it to the current session by running the following command:
+
+export PATH="$PATH:/home/srvtfsbuild_azpcontainer/.dotnet/tools"
+
+You can invoke the tool using the following command: dotnet-sonarscanner
+Tool 'dotnet-sonarscanner' (version '4.8.0') was successfully installed.
+SonarScanner for MSBuild 4.8
+Using the .NET Core version of the Scanner for MSBuild
+Pre-processing started.
+Preparing working directories...
+08:27:40.939  Updating build integration targets...
+08:27:40.993  Fetching analysis configuration settings...
+08:27:41.639  Provisioning analyzer assemblies for cs...
+08:27:41.64  Installing required Roslyn analyzers...
+08:27:42.309  Provisioning analyzer assemblies for vbnet...
+08:27:42.309  Installing required Roslyn analyzers...
+08:27:42.332  Pre-processing succeeded.
+  Determining projects to restore...
+  Restored /__w/9/s/Source/Contracts/Contracts/Component.Contracts.csproj (in 943 ms).
+  Restored /__w/9/s/Source/Contracts/Contracts.UnitTest/Component.Contracts.UnitTests.csproj (in 3.43 sec).
+Microsoft (R) Build Engine version 16.7.2+b60ddb6f4 for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored /__w/9/s/Source/Contracts/Contracts/Component.Contracts.csproj (in 251 ms).
+  Restored /__w/9/s/Source/Contracts/Contracts.UnitTest/Component.Contracts.UnitTests.csproj (in 265 ms).
+Models/ConfigurationKey.cs(6,18): warning S4035: Seal class 'ConfigurationKey' or implement 'IEqualityComparer<T>' instead. [/__w/9/s/Source/Contracts/Contracts/Component.Contracts.csproj]
+Models/ColorKey.cs(6,18): warning S4035: Seal class 'ColorKey' or implement 'IEqualityComparer<T>' instead. [/__w/9/s/Source/Contracts/Contracts/Component.Contracts.csproj]
+Models/BrandColors.cs(57,27): warning S107: Constructor has 9 parameters, which is greater than the 7 authorized. [/__w/9/s/Source/Contracts/Contracts/Component.Contracts.csproj]
+  Component.Contracts -> /__w/9/s/Source/Contracts/Contracts/bin/Debug/netstandard2.0/Component.Contracts.dll
+  Sonar: (Component.Contracts.csproj) Project processed successfully
+  Component.Contracts.UnitTests -> /__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll
+  Sonar: (Component.Contracts.UnitTests.csproj) Project processed successfully
+
+Build succeeded.
+
+Models/ConfigurationKey.cs(6,18): warning S4035: Seal class 'ConfigurationKey' or implement 'IEqualityComparer<T>' instead. [/__w/9/s/Source/Contracts/Contracts/Component.Contracts.csproj]
+Models/ColorKey.cs(6,18): warning S4035: Seal class 'ColorKey' or implement 'IEqualityComparer<T>' instead. [/__w/9/s/Source/Contracts/Contracts/Component.Contracts.csproj]
+Models/BrandColors.cs(57,27): warning S107: Constructor has 9 parameters, which is greater than the 7 authorized. [/__w/9/s/Source/Contracts/Contracts/Component.Contracts.csproj]
+    3 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:03.50
+Models/ColorKey.cs(6,18): warning S4035: Seal class 'ColorKey' or implement 'IEqualityComparer<T>' instead. [/__w/9/s/Source/Contracts/Contracts/Component.Contracts.csproj]
+Models/ConfigurationKey.cs(6,18): warning S4035: Seal class 'ConfigurationKey' or implement 'IEqualityComparer<T>' instead. [/__w/9/s/Source/Contracts/Contracts/Component.Contracts.csproj]
+Models/BrandColors.cs(57,27): warning S107: Constructor has 9 parameters, which is greater than the 7 authorized. [/__w/9/s/Source/Contracts/Contracts/Component.Contracts.csproj]
+Test run for /__w/9/s/Source/Contracts/Contracts.UnitTest/bin/Debug/netcoreapp3.1/Component.Contracts.UnitTests.dll(.NETCoreApp,Version=v3.1)
+Microsoft (R) Test Execution Command Line Tool Version 16.7.1
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+
+A total of 1 test files matched the specified pattern.
+Results File: /__w/9/s/Source/Contracts/Contracts.UnitTest/TestResults/_b48d76851fa9_2022-04-21_08_27_55.trx
+
+Test Run Successful.
+Total tests: 35
+     Passed: 35
+ Total time: 0.8726 Seconds
+
+Calculating coverage result...
+  Generating report '/tmp/coverlet.json'
+  Generating report '/tmp/coverlet.opencover.xml'
+
++---------------------+--------+--------+--------+
+| Module              | Line   | Branch | Method |
++---------------------+--------+--------+--------+
+| Component.Contracts | 74.28% | 65%    | 79.16% |
++---------------------+--------+--------+--------+
+
++---------+--------+--------+--------+
+|         | Line   | Branch | Method |
++---------+--------+--------+--------+
+| Total   | 74.28% | 65%    | 79.16% |
++---------+--------+--------+--------+
+| Average | 74.28% | 65%    | 79.16% |
++---------+--------+--------+--------+
+
+SonarScanner for MSBuild 4.8
+Using the .NET Core version of the Scanner for MSBuild
+Post-processing started.
+WARNING: File '/home/srvtfsbuild_azpcontainer/.nuget/packages/microsoft.net.test.sdk/16.4.0/build/netcoreapp2.1/Microsoft.NET.Test.Sdk.Program.cs' is not located under the root directory '/__w/9/s/Source/Contracts' and will not be analyzed.
+WARNING: File '/home/srvtfsbuild_azpcontainer/.nuget/packages/nunit3testadapter/3.15.1/build/netcoreapp2.0/NUnit3.TestAdapter.dll' is not located under the root directory '/__w/9/s/Source/Contracts' and will not be analyzed.
+WARNING: File '/home/srvtfsbuild_azpcontainer/.nuget/packages/nunit3testadapter/3.15.1/build/netcoreapp2.0/NUnit3.TestAdapter.pdb' is not located under the root directory '/__w/9/s/Source/Contracts' and will not be analyzed.
+WARNING: File '/home/srvtfsbuild_azpcontainer/.nuget/packages/nunit3testadapter/3.15.1/build/netcoreapp2.0/nunit.engine.dll' is not located under the root directory '/__w/9/s/Source/Contracts' and will not be analyzed.
+WARNING: File '/home/srvtfsbuild_azpcontainer/.nuget/packages/nunit3testadapter/3.15.1/build/netcoreapp2.0/nunit.engine.api.dll' is not located under the root directory '/__w/9/s/Source/Contracts' and will not be analyzed.
+Calling the SonarQube Scanner...
+INFO: Scanner configuration file: /home/srvtfsbuild_azpcontainer/.dotnet/tools/.store/dotnet-sonarscanner/4.8.0/dotnet-sonarscanner/4.8.0/tools/netcoreapp3.0/any/sonar-scanner-4.2.0.1873/conf/sonar-scanner.properties
+INFO: Project root configuration file: /__w/9/.sonarqube/out/sonar-project.properties
+INFO: SonarQube Scanner 4.2.0.1873
+INFO: Java 11.0.12 Debian (64-bit)
+INFO: Linux 5.4.0-100-generic amd64
+INFO: User cache: /home/srvtfsbuild_azpcontainer/.sonar/cache
+INFO: SonarQube server 9.0.1
+INFO: Default locale: "en_US", source code encoding: "US-ASCII" (analysis is platform dependent)
+INFO: Load global settings
+INFO: Load global settings (done) | time=187ms
+INFO: Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu
+INFO: User cache: /home/srvtfsbuild_azpcontainer/.sonar/cache
+INFO: Load/download plugins
+INFO: Load plugins index
+INFO: Load plugins index (done) | time=51ms
+INFO: Load/download plugins (done) | time=19356ms
+INFO: Loaded core extensions: developer-scanner
+INFO: Found an active CI vendor: 'Azure DevOps'
+INFO: Load project settings for component key: 'Component.Contracts'
+INFO: Load project settings for component key: 'Component.Contracts' (done) | time=26ms
+INFO: Process project properties
+INFO: Execute project builders
+INFO: Execute project builders (done) | time=29ms
+INFO: Project key: Component.Contracts
+INFO: Base dir: /__w/9/s/Source/Contracts
+INFO: Working dir: /__w/9/.sonarqube/out/.sonar
+INFO: Load project branches
+INFO: Load project branches (done) | time=33ms
+INFO: Check ALM binding of project 'Component.Contracts'
+INFO: Detected project binding: NOT_BOUND
+INFO: Check ALM binding of project 'Component.Contracts' (done) | time=22ms
+INFO: Load project pull requests
+INFO: Load project pull requests (done) | time=59ms
+INFO: Load branch configuration
+INFO: Load branch configuration (done) | time=1ms
+INFO: Load quality profiles
+INFO: Load quality profiles (done) | time=75ms
+INFO: Load active rules
+INFO: Load active rules (done) | time=1773ms
+INFO: Organization key: sivantossw
+INFO: Load project repositories
+INFO: Load project repositories (done) | time=156ms
+INFO: Indexing files...
+INFO: Project configuration:
+INFO:   Excluded sources: **/build-wrapper-dump.json, **/bin/**/*, **/obj/**/*
+INFO: Indexing files of module 'Component.Contracts.UnitTests'
+INFO:   Base dir: /__w/9/s/Source/Contracts/Contracts.UnitTest
+INFO:   Test paths: Models/BrandColorsTests.cs, Models/ColorKeyTests.cs, Models/Con...
+INFO:   Excluded sources: **/build-wrapper-dump.json, **/bin/**/*, **/obj/**/*
+INFO: Indexing files of module 'Component.Contracts'
+INFO:   Base dir: /__w/9/s/Source/Contracts/Contracts
+INFO:   Source paths: Commands/IAsyncCommand.cs, Commands/IAsyncCommand_T.cs, Comma...
+INFO:   Excluded sources: **/build-wrapper-dump.json, **/bin/**/*, **/obj/**/*
+INFO: Indexing files of module 'Component.Contracts'
+INFO:   Base dir: /__w/9/s/Source/Contracts
+INFO:   Source paths: metadata/buildlog
+INFO:   Excluded sources: **/build-wrapper-dump.json, **/bin/**/*, **/obj/**/*
+INFO: 65 files indexed
+INFO: 0 files ignored because of inclusion/exclusion patterns
+INFO: 1 file ignored because of scm ignore settings
+INFO: Quality profile for cs: Sonar way
+INFO: ------------- Run sensors on module Component.Contracts
+INFO: Load metrics repository
+INFO: Load metrics repository (done) | time=23ms
+INFO: Sensor C# Project Type Information [csharp]
+INFO: Sensor C# Project Type Information [csharp] (done) | time=1ms
+INFO: Sensor C# Analysis Log [csharp]
+INFO: Roslyn version: 3.7.0.0
+INFO: Language version: CSharp7_3
+INFO: Concurrent execution: enabled
+INFO: Roslyn version: 3.7.0.0
+INFO: Language version: CSharp7_3
+INFO: Concurrent execution: enabled
+INFO: Sensor C# Analysis Log [csharp] (done) | time=4ms
+INFO: Sensor C# Properties [csharp]
+INFO: Sensor C# Properties [csharp] (done) | time=1ms
+INFO: Sensor HTML [web]
+INFO: Sensor HTML [web] (done) | time=3ms
+INFO: Sensor Text Sensor [text]
+INFO: 58 source files to be analyzed
+INFO: 58/58 source files have been analyzed
+INFO: Sensor Text Sensor [text] (done) | time=19ms
+INFO: Sensor VB.NET Project Type Information [vbnet]
+INFO: Sensor VB.NET Project Type Information [vbnet] (done) | time=1ms
+INFO: Sensor VB.NET Analysis Log [vbnet]
+INFO: Sensor VB.NET Analysis Log [vbnet] (done) | time=10ms
+INFO: Sensor VB.NET Properties [vbnet]
+INFO: Sensor VB.NET Properties [vbnet] (done) | time=1ms
+INFO: Sensor JaCoCo XML Report Importer [jacoco]
+INFO: 'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+INFO: No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+INFO: Sensor JaCoCo XML Report Importer [jacoco] (done) | time=3ms
+INFO: Sensor CSS Rules [javascript]
+INFO: No CSS, PHP, HTML or VueJS files are found in the project. CSS analysis is skipped.
+INFO: Sensor CSS Rules [javascript] (done) | time=1ms
+INFO: Sensor ThymeLeaf template sensor [securityjavafrontend]
+INFO: Sensor ThymeLeaf template sensor [securityjavafrontend] (done) | time=1ms
+INFO: Sensor Serverless configuration file sensor [security]
+INFO: 0 Serverless function entries were found in the project
+INFO: 0 Serverless function handlers were kept as entrypoints
+INFO: Sensor Serverless configuration file sensor [security] (done) | time=3ms
+INFO: Sensor AWS SAM template file sensor [security]
+INFO: Sensor AWS SAM template file sensor [security] (done) | time=1ms
+INFO: ------------- Run sensors on module Component.Contracts.UnitTests
+INFO: Sensor C# Project Type Information [csharp]
+INFO: Sensor C# Project Type Information [csharp] (done) | time=0ms
+INFO: Sensor C# Analysis Log [csharp]
+INFO: Roslyn version: 3.7.0.0
+INFO: Language version: CSharp8
+INFO: Concurrent execution: enabled
+INFO: Roslyn version: 3.7.0.0
+INFO: Language version: CSharp8
+INFO: Concurrent execution: enabled
+INFO: Sensor C# Analysis Log [csharp] (done) | time=1ms
+INFO: Sensor C# Properties [csharp]
+INFO: Sensor C# Properties [csharp] (done) | time=1ms
+INFO: Sensor Text Sensor [text]
+INFO: 7 source files to be analyzed
+INFO: 7/7 source files have been analyzed
+INFO: Sensor Text Sensor [text] (done) | time=2ms
+INFO: Sensor VB.NET Project Type Information [vbnet]
+INFO: Sensor VB.NET Project Type Information [vbnet] (done) | time=0ms
+INFO: Sensor VB.NET Analysis Log [vbnet]
+INFO: Sensor VB.NET Analysis Log [vbnet] (done) | time=0ms
+INFO: Sensor VB.NET Properties [vbnet]
+INFO: Sensor VB.NET Properties [vbnet] (done) | time=0ms
+INFO: Sensor JaCoCo XML Report Importer [jacoco]
+INFO: 'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+INFO: No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+INFO: Sensor JaCoCo XML Report Importer [jacoco] (done) | time=0ms
+INFO: Sensor CSS Rules [javascript]
+INFO: No CSS, PHP, HTML or VueJS files are found in the project. CSS analysis is skipped.
+INFO: Sensor CSS Rules [javascript] (done) | time=1ms
+INFO: Sensor ThymeLeaf template sensor [securityjavafrontend]
+INFO: Sensor ThymeLeaf template sensor [securityjavafrontend] (done) | time=0ms
+INFO: Sensor Serverless configuration file sensor [security]
+INFO: 0 Serverless function entries were found in the project
+INFO: 0 Serverless function handlers were kept as entrypoints
+INFO: Sensor Serverless configuration file sensor [security] (done) | time=0ms
+INFO: Sensor AWS SAM template file sensor [security]
+INFO: Sensor AWS SAM template file sensor [security] (done) | time=1ms
+INFO: ------------- Run sensors on module Component.Contracts
+INFO: Sensor C# Project Type Information [csharp]
+INFO: Sensor C# Project Type Information [csharp] (done) | time=1ms
+INFO: Sensor C# Analysis Log [csharp]
+INFO: Sensor C# Analysis Log [csharp] (done) | time=0ms
+INFO: Sensor C# Properties [csharp]
+INFO: Sensor C# Properties [csharp] (done) | time=0ms
+INFO: Sensor Text Sensor [text]
+INFO: 0 source files to be analyzed
+INFO: 0/0 source files have been analyzed
+INFO: Sensor Text Sensor [text] (done) | time=0ms
+INFO: Sensor VB.NET Project Type Information [vbnet]
+INFO: Sensor VB.NET Project Type Information [vbnet] (done) | time=0ms
+INFO: Sensor VB.NET Analysis Log [vbnet]
+INFO: Sensor VB.NET Analysis Log [vbnet] (done) | time=0ms
+INFO: Sensor VB.NET Properties [vbnet]
+INFO: Sensor VB.NET Properties [vbnet] (done) | time=0ms
+INFO: Sensor JaCoCo XML Report Importer [jacoco]
+INFO: 'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+INFO: No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+INFO: Sensor JaCoCo XML Report Importer [jacoco] (done) | time=1ms
+INFO: Sensor CSS Rules [javascript]
+INFO: No CSS, PHP, HTML or VueJS files are found in the project. CSS analysis is skipped.
+INFO: Sensor CSS Rules [javascript] (done) | time=0ms
+INFO: Sensor ThymeLeaf template sensor [securityjavafrontend]
+INFO: Sensor ThymeLeaf template sensor [securityjavafrontend] (done) | time=0ms
+INFO: Sensor Serverless configuration file sensor [security]
+INFO: 0 Serverless function entries were found in the project
+INFO: 0 Serverless function handlers were kept as entrypoints
+INFO: Sensor Serverless configuration file sensor [security] (done) | time=0ms
+INFO: Sensor AWS SAM template file sensor [security]
+INFO: Sensor AWS SAM template file sensor [security] (done) | time=0ms
+INFO: Sensor JavaSecuritySensor [security]
+INFO: Reading type hierarchy from: /__w/9/.sonarqube/out/.sonar/ucfg2/java
+INFO: Read 0 type definitions
+INFO: Reading UCFGs from: /__w/9/.sonarqube/out/.sonar/ucfg2/java
+INFO: No UCFGs have been included for analysis.
+INFO: Sensor JavaSecuritySensor [security] (done) | time=3ms
+INFO: Sensor CSharpSecuritySensor [security]
+INFO: Reading type hierarchy from: /__w/9/.sonarqube/out/ucfg_cs2
+INFO: Read 36 type definitions
+INFO: Reading UCFGs from: /__w/9/.sonarqube/out/ucfg_cs2
+INFO: No UCFGs have been included for analysis.
+INFO: Sensor CSharpSecuritySensor [security] (done) | time=140ms
+INFO: Sensor PhpSecuritySensor [security]
+INFO: Reading type hierarchy from: /__w/9/.sonarqube/out/.sonar/ucfg2/php
+INFO: Read 0 type definitions
+INFO: Reading UCFGs from: /__w/9/.sonarqube/out/.sonar/ucfg2/php
+INFO: No UCFGs have been included for analysis.
+INFO: Sensor PhpSecuritySensor [security] (done) | time=0ms
+INFO: Sensor PythonSecuritySensor [security]
+INFO: No taint analysis rules have been enabled, will not execute taint analysis.
+INFO: Sensor PythonSecuritySensor [security] (done) | time=1ms
+INFO: Sensor JsSecuritySensor [security]
+INFO: Reading type hierarchy from: /__w/9/.sonarqube/out/.sonar/ucfg2/js
+INFO: Read 0 type definitions
+INFO: Reading UCFGs from: /__w/9/.sonarqube/out/.sonar/ucfg2/js
+INFO: No UCFGs have been included for analysis.
+INFO: Sensor JsSecuritySensor [security] (done) | time=0ms
+INFO: ------------- Run sensors on project
+INFO: Sensor C# [csharp]
+INFO: Importing results from 6 proto files in '/__w/9/.sonarqube/out/2/output-cs'
+INFO: Importing results from 6 proto files in '/__w/9/.sonarqube/out/0/output-cs'
+INFO: Importing results from 6 proto files in '/__w/9/.sonarqube/out/1/output-cs'
+INFO: Importing results from 6 proto files in '/__w/9/.sonarqube/out/3/output-cs'
+INFO: Importing 2 Roslyn reports
+INFO: Found 2 MSBuild C# projects: 1 MAIN project. 1 TEST project.
+INFO: Sensor C# [csharp] (done) | time=179ms
+INFO: Sensor C# Tests Coverage Report Import [csharp]
+INFO: Parsing the OpenCover report /tmp/coverlet.opencover.xml
+INFO: Adding this code coverage report to the cache for later reuse: /tmp/coverlet.opencover.xml
+INFO: Coverage Report Statistics: 6 files, 6 main files, 6 main files with coverage, 0 test files, 0 project excluded files, 0 other language files.
+INFO: Sensor C# Tests Coverage Report Import [csharp] (done) | time=48ms
+INFO: Sensor Zero Coverage Sensor
+INFO: Sensor Zero Coverage Sensor (done) | time=3ms
+INFO: SCM Publisher SCM provider for this project is: git
+INFO: SCM Publisher 1 source file to be analyzed
+INFO: SCM Publisher 1/1 source file have been analyzed (done) | time=128ms
+INFO: CPD Executor 40 files had no CPD blocks
+INFO: CPD Executor Calculating CPD for 18 files
+INFO: CPD Executor CPD calculation finished (done) | time=8ms
+INFO: Analysis report generated in 409ms, dir size=325 KB
+INFO: Analysis report compressed in 94ms, zip size=143 KB
+INFO: Analysis report uploaded in 190ms
+INFO: ANALYSIS SUCCESSFUL, you can find the results at: https://sonarcloud.io/dashboard?id=Component.Contracts
+INFO: Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+INFO: More about the report processing at https://sonarcloud.io/api/ce/task?id=AYBLPLF3glZwkgDisgzi
+INFO: Analysis total time: 6.344 s
+INFO: ------------------------------------------------------------------------
+INFO: EXECUTION SUCCESS
+INFO: ------------------------------------------------------------------------
+INFO: Total time: 27.718s
+INFO: Final Memory: 34M/124M
+INFO: ------------------------------------------------------------------------
+The SonarQube Scanner has finished
+08:28:23.58  Post-processing succeeded.
+[1;94m checking SonarQube Analyses
+[1;94m Try getting ANALYSIS_ID for task URL [https://sonarcloud.io/api/ce/task?id=AYBLPLF3glZwkgDisgzi]
+[1;31m Sonarqube ANALYSIS_ID not available. Retry in 10 seconds.
+{"task":{"id":"AYBLPLF3glZwkgDisgzi","type":"REPORT","componentId":"AXN1CFnaJdCKVX98ND6Z","componentKey":"Component.Contracts","componentName":"Component.Contracts","componentQualifier":"TRK","status":"IN_PROGRESS","submittedAt":"2022-04-21T10:28:30+0200","submitterLogin":"reinhardt-markus91495","startedAt":"2022-04-21T10:28:30+0200","executionTimeMs":83,"logs":false,"organization":"sivantossw","warnings":[]}}
+[1;94m Try getting ANALYSIS_ID for task URL [https://sonarcloud.io/api/ce/task?id=AYBLPLF3glZwkgDisgzi]
+[1;32m Retrieved ANALYSIS_ID.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   814  100   814    0     0  15960      0 --:--:-- --:--:-- --:--:-- 15960
+[1;32m Quality gate passed

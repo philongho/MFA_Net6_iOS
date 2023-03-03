@@ -1,0 +1,874 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Acoustic.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.AcousticException">
+            <summary>
+                Base Acoustic Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.Exceptions.AcousticException.#ctor(System.String)">
+            <summary>
+                Base Acoustic Exception.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.BothHearingAidsHaveSameSideException">
+            <summary>
+                Both Hearing Aids Have Same Side Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.Exceptions.BothHearingAidsHaveSameSideException.#ctor">
+            <summary>
+                Both Hearing Aids Have Same Side Exception.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.HearingSystemEmptyException">
+            <summary>
+                Hearing System Empty Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.Exceptions.HearingSystemEmptyException.#ctor">
+            <summary>
+                Hearing System Empty Exception.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.OperationNotSupportedException">
+            <summary>
+                Device Does Not Support Operation Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.Exceptions.OperationNotSupportedException.#ctor(System.String)">
+            <summary>
+                Device Does Not Support Operation Exception.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.UnknownBrandIdentifierException">
+            <summary>
+                Brand Id is unknown for a given Brand
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.Exceptions.UnknownBrandIdentifierException.#ctor(System.String)">
+            <summary>
+                Brand Id is unknown for a given Brand
+            </summary>
+            <param name="brand"></param>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions">
+            <summary>
+                This class provides the possibility to add extensions for <see cref="T:WSA.Foundation.Acoustic.Abstractions.IHearingSystem"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.Acoustic(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for Acoustic Address related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.BabyBoomer(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for Baby Boomer related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.Battery(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for Battery related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.CrosVolume(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for Cros Volume related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.DeviceInformation(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for Discovery Information related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.FlightMode(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for Flight Mode related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.FourBandEqualizer(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for Four Band Equalizer related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.IntelliZoom(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for Intelli Zoom related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.Program(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for Program related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.Slnf(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for SLNF (Side Look Narrow Focus) related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.SoundBalance(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for Sound Balance related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.Standby(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for Standby related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.TemporaryHearingInstrumentSettings(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for Temporary Hearing Instrument Settings related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.Tinnitus(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for Tinnitus related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.HearingSystemExtensions.Volume(WSA.Foundation.Acoustic.Abstractions.IHearingSystem)">
+            <summary>
+                Returns an extension for Volume related feature(s).
+            </summary>
+            <param name="hearingSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.IAcousticAddressExtension">
+            <summary>
+                This interface provides all information about the acoustic address of the hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IAcousticAddressExtension.GetAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns the current acoustic address of the device for the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <remarks>
+                The returned address is in use for communicating to this device.
+            </remarks>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.IBabyBoomerExtension">
+            <summary>
+                This interface provides all information about the Baby Boomer feature of the hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IBabyBoomerExtension.WriteAsync(WSA.Foundation.Shared.Abstractions.Models.BabyBoomer,System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Writes the <see cref="T:WSA.Foundation.Shared.Abstractions.Models.BabyBoomer"/> to the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/>.
+            </summary>
+            <param name="babyBoomer"></param>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if an invalid baby boomer value (unknown) is passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">Thrown if tone cannot be played. The conditions for what we check can be set with <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.IBatteryExtension">
+            <summary>
+                This interface provides all information about the battery of the hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IBatteryExtension.IsRechargeableAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns whether the device has a rechargeable battery for the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IBatteryExtension.WriteStatusToneAsync(System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Sends a tone to the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/> which will trigger the device to play a tone to indicate the battery status.
+            </summary>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IBatteryExtension.GetLowBatteryIndicatorAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+            	Gets the state of the system indicator for low battery.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.ICrosVolumeExtension">
+            <summary>
+                This interface provides all information about the Cros Volume of a hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.ICrosVolumeExtension.GetMaximalPositionAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns the range of available positions for the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.ICrosVolumeExtension.IsBiCrosAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns whether the device is a Bi Cros device for the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            /// &lt;exception cref="InvalidSideException"&gt;Thrown if an invalid side was passed.&lt;/exception&gt;
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.ICrosVolumeExtension.IsCrosAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns whether the device is a Cros device for the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.ICrosVolumeExtension.WriteAsync(WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolume,System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Writes the <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolume"/> to the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/>.
+            </summary>
+            <param name="crosVolume">
+                The volume will get updated with missing slider/percentage value.
+                Also the percentage value will be updated to a "valid" percentage.
+            </param>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if an invalid volume (exceeding boundaries) is passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">Thrown if tone cannot be played. The conditions for what we check can be set with <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.IDeviceInformationExtension">
+            <summary>
+               This interface provides all information about the Hearing System's Firmware and Platform.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IDeviceInformationExtension.GetBrandAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns the Brand of the device for the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IDeviceInformationExtension.GetFirmwareVersionAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns the running Firmware Version of the device for the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IDeviceInformationExtension.GetGuid(WSA.Foundation.Shared.Abstractions.Models.Side)">
+            <summary>
+                Returns the (unique) GUID of the device for the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IDeviceInformationExtension.GetPlatformAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns the running Platform of hearing system for the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.IExtension">
+            <summary>
+                Interface that all Hearing System Extensions need to implement.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.IExtensionFactory`1">
+            <summary>
+                This interface returns the extension T.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IExtensionFactory`1.GetExtension(WSA.Foundation.Acoustic.Abstractions.IHearingSystem,System.Object[])">
+            <summary>
+                Returns an extension for the hearing system.
+            </summary>
+            <param name="hearingSystem"></param>
+            <param name="arguments"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.IFlightModeExtension">
+            <summary>
+                This interface provides all information about the wireless feature of a hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IFlightModeExtension.DisableAsync(System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Disables flight mode for the <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/> of the hearing system.
+            </summary>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">Thrown if tone cannot be played. The conditions for what we check can be set with <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IFlightModeExtension.EnableAsync(System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Enables flight mode for the <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/> of the hearing system.
+            </summary>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">Thrown if tone cannot be played. The conditions for what we check can be set with <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.IFourBandEqualizerExtension">
+            <summary>
+                This interface provides all information about the Four Band Equalize feature of a hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IFourBandEqualizerExtension.GetMaximalValueAsync">
+            <summary>
+                Returns the maximal value a band can have.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IFourBandEqualizerExtension.GetMinimalValueAsync">
+            <summary>
+                Returns the minimal value a band can have.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IFourBandEqualizerExtension.GetStepSizeAsync">
+            <summary>
+                Returns the step size for band values.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IFourBandEqualizerExtension.WriteAsync(WSA.Foundation.Shared.Abstractions.Models.EqualizerBands,System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Writes the <see cref="T:WSA.Foundation.Shared.Abstractions.Models.EqualizerBands"/> to the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/>.
+            </summary>
+            <param name="equalizerBands">Must all be between <see cref="M:WSA.Foundation.Acoustic.Abstractions.IFourBandEqualizerExtension.GetMinimalValueAsync"/> and <see cref="M:WSA.Foundation.Acoustic.Abstractions.IFourBandEqualizerExtension.GetMinimalValueAsync"/> and multiple of <see cref="M:WSA.Foundation.Acoustic.Abstractions.IFourBandEqualizerExtension.GetStepSizeAsync"/>.</param>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if invalid bands are passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">Thrown if tone cannot be played. The conditions for what we check can be set with <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.IHearingSystem">
+            <summary>
+                This interface provides all information about the hearing system containing extensions for different features.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Acoustic.Abstractions.IHearingSystem.IsSelected">
+            <summary>
+                Returns whether the hearing system is selected.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Acoustic.Abstractions.IHearingSystem.MasterSide">
+            <summary>
+                Returns the master side of the hearing system.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Acoustic.Abstractions.IHearingSystem.Sides">
+            <summary>
+                All available sides of the hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IHearingSystem.DeselectAsync(System.Threading.CancellationToken)">
+            <summary>
+                Deselects the hearing system.
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <remarks>
+                If another hearing system should be selected, this method should be called on the old hearing system.
+            </remarks>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IHearingSystem.GetExtension``1(System.Object[])">
+            <summary>
+                Returns an extension for a feature.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IHearingSystem.HasSide(WSA.Foundation.Shared.Abstractions.Models.Side)">
+            <summary>
+                Returns whether the hearing system has a specific <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IHearingSystem.SelectAsync(System.Threading.CancellationToken)">
+            <summary>
+                Selects the hearing system.
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IHearingSystem.ToString(WSA.Foundation.Shared.Abstractions.Models.Side)">
+            <inheritdoc cref="M:System.Object.ToString"/>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.IHearingSystemFactory">
+            <summary>
+                This interface provides all ways to create new instances of <see cref="T:WSA.Foundation.Acoustic.Abstractions.IHearingSystem"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IHearingSystemFactory.CreateAsync(System.Collections.Generic.HashSet{WSA.Foundation.Shared.Abstractions.Models.Side},WSA.Foundation.Shared.Abstractions.Models.Brand,System.Threading.CancellationToken)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Acoustic.Abstractions.IHearingSystem"/> after performing a acoustic pairing.
+                This performs a fresh acoustic pairing with only a brand information.
+            </summary>
+            <param name="devices"> Holds side information.</param>
+            <param name="brand"> Holds brand information with side.</param>
+            <param name="cancellationToken"></param>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.UnknownBrandIdentifierException">Thrown if we do not have a brand id for a given brand.</exception>
+            <exception cref="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.HearingSystemEmptyException">Thrown if we no devices are passed.</exception>
+            <exception cref="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.BothHearingAidsHaveSameSideException">Thrown if the collection contains the same side twice.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">
+                Thrown if tone cannot be played. The conditions for what we check can be set with
+                <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.
+            </exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IHearingSystemFactory.CreateAsync(System.Collections.Generic.IDictionary{WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid},System.Threading.CancellationToken)">
+            <summary>
+                Create a new instance of <see cref="T:WSA.Foundation.Acoustic.Abstractions.IHearingSystem"/> from persisted information containing Unique device
+                identifier.
+                This performs a fresh acoustic pairing after e.g. a QR code has been scanned.
+            </summary>
+            <param name="devices"> Holds unique identifier for a given side.</param>
+            <param name="cancellationToken"></param>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.UnknownBrandIdentifierException">Thrown if we do not have a brand id for a given brand.</exception>
+            <exception cref="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.HearingSystemEmptyException">Thrown if we no devices are passed.</exception>
+            <exception cref="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.BothHearingAidsHaveSameSideException">Thrown if the collection contains the same side twice.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">
+                Thrown if tone cannot be played. The conditions for what we check can be set with
+                <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.
+            </exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IHearingSystemFactory.LoadAsync(System.Collections.Generic.IDictionary{WSA.Foundation.Shared.Abstractions.Models.Side,System.Guid},System.Threading.CancellationToken)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Acoustic.Abstractions.IHearingSystem"/> from persisted information containing the unique device
+                identifier.
+                This could be used in case of fallback where we already have the above information from a bluetooth connection.
+            </summary>
+            <param name="devices"></param>
+            <param name="cancellationToken"></param>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.HearingSystemEmptyException">Thrown if we no devices are passed.</exception>
+            <exception cref="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.BothHearingAidsHaveSameSideException">Thrown if the collection contains the same side twice.</exception>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IHearingSystemFactory.CreateAsync(System.Collections.Generic.IDictionary{WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Acoustic.Abstractions.Models.AcousticDeviceInformation},System.Threading.CancellationToken)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Acoustic.Abstractions.IHearingSystem"/> by performing a acoustic pairing with the information
+                passed.
+                This could be the case when we get the ARC information from a backend.
+            </summary>
+            <param name="devices"></param>
+            <param name="cancellationToken"></param>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.UnknownBrandIdentifierException">Thrown if we do not have a brand id for a given brand.</exception>
+            <exception cref="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.HearingSystemEmptyException">Thrown if we no devices are passed.</exception>
+            <exception cref="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.BothHearingAidsHaveSameSideException">Thrown if the collection contains the same side twice.</exception>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IHearingSystemFactory.CreateDeviceInformationAsync(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.Brand,WSA.Foundation.Shared.Abstractions.Models.Platform,System.Threading.CancellationToken,System.Byte)">
+            <summary>
+                This is pairing one device of a pair of devices.
+                For binaural setup, this method must be called for each side. Before calling this, make sure the user rebooted the
+                device to which this should pair to.
+                The results for each side must be collected and passed to
+                <see cref="M:WSA.Foundation.Acoustic.Abstractions.IHearingSystemFactory.CreateAsync(System.Collections.Generic.IDictionary{WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Acoustic.Abstractions.Models.AcousticDeviceInformation},System.Threading.CancellationToken)"/>
+                to create the hearing system.
+                This is only supported for <see cref="F:WSA.Foundation.Shared.Abstractions.Models.Platform.D11"/> or higher
+                Keep in mind to pass the first acoustic address provided by <see cref="T:WSA.Foundation.Acoustic.Abstractions.Models.AcousticDeviceInformation"/> as an address
+                to be excluded for the second pairing
+                Only this way you ensure that both acoustic addresses will not be the same
+            </summary>
+            <param name="side"></param>
+            <param name="brand"></param>
+            <param name="platform"></param>
+            <param name="cancellationToken"></param>
+            <param name="addressToExclude"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IHearingSystemFactory.CreateDeviceInformationWithSwitchingOffAsync(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.Brand,System.Threading.CancellationToken,System.Byte)">
+            <summary>
+                This is pairing one device of a pair of devices.
+                For binaural setup, this method must be called for each side. Before calling this, make sure the user rebooted the
+                device to which this should pair to.
+                The results for each side must be collected and passed to
+                <see cref="M:WSA.Foundation.Acoustic.Abstractions.IHearingSystemFactory.CreateAsync(System.Collections.Generic.IDictionary{WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Acoustic.Abstractions.Models.AcousticDeviceInformation},System.Threading.CancellationToken)"/>
+                to create the hearing system.
+                This is supported for all platform but this requires that you always switch off the first hearing aid when you pair
+                the second hearing aid
+                Keep in mind to pass the first acoustic address provided by <see cref="T:WSA.Foundation.Acoustic.Abstractions.Models.AcousticDeviceInformation"/> as an address
+                to be excluded for the second pairing
+                Only this way you ensure that both acoustic addresses will not be the same
+            </summary>
+            <param name="side"></param>
+            <param name="brand"></param>
+            <param name="cancellationToken"></param>
+            <param name="addressToExclude"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.IIntelliZoomExtension">
+            <summary>
+                This interface provides all information about the IntelliZoom feature of a hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IIntelliZoomExtension.WriteAsync(WSA.Foundation.Shared.Abstractions.Models.IntelliZoom,System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Writes the <see cref="T:WSA.Foundation.Shared.Abstractions.Models.IntelliZoom"/> position to passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/>.
+            </summary>
+            <param name="intelliZoom"></param>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if an invalid intelli zoom value (unknown) is passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">Thrown if tone cannot be played. The conditions for what we check can be set with <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.IProgramExtension">
+            <summary>
+                This interface provides all information about the Program of a hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IProgramExtension.AreCustomNamesSupportedAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns whether the device supports to provide custom program names that can be configured.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IProgramExtension.GetCustomNameAsync(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.ProgramId,System.Threading.CancellationToken)">
+            <summary>
+                Returns the custom program name that has been configured for the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <param name="programId"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if a program id that is not available is passed.</exception>
+            <exception cref="T:WSA.Foundation.Acoustic.Abstractions.Exceptions.OperationNotSupportedException">Thrown if the device does not support custom names. Can be checked by <see cref="M:WSA.Foundation.Acoustic.Abstractions.IProgramExtension.AreCustomNamesSupportedAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)"/>.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IProgramExtension.GetNameLabelAsync(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.ProgramId,System.Threading.CancellationToken)">
+            <summary>
+                Returns Name Label for the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ProgramId"/> and <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <param name="programId"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if a program id that is not available is passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IProgramExtension.GetNumberOfProgramsAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns the number of hearing aid programs for the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IProgramExtension.HasProgramAsync(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.ProgramId,System.Threading.CancellationToken)">
+            <summary>
+                Returns whether the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ProgramId"/> is existing for the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <param name="programId"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IProgramExtension.IsSelectableAsync(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.ProgramId,System.Threading.CancellationToken)">
+            <summary>
+                Returns whether the specific <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ProgramId"/> is selectable for the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="side"></param>
+            <param name="programId"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if a program id that is not available is passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IProgramExtension.WriteAsync(WSA.Foundation.Shared.Abstractions.Models.ProgramId,System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Writes the <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ProgramId"/> to the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="programId"></param>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if a program id that is not available is passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">Thrown if tone cannot be played. The conditions for what we check can be set with <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.ISlnfExtension">
+            <summary>
+                This interface provides all information about the Side Look Narrow Focus (SLNF) feature of a hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.ISlnfExtension.WriteAsync(WSA.Foundation.Shared.Abstractions.Models.Slnf,System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Writes SLNF info to the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/>.
+            </summary>
+            <param name="slnf"></param>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if an invalid slnf value (unknown) is passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">Thrown if tone cannot be played. The conditions for what we check can be set with <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.ISoundBalanceExtension">
+            <summary>
+                This interface provides all information about the Sound Balance of a hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.ISoundBalanceExtension.GetMaximalPositionAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns the range of available positions.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.ISoundBalanceExtension.WriteAsync(WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalance,System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Writes Sound Balance to the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/>.
+            </summary>
+            <param name="soundBalance">
+                The sound balance will get updated with missing slider/percentage value. Also the percentage
+                value will be updated to a "valid" percentage.
+            </param>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if an invalid sound balance (exceeding boundaries) is passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">Thrown if tone cannot be played. The conditions for what we check can be set with <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.IStandbyExtension">
+            <summary>
+                This interface enables the client to put the hearing system into Standby Mode.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IStandbyExtension.DisableAsync(System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Disables the Standby Mode of the <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/>.
+            </summary>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">Thrown if tone cannot be played. The conditions for what we check can be set with <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IStandbyExtension.EnableAsync(System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Enables the Standby Mode of the <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/>.
+            </summary>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">Thrown if tone cannot be played. The conditions for what we check can be set with <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.ITemporaryHearingInstrumentSettingsExtension">
+            <summary>
+                This interface provides all info about the THIS (Temporary Hearing Instrument Settings) feature of the hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.ITemporaryHearingInstrumentSettingsExtension.WriteAsync(WSA.Foundation.Shared.Abstractions.Models.TemporaryHearingInstrumentSetting,System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Writes the Temporary Hearing Instrument Setting to the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="temporaryHearingInstrumentSetting"></param>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if an invalid temporary hearing instrument settings value (unknown) is passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">Thrown if tone cannot be played. The conditions for what we check can be set with <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.ITinnitusExtension">
+            <summary>
+                This interface provides all information about the Tinnitus Volume of a hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.ITinnitusExtension.GetMaximalPositionAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns the maximum range of available positions.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.ITinnitusExtension.IsDecoupledAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns whether the Tinnitus volume of the device is decoupled.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.ITinnitusExtension.WriteAsync(WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolume,System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Writes Tinnitus Volume to the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/>.
+            </summary>
+            <param name="tinnitusVolume">
+                The Tinnitus volume will get updated with missing slider/percentage value. Also the percentage
+                value will be updated to a "valid" percentage.
+            </param>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if an invalid volume (exceeding boundaries) is passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">Thrown if tone cannot be played. The conditions for what we check can be set with <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.IVolumeExtension">
+            <summary>
+                This interface provides all information about the Volume of a hearing system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IVolumeExtension.CanAdjustIndependentlyAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns whether volume can be adjusted independently.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IVolumeExtension.GetMaximalPositionAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns the range of available positions.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IVolumeExtension.IsDecoupledAsync(WSA.Foundation.Shared.Abstractions.Models.Side,System.Threading.CancellationToken)">
+            <summary>
+                Returns whether the volume of the device is decoupled.
+            </summary>
+            <param name="side"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.IVolumeExtension.WriteAsync(WSA.Foundation.Shared.Abstractions.Contracts.IVolume,System.Threading.CancellationToken,WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Writes the volume to the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/>.
+            </summary>
+            <param name="volume">
+                The current volume level will get updated with missing slider/percentage value.
+                Also the percentage value will be updated to a "valid" percentage.
+            </param>
+            <param name="cancellationToken"></param>
+            <param name="receiverSide"></param>
+            <returns></returns>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">Thrown if an invalid side was passed.</exception>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if an invalid volume (exceeding boundaries) is passed.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">Thrown if tone cannot be generated.</exception>
+            <exception cref="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">Thrown if tone cannot be played. The conditions for what we check can be set with <see cref="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)"/>.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.Abstractions.Models.AcousticDeviceInformation">
+            <summary>
+                This class represents the information to communicate to a Hearing System acoustically.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Acoustic.Abstractions.Models.AcousticDeviceInformation.ArcAddress">
+            <summary>
+                Acoustic Address of the Hearing System.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Acoustic.Abstractions.Models.AcousticDeviceInformation.Guid">
+            <summary>
+                Guid of the Hearing System.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Acoustic.Abstractions.Models.AcousticDeviceInformation.Brand">
+            <summary>
+                Brand of the Hearing System.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.Abstractions.Models.AcousticDeviceInformation.#ctor(System.Byte,System.Guid,WSA.Foundation.Shared.Abstractions.Models.Brand)">
+            <summary>
+                Information representing a Hearing System.
+            </summary>
+            <param name="arcAddress"></param>
+            <param name="guid"></param>
+            <param name="brand"></param>
+        </member>
+    </members>
+</doc>

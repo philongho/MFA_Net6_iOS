@@ -1,0 +1,1663 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Shared.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolume">
+            <summary>
+                This interface provides data about Cros Volume.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolume.Percentage">
+            <summary>
+                Returns the Cros Volume as percentage.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolume.SliderValue">
+            <summary>
+                Returns the Cros Volume as absolute slider value.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolumeConverter">
+            <summary>
+                This interface provides method to create instances of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolume"/> and <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedCrosVolume"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolumeConverter.FromVolume(WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolume,System.Version)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedCrosVolume"/> based on the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolume"/>.
+            </summary>
+            <param name="volume"></param>
+            <param name="activeProgramInfoVersion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolumeConverter.FromPosition(System.Int32,System.Version)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedCrosVolume"/> based on the passed position/>.
+            </summary>
+            <param name="value"></param>
+            <param name="activeProgramInfoVersion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolumeConverter.FromExtendedVolume(WSA.Foundation.Shared.Abstractions.Contracts.IExtendedCrosVolume)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolume"/> which has been converted from the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedCrosVolume"/>.
+            </summary>
+            <param name="extendedVolume"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolumeConverter.EnsureIsValid(WSA.Foundation.Shared.Abstractions.Contracts.IExtendedCrosVolume)">
+            <summary>
+                Checks if the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedCrosVolume"/> object has valid values.
+            </summary>
+            <param name="volume"></param>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if the value is not valid.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolumeConverter.GetMaxSteps">
+            <summary>
+                Returns the maximum number of steps of Cros Volume.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolumeProvider">
+            <summary>
+            	Cros Volume Provider
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolumeProvider.FromPercentage(System.Int32)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolume"/> based on the passed percentage.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolumeProvider.FromSlider(System.Int32)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ICrosVolume"/> based on the passed slider value.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedCrosVolume">
+            <summary>
+                This interface provides extended data about Cros Volume.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedCrosVolume.Percentage">
+            <summary>
+                Returns the Cros Volume as percentage.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedCrosVolume.Position">
+            <summary>
+                Returns the position as defined in Hearing Aid interface specifications.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedCrosVolume.SliderValue">
+            <summary>
+                Returns the Cros Volume as absolute slider value.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedSoundBalance">
+            <summary>
+                This interface provides extended data about Sound Balance.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedSoundBalance.Percentage">
+            <summary>
+                Returns the Sound Balance as percentage.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedSoundBalance.Position">
+            <summary>
+                Returns the position as defined in Hearing Aid interface specifications.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedSoundBalance.SliderValue">
+            <summary>
+                Returns the Sound Balance as absolute slider value.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedTinnitusVolume">
+            <summary>
+                This interface provides extended data about Tinnitus Volume.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedTinnitusVolume.Percentage">
+            <summary>
+                Returns the Tinnitus Volume as percentage.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedTinnitusVolume.Position">
+            <summary>
+                Returns the position as defined in Hearing Aid interface specifications.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedTinnitusVolume.SliderValue">
+            <summary>
+                Returns the Tinnitus Volume as absolute slider value.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume">
+            <summary>
+                This interface provides extended data about Volume.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume.Percentage">
+            <summary>
+                Returns the Volume as percentage.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume.Position">
+            <summary>
+                Position as defined in Hearing Aid interface specifications.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume.ReceiverState">
+            <summary>
+                Returns the Receiver Mute State based on the volume.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume.SliderValue">
+            <summary>
+                Returns the Tinnitus Volume as absolute slider value.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.IProgramDependentFeature">
+            <summary>
+                Interface for any feature where its availability is dependent on the passed program.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.IProgramDependentFeature.IsSupportedAsync(WSA.Foundation.Shared.Abstractions.Models.Side,WSA.Foundation.Shared.Abstractions.Models.ProgramId,System.Threading.CancellationToken)">
+            <summary>
+                Checks if the feature of the implementer is currently supported.
+            </summary>
+            <param name="side">Side of the HearingSystem which shall be checked.</param>
+            <param name="programId">ID of the ProgramSlot which shall be checked.</param>
+            <param name="cancellationToken"></param>
+            <returns>Value Task indicating if the feature is supported.</returns>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.IProgramNameLabelParser">
+            <summary>
+                This interface provides method to parse data to a <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.IProgramNameLabelParser.FromBrandedPlatform(WSA.Foundation.Shared.Abstractions.Models.Platform,System.Byte,WSA.Foundation.Shared.Abstractions.Models.Brand)">
+            <summary>
+                Returns a <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel"/> based on the passed parameters.
+            </summary>
+            <param name="platform"></param>
+            <param name="value"></param>
+            <param name="brand"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalance">
+            <summary>
+                This interface provides data about Sound Balance.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalance.Percentage">
+            <summary>
+                Returns the Sound Balance as percentage.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalance.SliderValue">
+            <summary>
+                Returns the Sound Balance as absolute slider value.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalanceConverter">
+            <summary>
+                This interface provides method to create instances of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalance"/> and <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedSoundBalance"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalanceConverter.FromSoundBalance(WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalance)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedSoundBalance"/> based on the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalance"/>.
+            </summary>
+            <param name="soundBalance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalanceConverter.FromExtendedSoundBalance(WSA.Foundation.Shared.Abstractions.Contracts.IExtendedSoundBalance)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalance"/> which has been converted from the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedSoundBalance"/>.
+            </summary>
+            <param name="extendedVolume"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalanceConverter.FromPosition(System.Int32,System.Byte)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedSoundBalance"/> which has been converted from the passed position.
+            </summary>
+            <param name="value"></param>
+            <param name="soundControlShape"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalanceConverter.EnsureIsValid(WSA.Foundation.Shared.Abstractions.Contracts.IExtendedSoundBalance)">
+            <summary>
+                Checks if the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedSoundBalance"/> object has valid values.
+            </summary>
+            <param name="soundBalance"></param>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if the value is not valid.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalanceConverter.GetMaxSteps">
+            <summary>
+                Returns the maximum number of steps of Sound Balance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalanceProvider">
+            <summary>
+             Sound Balance Provider
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalanceProvider.FromPercentage(System.Int32)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalance"/> based on the passed percentage.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalanceProvider.FromSlider(System.Int32)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ISoundBalance"/> based on the passed slider value.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolume">
+            <summary>
+                This interface provides data about Tinnitus Volume.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolume.Percentage">
+            <summary>
+                Returns the Tinnitus Volume as percentage.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolume.SliderValue">
+            <summary>
+                Returns the Tinnitus Volume as absolute slider value.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolumeConverter">
+            <summary>
+                This interface provides method to create instances of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolume"/> and <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedTinnitusVolume"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolumeConverter.FromVolume(WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolume)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedTinnitusVolume"/> based on the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolume"/>.
+            </summary>
+            <param name="volume"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolumeConverter.FromExtendedVolume(WSA.Foundation.Shared.Abstractions.Contracts.IExtendedTinnitusVolume)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolume"/> which has been converted from the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedTinnitusVolume"/>.
+            </summary>
+            <param name="extendedVolume"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolumeConverter.FromPosition(System.Int32)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedTinnitusVolume"/> based on the passed position.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolumeConverter.EnsureIsValid(WSA.Foundation.Shared.Abstractions.Contracts.IExtendedTinnitusVolume)">
+            <summary>
+                Checks if the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedTinnitusVolume"/> object has valid values.
+            </summary>
+            <param name="volume"></param>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if the value is not valid.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolumeConverter.GetMaxSteps">
+            <summary>
+                Returns the maximum number of steps of Cros Volume.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolumeProvider">
+            <summary>
+            	Tinnitus Volume Provider
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolumeProvider.FromPercentage(System.Int32)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolume"/> based on the passed percentage.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolumeProvider.FromSlider(System.Int32)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.ITinnitusVolume"/> based on the passed slider value.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.IVolume">
+            <summary>
+                This interface provides data about Volume.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IVolume.Percentage">
+            <summary>
+                Returns the Volume as percentage.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Contracts.IVolume.SliderValue">
+            <summary>
+                Returns the Volume as absolute slider value.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.IVolumeConverter">
+            <summary>
+                This interface provides method to create instances of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IVolume"/> and <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.IVolumeConverter.FromVolume(WSA.Foundation.Shared.Abstractions.Contracts.IVolume,System.Int32)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume"/> based on the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IVolume"/>.
+            </summary>
+            <param name="volume"></param>
+            <param name="maxValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.IVolumeConverter.FromExtendedVolume(WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IVolume"/> which has been converted from the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume"/>.
+            </summary>
+            <param name="extendedVolume"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.IVolumeConverter.FromPosition(System.Int32,System.Int32,WSA.Foundation.Shared.Abstractions.Models.ReceiverMute)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume"/> based on the passed position.
+            </summary>
+            <param name="value"></param>
+            <param name="maxValue"></param>
+            <param name="receiverMute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.IVolumeConverter.GetMaxSteps(WSA.Foundation.Shared.Abstractions.Models.Platform,System.Version)">
+            <summary>
+                Returns the maximum number of steps of Volume based on the passed data.
+            </summary>
+            <param name="platform"></param>
+            <param name="firmwareVersion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.IVolumeConverter.RequiresExplicitMuteChange(WSA.Foundation.Shared.Abstractions.Models.Platform,System.Version)">
+            <summary>
+                Returns whether the device requires an explicit mute change based on the passed data.
+            </summary>
+            <param name="platform"></param>
+            <param name="firmwareVersion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.IVolumeConverter.EnsureIsValid(WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume,WSA.Foundation.Shared.Abstractions.Models.Platform,System.Version)">
+            <summary>
+                Checks if the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume"/> object has valid values.
+            </summary>
+            <param name="volume"></param>
+            <param name="platform"></param>
+            <param name="firmwareVersion"></param>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if the value is not valid.</exception>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.IVolumeConverter.EnsureIsValid(WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume,System.Int32)">
+            <summary>
+                Checks if the passed <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IExtendedVolume"/> object has valid values.
+            </summary>
+            <param name="volume"></param>
+            <param name="maxValue"></param>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if the value is not valid.</exception>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Contracts.IVolumeProvider">
+            <summary>
+            	An interface that contains APIs to provide IVolume.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.IVolumeProvider.FromPercentage(System.Int32)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IVolume"/> based on the passed percentage.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Contracts.IVolumeProvider.FromSlider(System.Int32)">
+            <summary>
+                Returns a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Contracts.IVolume"/> based on the passed slider value.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Exceptions.HearingAidMustBeMutedException">
+            <summary>
+                Hearing Aid Must Be Muted Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Exceptions.HearingAidMustBeMutedException.#ctor">
+            <summary>
+                Hearing Aid Must Be Muted Exception.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidHearingSystemException">
+            <summary>
+            	Thrown if you try to access an Extension method of a null HearingSystem.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidHearingSystemException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException">
+            <summary>
+                Invalid Side Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException.#ctor(WSA.Foundation.Shared.Abstractions.Models.Side)">
+            <summary>
+                <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/> is Invalid.
+            </summary>
+            <param name="side"></param>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Exceptions.InvalidSideException.#ctor(WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/> is Invalid.
+            </summary>
+            <param name="receiverSide"></param>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Exceptions.SharedException">
+            <summary>
+                Base Shared Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Exceptions.SharedException.#ctor(System.String)">
+            <summary>
+                Constructor with a message for generic Shared Exception.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">
+            <summary>
+                Value Is Invalid Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException.#ctor(System.String)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException"/> based on the passed <paramref name="message"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException.#ctor(System.String,System.String)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException"/> based on the passed <paramref name="name"/> and <paramref name="value"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException.#ctor(System.String,System.Byte[])">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException"/> based on the passed <paramref name="name"/> and <paramref name="data"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException.#ctor(System.String,System.Int32)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException"/> based on the passed <paramref name="name"/> and <paramref name="length"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException.#ctor(WSA.Foundation.Shared.Abstractions.Models.ProgramId,System.Int32)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException"/> based on the passed <paramref name="programId"/> and <paramref name="numberOfPrograms"/>.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.AcousticAddress">
+            <summary>
+                Acoustic Address of a hearing system.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Models.AcousticAddress.Address">
+            <summary>
+                Returns the address as byte.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Models.AcousticAddress.#ctor(System.Byte)">
+            <summary>
+                Acoustic Address of a hearing system.
+            </summary>
+            <param name="address"></param>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Models.AcousticAddress.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.BabyBoomer">
+            <summary>
+                Baby Boomer Mode.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.BabyBoomer.Off">
+            <summary>
+                Baby Boomer is Off.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.BabyBoomer.Boost">
+            <summary>
+                Baby Boomer is Boost.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.BabyBoomer.Relax">
+            <summary>
+                Baby Boomer is Relax.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.BabyBoomer.Unknown">
+            <summary>
+                Baby Boomer Mode is Unknown.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.BatteryType">
+            <summary>
+                Battery Type.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.BatteryType.ZincAir">
+            <summary>
+                Battery Type is Zinc Air.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.BatteryType.NickelMetalHydride">
+            <summary>
+                Battery Type is Nickel Metal Hydride.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.BatteryType.LithiumIon">
+            <summary>
+                Battery Type is Lithium Ion.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.BatteryType.Styletto">
+            <summary>
+                Battery Type is Styletto.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.BatteryType.Unknown">
+            <summary>
+                Battery Type is Unknown.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.BatteryTypeExtension">
+            <summary>
+                This class provides extension methods for <see cref="T:WSA.Foundation.Shared.Abstractions.Models.BatteryType"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Models.BatteryTypeExtension.IsRechargeable(WSA.Foundation.Shared.Abstractions.Models.BatteryType)">
+            <summary>
+                Returns if the <see cref="T:WSA.Foundation.Shared.Abstractions.Models.BatteryType"/> is rechargeable.
+            </summary>
+            <param name="batteryType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.Brand">
+            <summary>
+                Hearing System Brand.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Unknown">
+            <summary>
+                Unknown Brand.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:WSA.Foundation.Shared.Abstractions.Models.Brand.AM" -->
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Afflelou">
+            <summary>
+                AudioService - Afflelou.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:WSA.Foundation.Shared.Abstractions.Models.Brand.AmHearingLimited" -->
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Amplifon">
+            <summary>
+                Amplifon.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Audibene">
+            <summary>
+                Signia - Audibene.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.AudioService">
+            <summary>
+                Audio Service.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Audionova">
+            <summary>
+                Audio Nova.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.BasicConnexx">
+            <summary>
+                Basic Connexx.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.BasicMiracleEar">
+            <summary>
+                Basic Miracle Ear.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.BasicSiemensSignia">
+            <summary>
+                Basic Siemens Signia.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.BenQ">
+            <summary>
+                Signia - BenQ.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.BlackHorizon">
+            <summary>
+                Black Horizon.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Costco">
+            <summary>
+                Rexton - Costco.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.HCS">
+            <summary>
+                Signia - HCS.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Hansaton">
+            <summary>
+                Hansaton.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.HearDotCom">
+            <summary>
+                Signia Hear.com.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Hoerluchs">
+            <summary>
+                Audio Service - Hoerluchs.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Hulc">
+            <summary>
+                Hulc.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.INSync">
+            <summary>
+                Optimus Hearing - InSync.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.ISMA">
+            <summary>
+                Audio Service - ISMA.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.IncognitoAfflelou">
+            <summary>
+                Audio Service - Incognito Afflelou.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.MedEl">
+            <summary>
+                MedEl.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Meditrend">
+            <summary>
+                Audio Service - Meditrend.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Miki">
+            <summary>
+                Signia - Miki.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.MiracleEar">
+            <summary>
+                Miracle Ear.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.NHS">
+            <summary>
+                Signia - NHS.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Neutral">
+            <summary>
+                Optimus Hearing - Neutral.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.OptifitII">
+            <summary>
+                Optimus Hearing - OptifitII.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Optimus">
+            <summary>
+                Optimus Hearing - Optimus.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.OptimusHearing">
+            <summary>
+                Optimus Hearing - Optimus Hearing.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.OuieZen">
+            <summary>
+                Audio Service OuieZen.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Rexton">
+            <summary>
+                Rexton.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Rion">
+            <summary>
+                Rion.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Sensaton">
+            <summary>
+                Audio Service - Sensaton.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Signia">
+            <summary>
+                Signia.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Soniton">
+            <summary>
+                Audio Service - Soniton.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Specsavers">
+            <summary>
+                Rexton - Specsavers.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Sympatico">
+            <summary>
+                Audio Service - Sympatico.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Symphonix">
+            <summary>
+                Symphonix.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.TruHearing">
+            <summary>
+                Signia - TruHearing.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.ViOKollektion">
+            <summary>
+                Signia - ViO Kollektion.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Vibe">
+            <summary>
+                Signia - Vibe.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.VA">
+            <summary>
+                Signia - VA.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.KirklandSignature">
+            <summary>
+                Rexton - KirklandSignature.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Siemens">
+            <summary>
+                Signia - Siemens.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Dialog">
+            <summary>
+                Dialog.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Kaulard">
+            <summary>
+                Kaulard.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Opticland">
+            <summary>
+                Opticland.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Oton">
+            <summary>
+                Oton.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Mimitakara">
+            <summary>
+                Mimitakara.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Audibel">
+            <summary>
+                Audibel.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Impact">
+            <summary>
+                Impact.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Kojrlx">
+            <summary>
+                Kojrlx.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Specsavers2">
+            <summary>
+                Specsavers 2.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Orion">
+            <summary>
+                Orion.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Stretta">
+            <summary>
+                Stretta.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.AUDIO2000">
+            <summary>
+                AUDIO2000.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Sony">
+            <summary>
+                Sony.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.SonyCre">
+            <summary>
+                Sony:CRE
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Brand.Audibel2">
+            <summary>
+                Audibel 2
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.BrandType">
+            <summary>
+                Hearing System Brand Type.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.BrandType.BrandA">
+            <summary>
+                Brand A.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.BrandType.BrandX">
+            <summary>
+                Brand X.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.BrandType.Unknown">
+            <summary>
+                Unknown Brand Type.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.ComplementsCalculator">
+            <summary>
+                This class provides method to convert unsigned numbers to two's complement values and vice versa.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Models.ComplementsCalculator.GetTwosComplementValue(System.UInt32,System.Int32)">
+            <summary>
+                Convert a unsigned number to a two's complement based on the passed bit count.
+            </summary>
+            <param name="data"></param>
+            <param name="bitCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Models.ComplementsCalculator.GetZerosComplementValue(System.Int32,System.Int32)">
+            <summary>
+                Converts a two's complement value to an unsigned number based on the passed bit count.
+            </summary>
+            <param name="data"></param>
+            <param name="bitCount"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.EqualizerBands">
+            <summary>
+                This class represents the four Equalizer Bands.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Models.EqualizerBands.Band1">
+            <summary>
+                Band 1.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Models.EqualizerBands.Band2">
+            <summary>
+                Band 2.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Models.EqualizerBands.Band3">
+            <summary>
+                Band 3.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Shared.Abstractions.Models.EqualizerBands.Band4">
+            <summary>
+                Band 4.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Models.EqualizerBands.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Shared.Abstractions.Models.EqualizerBands"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Models.EqualizerBands.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Models.EqualizerBands.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Models.EqualizerBands.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.HiCrosType">
+            <summary>
+                Hearing Aid Cros Type.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.HiCrosType.Normal">
+            <summary>
+                Normal.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.HiCrosType.Cros">
+            <summary>
+                Cros.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.HiCrosType.BiCros">
+            <summary>
+                BiCros.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.HiCrosType.Unknown">
+            <summary>
+                Cros Type is Unknown.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.IntelliZoom">
+            <summary>
+                Intelli Zoom.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.IntelliZoom.OmniDirectional1">
+            <summary>
+                Omnidirectional 1.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.IntelliZoom.OmniDirectional2">
+            <summary>
+                Omnidirectional 2.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.IntelliZoom.DirMicStatic1">
+            <summary>
+                Directional Mic Static 1.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.IntelliZoom.DirMicStatic2">
+            <summary>
+                Directional Mic Static 2.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.IntelliZoom.DirMicStatic3">
+            <summary>
+                Directional Mic Static 3.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.IntelliZoom.DirMicStaticAdaptive">
+            <summary>
+                Directional Mic Adaptive.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.IntelliZoom.DirMicAdaptive1">
+            <summary>
+                Directional Mic Adaptive 1.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.IntelliZoom.DirMicAdaptive2">
+            <summary>
+                Directional Mic Adaptive 2.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.IntelliZoom.DirMicAdaptive3">
+            <summary>
+                Directional Mic Adaptive 3.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.IntelliZoom.NarrowFocus1">
+            <summary>
+                Narrow Focus 1.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.IntelliZoom.NarrowFocus2">
+            <summary>
+                Narrow Focus 2.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.IntelliZoom.Unknown">
+            <summary>
+                Unknown Intelli Zoom.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.MicrophoneState">
+            <summary>
+                Microphone State.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.MicrophoneState.Muted">
+            <summary>
+                Muted.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.MicrophoneState.NotMuted">
+            <summary>
+                Not Muted.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.MicrophoneState.Unknown">
+            <summary>
+                Microphone State is Unknown.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.Platform">
+            <summary>
+                Platform of a hearing system.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Platform.Unknown">
+            <summary>
+                Platform is unknown.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Platform.D8">
+            <summary>
+                Platform is D8.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Platform.D9">
+            <summary>
+                Platform is D9.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Platform.D10">
+            <summary>
+                Platform is D10.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Platform.D11">
+            <summary>
+                Platform is D11.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Platform.D12">
+            <summary>
+                Platform is D12.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Platform.D13">
+            <summary>
+                Platform is D13.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.ProgramId">
+            <summary>
+                Program Id of a hearing aid.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramId.Program1">
+            <summary>
+                Program 1.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramId.Program2">
+            <summary>
+                Program 2.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramId.Program3">
+            <summary>
+                Program 3.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramId.Program4">
+            <summary>
+                Program 4.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramId.Program5">
+            <summary>
+                Program 5.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramId.Program6">
+            <summary>
+                Program 6.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramId.Unknown">
+            <summary>
+                Program is Unknown.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.ProgramIdExtension">
+            <summary>
+                Static class providing extension methods to convert <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ProgramId"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Models.ProgramIdExtension.ConvertToSlotInfo(WSA.Foundation.Shared.Abstractions.Models.ProgramId)">
+            <summary>
+                Returns a <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ProgramSlot"/> converted from the <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ProgramId"/>.
+            </summary>
+            <param name="programId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Models.ProgramIdExtension.ThrowIfUnknown(WSA.Foundation.Shared.Abstractions.Models.ProgramId)">
+            <summary>
+                Throws a <see cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException"/> if the value is <see cref="F:WSA.Foundation.Shared.Abstractions.Models.ProgramId.Unknown"/>.
+            </summary>
+            <param name="programId"></param>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel">
+            <summary>
+                Program Name Label.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.Unknown">
+            <summary>
+                Unknown Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.Universal">
+            <summary>
+                Universal Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.NoisyEnvironment">
+            <summary>
+                Noisy Environment Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.PhoneAcoustically">
+            <summary>
+                Phone Acoustically Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.PhoneT">
+            <summary>
+                Phone T Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.BluetoothPhone">
+            <summary>
+                Bluetooth Phone Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.Music">
+            <summary>
+                Music Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.Tv">
+            <summary>
+                TV Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.OutdoorSport">
+            <summary>
+                Outdoor Sport Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.Privacy">
+            <summary>
+                Privacy Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.Tinnitus">
+            <summary>
+                Tinnitus Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.EarProtection">
+            <summary>
+                Ear Protection Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.AudioInput">
+            <summary>
+                Audio Input Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.Stroll">
+            <summary>
+                Stroll Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.StreamingAudio">
+            <summary>
+                Streaming Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.EasyTekFm">
+            <summary>
+                EasyTek FM Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.PhoneMicrophoneTeleCoil">
+            <summary>
+                Phone Microphone TeleCoil Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.PhoneTeleCoilMicrophone">
+            <summary>
+                Phone TeleCoil Microphone Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.LiveListening">
+            <summary>
+                Live Listening Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.MakingMusic">
+            <summary>
+                Making Music Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.MusicPlusHd">
+            <summary>
+                Music Plus HD Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.HomeListening">
+            <summary>
+                Home Listening Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.CrossPhone">
+            <summary>
+                Cros Phone Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.Dereverberation">
+            <summary>
+                Dereverberation Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.InductionLoopTeleCoilMicrophone">
+            <summary>
+                Induction Loop TeleCoil Microphone Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.InductionLoopTeleCoil">
+            <summary>
+                Induction Loop TeleCoil Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.TwinPhone">
+            <summary>
+                Twin Phone Program.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramNameLabel.Off">
+            <summary>
+                Off.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.ProgramSlot">
+            <summary>
+                Program Slot.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramSlot.SlotIndependent">
+            <summary>
+                Program Independent.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramSlot.Slot1">
+            <summary>
+                Program Slot 1.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramSlot.Slot2">
+            <summary>
+                Program Slot 2.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramSlot.Slot3">
+            <summary>
+                Program Slot 3.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramSlot.Slot4">
+            <summary>
+                Program Slot 4.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramSlot.Slot5">
+            <summary>
+                Program Slot 5.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ProgramSlot.Slot6">
+            <summary>
+                Program Slot 6.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverMute">
+            <summary>
+                Receiver Mute State.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ReceiverMute.Unknown">
+            <summary>
+                Receiver Mute State is unknown.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ReceiverMute.IsMuted">
+            <summary>
+                Receiver State is muted.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ReceiverMute.IsNotMuted">
+            <summary>
+                Receiver State is not muted.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ReceiverMute.RequiresToMute">
+            <summary>
+                Receiver State requires mute.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ReceiverMute.RequiresToUnmute">
+            <summary>
+                Receiver State requires to unmute.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ReceiverMute.RequiresNoMuteChange">
+            <summary>
+                Receiver State does not require a mute change.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide">
+            <summary>
+                Receiver Side of an Operation.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide.Left">
+            <summary>
+                Only Left hearing aid.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide.Right">
+            <summary>
+                Only Right hearing aid.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide.All">
+            <summary>
+                All available hearing aids of a hearing system.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSideExtension">
+            <summary>
+                Set of extension methods for the <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Models.ReceiverSideExtension.ToReceiverSide(WSA.Foundation.Shared.Abstractions.Models.Side)">
+            <summary>
+                Converts a <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/> to a <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/>.
+            </summary>
+            <param name="side">The Side to be converted</param>
+            <returns>ReceiverSide that corresponds to side</returns>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.SelectionStatus">
+            <summary>
+                Represents if a HearingSystem is selected or not.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.SelectionStatus.NotSelected">
+            <summary>
+                Not Selected.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.SelectionStatus.Selected">
+            <summary>
+                Selected.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.Side">
+            <summary>
+                Side.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Side.Unknown">
+            <summary>
+                Side is Unknown.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Side.Left">
+            <summary>
+                Side is Left.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Side.Right">
+            <summary>
+                Side is Right.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.SideExtension">
+            <summary>
+                Static class providing extension methods for <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Models.SideExtension.ThrowIfUnknown(WSA.Foundation.Shared.Abstractions.Models.Side)">
+            <summary>
+                Throws a <see cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException"/> when the value is <see cref="F:WSA.Foundation.Shared.Abstractions.Models.Side.Unknown"/>.
+            </summary>
+            <param name="side"></param>
+        </member>
+        <member name="M:WSA.Foundation.Shared.Abstractions.Models.SideExtension.ToSide(WSA.Foundation.Shared.Abstractions.Models.ReceiverSide)">
+            <summary>
+                Converts a <see cref="T:WSA.Foundation.Shared.Abstractions.Models.ReceiverSide"/> to a <see cref="T:WSA.Foundation.Shared.Abstractions.Models.Side"/>.
+            </summary>
+            <param name="receiverSide">The ReceiverSide to be converted</param>
+            <returns>Side that corresponds to receiverSide</returns>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.Slnf">
+            <summary>
+                Side Look Narrow Focus (slnf).
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Slnf.Off">
+            <summary>
+                Slnf is Off.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Slnf.Front">
+            <summary>
+                Slnf is Front.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Slnf.Left">
+            <summary>
+                Slnf is Left.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Slnf.Back">
+            <summary>
+                Slnf is Back.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Slnf.Right">
+            <summary>
+                Slnf is Right.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.Slnf.Unknown">
+            <summary>
+                Slnf is Unknown.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.State">
+            <summary>
+                State.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.State.Unknown">
+            <summary>
+                Unknown.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.State.On">
+            <summary>
+                On.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.State.Off">
+            <summary>
+                Off.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.SystemSoundIndicator">
+            <summary>
+                System Sound Indicator.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.SystemSoundIndicator.Unknown">
+            <summary>
+                System Sound Indicator is Unknown.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.SystemSoundIndicator.Enabled">
+            <summary>
+                System Sound Indicator is Enabled.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.SystemSoundIndicator.Disabled">
+            <summary>
+                System Sound Indicator is Disabled.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.TemporaryHearingInstrumentSetting">
+            <summary>
+                Temporary Hearing Instrument Settings (THIS).
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.TemporaryHearingInstrumentSetting.Off">
+            <summary>
+               Off.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.TemporaryHearingInstrumentSetting.SpeechFocus">
+            <summary>
+               Speech Focus.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.TemporaryHearingInstrumentSetting.ActiveMode">
+            <summary>
+                Active Mode.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.TemporaryHearingInstrumentSetting.MusicMode">
+            <summary>
+            	Music Mode.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.TemporaryHearingInstrumentSetting.RelaxMode">
+            <summary>
+            	Relax Mode (Ocean Wave).
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.TemporaryHearingInstrumentSetting.ComfortMode">
+            <summary>
+            	Comfort Mode (Leisure Mode).
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.TemporaryHearingInstrumentSetting.PanoramaEffect">
+            <summary>
+            	Panorama Effect.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.TemporaryHearingInstrumentSetting.Unknown">
+            <summary>
+                Temporary Hearing Instrument Setting is Unknown.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.ValueType">
+            <summary>
+                Value Type.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ValueType.Slider">
+            <summary>
+                Slider.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ValueType.Percentage">
+            <summary>
+                Percentage.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.ValueType.Position">
+            <summary>
+                Position.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Shared.Abstractions.Models.VolumeControlStepSize">
+            <summary>
+                Volume Control Step Size.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.VolumeControlStepSize.Step0dB">
+            <summary>
+                0 dB Step Size.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.VolumeControlStepSize.Step8dB">
+            <summary>
+                8 dB Step Size.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.VolumeControlStepSize.Step16dB">
+            <summary>
+                16 dB Step Size.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.VolumeControlStepSize.Step24dB">
+            <summary>
+                24 dB Step Size.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.VolumeControlStepSize.Step32dB">
+            <summary>
+                32 dB Step Size.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Shared.Abstractions.Models.VolumeControlStepSize.Unknown">
+            <summary>
+                Unknown Step Size.
+            </summary>
+        </member>
+    </members>
+</doc>

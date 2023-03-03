@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Persistency.iOS</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.Persistency.iOS.Persistency">
+            <summary>
+            	Entry point of the Persistency component. This class provides methods to initialize this component.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Persistency.iOS.Persistency.Init(WSA.Foundation.Locator.Basic.IBasicServiceCollection,WSA.Foundation.Locator.Basic.IBasicLocator)">
+            <summary>
+            	Initializes Persistency Component and its dependencies.
+            </summary>
+            <param name="serviceCollection"></param>
+            <param name="basicLocator"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Logger.AppCenter</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.Logger.AppCenter.AppCenter">
+            <summary>
+                Entry point of the AppCenter component. This class provides methods to initialize this component.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.AppCenter.AppCenter.Init(WSA.Foundation.Locator.Basic.IBasicServiceCollection,WSA.Foundation.Locator.Basic.IBasicLocator)">
+            <summary>
+                Initializes AppCenter Component.
+            </summary>
+            <param name="serviceCollection"></param>
+            <param name="basicLocator"></param>
+        </member>
+        <member name="T:WSA.Foundation.Logger.AppCenter.Internals.AppCenterTracker">
+            <summary>
+                This class handles all Appcenter operations. Crashes and analytics would be logged in to AppCenter.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.AppCenter.Internals.AppCenterTracker.DisableAnalytics">
+            <summary>
+                Disable app center analytics logs.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.AppCenter.Internals.AppCenterTracker.DisableCrashLogs">
+            <summary>
+                Disable app center crash logs.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.AppCenter.Internals.AppCenterTracker.EnableAnalytics">
+            <summary>
+                Enable app center analytics logs.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.AppCenter.Internals.AppCenterTracker.EnableCrashLogs">
+            <summary>
+                Enable app center crash logs.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.AppCenter.Internals.AppCenterTracker.IsAnalyticsEnabled">
+            <summary>
+                Is app center analytics logs are enabled.
+            </summary>
+            <returns>True if analytics is enabled else false.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.AppCenter.Internals.AppCenterTracker.IsCrashLogsEnabled">
+            <summary>
+                Is app center crash logs are enabled.
+            </summary>
+            <returns>True if crash logs is enabled else false.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.AppCenter.Internals.AppCenterTracker.StartAppCenter(System.String)">
+            <summary>
+                Initialize the app centers by passing key.
+            </summary>
+            <param name="key">Appcenter unique key.</param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.AppCenter.Internals.AppCenterTracker.TrackEvents(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+                Tracking the event via app center events.
+                Once you have started the SDK, use the TrackEvent() method to track your events with properties.
+                You can send up to 200 distinct event names. Also, there is a maximum limit of 256 characters per event name
+                and 64 characters per event property name and event property value.
+            </summary>
+            <param name="eventName"> Event Name.</param>
+            <param name="eventProperties">Event Properties.</param>
+            <returns>False if eventName or eventProperties are not following string length constraint else true.</returns>
+        </member>
+    </members>
+</doc>

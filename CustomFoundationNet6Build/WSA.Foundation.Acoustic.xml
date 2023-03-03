@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Acoustic</name>
+    </assembly>
+    <members>
+        <member name="F:WSA.Foundation.Acoustic.Extensions.Pairing.EnablePairing">
+            <summary>
+            CFG_ARC_PAIR_EN
+            After sending this command, if the HI is still open to pairing (HIOpenToARCPairDurationAfterStartup_min=..3 min),
+            the HI will interpret the next command as (Brand ID, COM channel) and set the communication channel to the specified COM channel.
+            This command can be used repeatedly (as opposed to command PAIRING_ENABLE_MFA).
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Acoustic.Extensions.Pairing.EnablePairingMfa">
+            <summary>
+            PAIRING_ENABLE_MFA
+            After sending this command, if the HI is still open to pairing (HIOpenToARCPairDurationAfterStartup_min=..3 min),
+            the HI will interpret the next command as (Brand ID, COM channel) and set the communication channel to the specified COM channel.
+            This command will be executed only once after each system reboot (as opposed to command CFG_ARC_PAIR_EN).
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.HearingSystem.IDevice">
+            <summary>
+                Interface containing methods to write acoustic commands to HI
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.HearingSystem.IDevice.WriteToneAsync(System.Byte,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+                Sends a high-frequency tone for the command.
+            </summary>
+            <param name="toneId">Command which needs to be played.</param>
+            <param name="cancellationToken">Token for cancelling the queued tone playing sequence.</param>
+            <param name="withSniffSuspendTone">
+                A static tone sequence indicating the device to stop sniffing. Used for very few
+                commands. See ARC specification for details on that.
+            </param>
+            <returns>Task indicating if playing succeeded.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.HearingSystem.IDevice.WriteTonesAsync(System.Collections.Generic.IEnumerable{System.Byte},System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+                Sends a sequence of high-frequency tones for the commands.
+            </summary>
+            <param name="toneIds">Command which needs to be played.</param>
+            <param name="cancellationToken">Token for cancelling the queued tone playing sequence.</param>
+            <param name="withSniffSuspendTone">
+                A static tone sequence indicating the device to stop sniffing. Used for very few
+                commands. See ARC specification for details on that.
+            </param>
+            <returns>Task indicating if playing succeeded.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.HearingSystem.IDevice.ToString">
+            <summary>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.HearingSystem.Utilities.HasSameAddresses(WSA.Foundation.Acoustic.Abstractions.IHearingSystem,System.Threading.CancellationToken)">
+            <summary>
+                Checks whether there are two hearing aids with the same address
+            </summary>
+            <param name="hearingSystem"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Acoustic.iOS.Acoustic">
+            <summary>
+                Entry point of the Acoustic component. This class provides methods to initialize this component.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Acoustic.iOS.Acoustic.Init(WSA.Foundation.Locator.Basic.IBasicServiceCollection,WSA.Foundation.Locator.Basic.IBasicLocator)">
+            <summary>
+                Initializes the Acoustic component and it's dependencies.
+            </summary>
+            <param name="collection"></param>
+            <param name="locator"></param>
+        </member>
+    </members>
+</doc>

@@ -1,15 +1,7 @@
-﻿using DryIoc;
-using Foundation;
+﻿using Foundation;
 using UIKit;
-using WSA.Foundation.Acoustic.Abstractions.Models;
-using WSA.Foundation.Acoustic.iOS;
 using WSA.Foundation.Locator.Basic;
-using WSA.Foundation.Locator.DryIoc;
-using WSA.Foundation.Logger.iOS;
 using WSA.Foundation.Shared.Abstractions.Models;
-using WSA.Foundation.Logger.AppCenter;
-using Autofac;
-using WSA.Foundation.Locator.Autofac;
 
 namespace test
 {
@@ -29,28 +21,15 @@ namespace test
             // If not required for your application you can safely delete this method
 
             var containerBuilder = new ContainerBuilder();
-            var container = new AutofacLocatorService(containerBuilder);
+            var adapter = new DryIocLocatorAdapter(containerBuilder);
+            BasicLocator.Initialize(adapter);
+            Acoustic.Init(adapter, adapter);
 
-            RegisterOnLocatorInitialized(container);
-            var locatorBasicServiceCollection = new LocatorBasicServiceCollectionAdapter(container);
-            BasicLocator.Initialize(container);
-            Logger.Init(locatorBasicServiceCollection, container);
-            AppCenter.Init(locatorBasicServiceCollection, container);
-            Acoustic.Init(locatorBasicServiceCollection, container);
-
-            container.Build();
-
+            foreach (var action in adapter.GetAllOnInitializedListener())
+            {
+                action(adapter);
+            }
             return true;
-        }
-
-        protected void RegisterOnLocatorInitialized(IBasicLocator locator)
-        {
-            locator.RegisterOnLocatorIsInitialized(LocatorInitialized);
-        }
-
-        protected void LocatorInitialized(IBasicLocator locator)
-        {
-            locator.DeregisterFromLocatorIsInitialized(LocatorInitialized);
         }
 
         // UISceneSession Lifecycle

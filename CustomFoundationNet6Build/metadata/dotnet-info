@@ -1,0 +1,24 @@
+.NET Core SDK (reflecting any global.json):
+ Version:   3.1.412
+ Commit:    751fd182ef
+
+Runtime Environment:
+ OS Name:     debian
+ OS Version:  10
+ OS Platform: Linux
+ RID:         debian.10-x64
+ Base Path:   /usr/share/dotnet/sdk/3.1.412/
+
+Host (useful for support):
+  Version: 3.1.18
+  Commit:  5d3919d34e
+
+.NET Core SDKs installed:
+  3.1.412 [/usr/share/dotnet/sdk]
+
+.NET Core runtimes installed:
+  Microsoft.AspNetCore.App 3.1.18 [/usr/share/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.NETCore.App 3.1.18 [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+
+To install additional .NET Core runtimes or SDKs:
+  https://aka.ms/dotnet-download

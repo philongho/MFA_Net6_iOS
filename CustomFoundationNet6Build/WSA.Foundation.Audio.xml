@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Audio</name>
+    </assembly>
+    <members>
+        <member name="F:WSA.Foundation.Audio.AcousticTone._pulseEncoder">
+            <summary>
+                PulseEncoder reference.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.AcousticTone._toneGenerationParameters">
+            <summary>
+                ToneGenerationParameters reference.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.AcousticTone._utilities">
+            <summary>
+                Utilities reference.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.AcousticTone.#ctor(WSA.Foundation.Audio.Utilities,WSA.Foundation.Audio.PulseEncoder,WSA.Foundation.Audio.ToneGenerationParameters)">
+            <summary>
+                AcousticTone Constructor.
+            </summary>
+            <param name="utilities">Utilities.</param>
+            <param name="pulseEncoder">Pulse Encoder.</param>
+            <param name="toneGenerationParameters">Tone Generation Parameters.</param>
+        </member>
+        <member name="M:WSA.Foundation.Audio.AcousticTone.GenerateControlTone(System.Byte,System.Byte)">
+            <summary>
+                This function generates the control tone corresponding to every command. Please refer to ARC command specification
+                document to get a
+                detailed information on the implementation.
+            </summary>
+            <param name="command"></param>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.AcousticTone.MergeTones(System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+                This function merges two tones by adding a silent period(mute length) in between. Merging of the tones are required
+                while sending
+                compound commands. Pairing request and Wake up commands are compound commands.
+            </summary>
+            <param name="tone1">Tone 1.</param>
+            <param name="tone2">Tone 2.</param>
+            <param name="muteLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.AcousticTone.MergeTones(System.Collections.Generic.IList{System.Byte[]},System.Int32)">
+            <summary>
+                This function merges array of tones by adding a silent period(mute length) in between. Merging of the tones are
+                required while sending
+                compound commands. Pairing request and Wake up commands and four-band equalizer are compound commands.
+            </summary>
+            <param name="tones">Array of tones.</param>
+            <param name="muteLength"></param>
+            <returns>Merged tone.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.IAcousticTone.GenerateControlTone(System.Byte,System.Byte)">
+            <summary>
+                This function generates the control tone corresponding to every command. Please refer to ARC command specification
+                document to get a
+                detailed information on the implementation.
+            </summary>
+            <param name="command"></param>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.IAcousticTone.MergeTones(System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+                This function merges two tones by adding a silent period(mute length) in between. Merging of the tones are required
+                while sending
+                compound commands. Pairing request and Wake up commands are compound commands.
+            </summary>
+            <param name="tone1">Tone 1.</param>
+            <param name="tone2">Tone 2.</param>
+            <param name="muteLength">in ms</param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.IAcousticTone.MergeTones(System.Collections.Generic.IList{System.Byte[]},System.Int32)">
+            <summary>
+                This function merges array of tones by adding a silent period(mute length) in between. Merging of the tones are
+                required while sending
+                compound commands. Pairing request and Wake up commands and four-band equalizer are compound commands.
+            </summary>
+            <param name="tones">Array of tones.</param>
+            <param name="muteLength"></param>
+            <returns>Merged tone.</returns>
+        </member>
+        <member name="P:WSA.Foundation.Audio.IToneGenerationParameters.BaseFrequency">
+            <summary>
+                Gets or sets the base frequency.
+            </summary>
+            <value>The base frequency.</value>
+        </member>
+        <member name="P:WSA.Foundation.Audio.IToneGenerationParameters.BitLength">
+            <summary>
+                Gets or sets the length of the bit.
+            </summary>
+            <value>The length of the bit.</value>
+        </member>
+        <member name="P:WSA.Foundation.Audio.IToneGenerationParameters.FrequencyBandSpace">
+            <summary>
+                Gets or sets the frequency band space.
+            </summary>
+            <value>The frequency band space.</value>
+        </member>
+        <member name="P:WSA.Foundation.Audio.IToneGenerationParameters.Overlap">
+            <summary>
+                Gets or sets the overlap.
+            </summary>
+            <value>The overlap.</value>
+        </member>
+        <member name="P:WSA.Foundation.Audio.IToneGenerationParameters.SampleRate">
+            <summary>
+                Gets or sets the sample rate.
+            </summary>
+            <value>The sample rate.</value>
+        </member>
+        <member name="P:WSA.Foundation.Audio.IToneGenerationParameters.ShaperType">
+            <summary>
+                Gets or sets the type of the shaper.
+            </summary>
+            <value>The type of the shaper.</value>
+        </member>
+        <member name="T:WSA.Foundation.Audio.LowPassFilterGenerator">
+            <summary>
+                Low pass filter generator.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.PulseEncoder">
+            <summary>
+                This class is used for encoding pulses.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.PulseEncoder._utilities">
+            <summary>
+                Utilities reference.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.PulseEncoder.#ctor(WSA.Foundation.Audio.Utilities)">
+            <summary>
+                PulseEncoder Constructor.
+            </summary>
+            <param name="utilities"></param>
+        </member>
+        <member name="M:WSA.Foundation.Audio.PulseEncoder.EncodePulse(System.Byte[],System.Byte[])">
+            <summary>
+                Encodes the pulse.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.ToneGenerationParameters">
+            <summary>
+                This class holds initial parameters of Acoustic module.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.ToneGenerationParameters._lowPassFilterGenerator">
+            <summary>
+                LowPassFilterGenerator reference.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.ToneGenerationParameters.#ctor(WSA.Foundation.Audio.LowPassFilterGenerator)">
+            <summary>
+                ToneGenerationParameters Constructor.
+            </summary>
+            <param name="lowPassFilterGenerator"></param>
+        </member>
+        <member name="P:WSA.Foundation.Audio.ToneGenerationParameters.BaseFrequency">
+            <summary>
+                Gets or sets the base frequency.
+            </summary>
+            <value>The base frequency.</value>
+        </member>
+        <member name="P:WSA.Foundation.Audio.ToneGenerationParameters.BitLength">
+            <summary>
+                Gets or sets the length of the bit.
+            </summary>
+            <value>The length of the bit.</value>
+        </member>
+        <member name="P:WSA.Foundation.Audio.ToneGenerationParameters.FrequencyBandSpace">
+            <summary>
+                Gets or sets the frequency band space.
+            </summary>
+            <value>The frequency band space.</value>
+        </member>
+        <member name="P:WSA.Foundation.Audio.ToneGenerationParameters.Overlap">
+            <summary>
+                Gets or sets the overlap.
+            </summary>
+            <value>The overlap.</value>
+        </member>
+        <member name="P:WSA.Foundation.Audio.ToneGenerationParameters.SampleRate">
+            <summary>
+                Gets or sets the sample rate.
+            </summary>
+            <value>The sample rate.</value>
+        </member>
+        <member name="P:WSA.Foundation.Audio.ToneGenerationParameters.ShaperType">
+            <summary>
+                Gets or sets the type of the shaper.
+            </summary>
+            <value>The type of the shaper.</value>
+        </member>
+        <member name="M:WSA.Foundation.Audio.ToneGenerationParameters.CreateFrequencyScheme">
+            <summary>
+                Gets the frequency scheme.
+            </summary>
+            <returns>The frequency scheme.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.ToneGenerationParameters.InitializeToneGeneration">
+            <summary>
+                Initializing ToneGeneration.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Utilities">
+            <summary>
+                This class is used for utility functions.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Utilities.CalculateCrc8(System.Byte)">
+            <summary>
+                Calculates 8 Bit CRC value of a given data.
+            </summary>
+            <returns>The CR c8.</returns>
+            <param name="data">Data.</param>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Utilities.ConstructDataBForControlTone(System.Byte,System.Byte,System.Int32)">
+            <summary>
+                Combines data and crc value and constructs first part of information which will be transmitted.
+            </summary>
+            <param name="data">Data.</param>
+            <param name="crc">Crc.</param>
+            <param name="bitOffset">Bit_offset.</param>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Utilities.GetBitByIndex(System.Byte,System.Int32)">
+            <summary>
+                Gets the index of the bit by.
+            </summary>
+            <returns>The bit by index.</returns>
+            <param name="data">Data.</param>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Utilities.InvertByteValue(System.Byte)">
+            <summary>
+                Gets the inverted byte.
+            </summary>
+            <returns>The inverted byte.</returns>
+            <param name="input">The blue component.</param>
+        </member>
+    </members>
+</doc>

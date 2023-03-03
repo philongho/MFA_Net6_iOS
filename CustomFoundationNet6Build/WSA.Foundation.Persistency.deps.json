@@ -1,0 +1,264 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "WSA.Foundation.Persistency/10.0.0.0": {
+        "dependencies": {
+          "Component.Contracts": "1.3.0.1",
+          "Microsoft.CodeAnalysis.PublicApiAnalyzers": "3.3.3",
+          "NETStandard.Library": "2.0.3",
+          "WSA.Foundation.General": "10.0.0",
+          "WSA.Foundation.Logger": "10.0.0",
+          "WSA.Foundation.Persistency.Abstractions": "10.0.0",
+          "WSA.Foundation.Shared": "10.0.0",
+          "WSA.Foundation.Shared.Abstractions": "10.0.0"
+        },
+        "runtime": {
+          "WSA.Foundation.Persistency.dll": {}
+        }
+      },
+      "Component.Contracts/1.3.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Component.Contracts.dll": {
+            "assemblyVersion": "1.3.0.1",
+            "fileVersion": "1.3.0.1"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis.PublicApiAnalyzers/3.3.3": {},
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Numerics.Vectors.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.3": {
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "4.0.4.1",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.4": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "assemblyVersion": "4.2.0.1",
+            "fileVersion": "4.6.28619.1"
+          }
+        }
+      },
+      "WSA.Foundation.General/10.0.0": {
+        "dependencies": {
+          "WSA.Foundation.MetaInformation": "10.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/WSA.Foundation.General.dll": {
+            "assemblyVersion": "8.5.0.1",
+            "fileVersion": "8.5.0.1"
+          }
+        }
+      },
+      "WSA.Foundation.Locator.Basic/10.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/WSA.Foundation.Locator.Basic.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.0.0"
+          }
+        }
+      },
+      "WSA.Foundation.Logger/10.0.0": {
+        "dependencies": {
+          "WSA.Foundation.MetaInformation": "10.0.0",
+          "Xamarin.Essentials": "1.7.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/WSA.Foundation.Logger.dll": {
+            "assemblyVersion": "8.5.0.1",
+            "fileVersion": "8.5.0.1"
+          }
+        }
+      },
+      "WSA.Foundation.MetaInformation/10.0.0": {
+        "dependencies": {
+          "WSA.Foundation.Locator.Basic": "10.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/WSA.Foundation.MetaInformation.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.0.0"
+          }
+        }
+      },
+      "WSA.Foundation.Shared/10.0.0": {
+        "dependencies": {
+          "WSA.Foundation.Shared.Abstractions": "10.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/WSA.Foundation.Shared.dll": {
+            "assemblyVersion": "8.7.0.0",
+            "fileVersion": "8.7.0.0"
+          }
+        }
+      },
+      "WSA.Foundation.Shared.Abstractions/10.0.0": {
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.4",
+          "WSA.Foundation.General": "10.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/WSA.Foundation.Shared.Abstractions.dll": {
+            "assemblyVersion": "8.7.0.0",
+            "fileVersion": "8.7.0.0"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.7.2": {
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "WSA.Foundation.Persistency.Abstractions/10.0.0": {
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.4",
+          "WSA.Foundation.Shared.Abstractions": "10.0.0"
+        },
+        "runtime": {
+          "WSA.Foundation.Persistency.Abstractions.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WSA.Foundation.Persistency/10.0.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Component.Contracts/1.3.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NpEh+3AGJNzL6571ksZhxtdaWOmTET0AUgYu2xU8jy07M6o015z6rbuHW1CmtddCaNgbeBxe9ryQEEuNopu3VA==",
+      "path": "component.contracts/1.3.0.1",
+      "hashPath": "component.contracts.1.3.0.1.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.PublicApiAnalyzers/3.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DWLeZtw2jszmzAh/MZXVo/Dy8fD9vcRaCIRZTaf2ppqaug8BGIV81dQdZfaYFlNuw7FyuZLVC5SZPZsCcePZhQ==",
+      "path": "microsoft.codeanalysis.publicapianalyzers/3.3.3",
+      "hashPath": "microsoft.codeanalysis.publicapianalyzers.3.3.3.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3TIsJhD1EiiT0w2CcDMN/iSSwnNnsrnbzeVHSKkaEgV85txMprmuO+Yq2AdSbeVGcg28pdNDTPK87tJhX7VFHw==",
+      "path": "system.runtime.compilerservices.unsafe/4.5.3",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512"
+    },
+    "System.Threading.Tasks.Extensions/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
+      "path": "system.threading.tasks.extensions/4.5.4",
+      "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    },
+    "WSA.Foundation.General/10.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GMVtt8sOazuHqT7NwJ7NM9kOWA2L93OLCYbE93vF65edBRHTx//CrORu0MvCe1goe1XmXPjo0YGgLb7Zg+mbyQ==",
+      "path": "wsa.foundation.general/10.0.0",
+      "hashPath": "wsa.foundation.general.10.0.0.nupkg.sha512"
+    },
+    "WSA.Foundation.Locator.Basic/10.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tXaERmKZJ+a+Zoa8IcocobdQ7razM/MheZH1/ImhfJ0JlVFfSf8tUObPbCWcQU8Y6dKvebclaHWayJ/Sif8Ckg==",
+      "path": "wsa.foundation.locator.basic/10.0.0",
+      "hashPath": "wsa.foundation.locator.basic.10.0.0.nupkg.sha512"
+    },
+    "WSA.Foundation.Logger/10.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Luq9dfS9Olm+ussjYI1O4KlDnnU5tjzWcFUBlKMsK/c7JajuebRB9mTGIJEJxEraAwnAEGqT5GOpXEzzL9AErQ==",
+      "path": "wsa.foundation.logger/10.0.0",
+      "hashPath": "wsa.foundation.logger.10.0.0.nupkg.sha512"
+    },
+    "WSA.Foundation.MetaInformation/10.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-q+MgmLrWPqcXdP3fNEY9UdVtrO3i86PBtusvyBz/Eqxu67KJUHr/XgLGyhslgAvdoUswaBjgQoyjEwNXUmCkjg==",
+      "path": "wsa.foundation.metainformation/10.0.0",
+      "hashPath": "wsa.foundation.metainformation.10.0.0.nupkg.sha512"
+    },
+    "WSA.Foundation.Shared/10.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nAWjmqlIdsgYi2ELcJKAfBSI2/mnFx93NItLa1CGy9LB6cU8GA1PxoN1g0E08r5rvfF+zJRgFt0x3hq88s3R/Q==",
+      "path": "wsa.foundation.shared/10.0.0",
+      "hashPath": "wsa.foundation.shared.10.0.0.nupkg.sha512"
+    },
+    "WSA.Foundation.Shared.Abstractions/10.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6G1VQNbrspPK8zsmPZKEaFqRY5vlQv3q95a77wZdsB+7YIAOJSDLMWsTpENsDUs7vc9OJk5gwq5oMNJrIwcxig==",
+      "path": "wsa.foundation.shared.abstractions/10.0.0",
+      "hashPath": "wsa.foundation.shared.abstractions.10.0.0.nupkg.sha512"
+    },
+    "Xamarin.Essentials/1.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3r2QA/54YZGw6o+cBmIQdvs9nkT1SNHHvFGl1jg2bJ/INmsPdSU4ddrwhIw6zSWSIMRbemKvXEVov1KwjRk6PQ==",
+      "path": "xamarin.essentials/1.7.2",
+      "hashPath": "xamarin.essentials.1.7.2.nupkg.sha512"
+    },
+    "WSA.Foundation.Persistency.Abstractions/10.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

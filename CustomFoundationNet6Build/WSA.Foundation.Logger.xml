@@ -1,0 +1,642 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Logger</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.Logger.IAppCenterTracker">
+            <summary>
+                This interface provides access to the app center remote tracking.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IAppCenterTracker.DisableAnalytics">
+            <summary>
+                Disable app center analytics logs.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IAppCenterTracker.DisableCrashLogs">
+            <summary>
+                Disable app center crash logs.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IAppCenterTracker.EnableAnalytics">
+            <summary>
+                Enable app center analytics logs.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IAppCenterTracker.EnableCrashLogs">
+            <summary>
+                Enable app center crash logs.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IAppCenterTracker.IsAnalyticsEnabled">
+            <summary>
+                Is app center analytics logs are enabled.
+            </summary>
+            <returns>True if analytics is enabled else false.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IAppCenterTracker.IsCrashLogsEnabled">
+            <summary>
+                Is app center crash logs are enabled.
+            </summary>
+            <returns>True if crash logs is enabled else false.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IAppCenterTracker.StartAppCenter(System.String)">
+            <summary>
+                Initialize the app centers by passing key.
+            </summary>
+            <param name="key">Appcenter unique key.</param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IAppCenterTracker.TrackEventFromLogMessage(WSA.Foundation.Logger.LogMessage)">
+            <summary>
+                Creates an event based on the passed <paramref name="logMessage"/>.
+            </summary>
+            <param name="logMessage"></param>
+            <remarks>
+                You can send up to 200 distinct event names. Also, there is a maximum limit of 256 characters per event name
+                and 256 characters per event property name and event property value.
+            </remarks>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IAppCenterTracker.TrackEvents(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+                Creates an event based on the passed <paramref name="eventName"/>.
+            </summary>
+            <param name="eventName"> Event Name.</param>
+            <param name="eventProperties">Event Properties.</param>
+            <returns>False if eventName or eventProperties are not following string length constraint else true.</returns>
+            <remarks>
+                You can send up to 200 distinct event names. Also, there is a maximum limit of 256 characters per event name
+                and 256 characters per event property name and event property value.
+            </remarks>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IAppCenterTracker.TrackHandledException(System.Exception,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+                Creates an error event based on the passed <paramref name="exception"/>.
+            </summary>
+            <param name="exception">Exception.</param>
+            <param name="properties">Event Properties.</param>
+            <returns>False if eventName or eventProperties are not following string length constraint else true.</returns>
+            <remarks>
+                You can send up to 200 distinct event names. Also, there is a maximum limit of 256 characters per event name
+                and 256 characters per event property name and event property value.
+            </remarks>
+        </member>
+        <member name="T:WSA.Foundation.Logger.IDiagnosticService">
+            <summary>
+                This interface is used to retrieve diagnostic information.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.IDiagnosticService.FramesToBeSkipped">
+            <summary>
+                Configures the amount of frames that need to be skipped in the stacktrace.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IDiagnosticService.ClassName">
+            <summary>
+                Returns the name of the class in the current stacktrace.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IDiagnosticService.MethodName">
+            <summary>
+                Returns the name of the method in the current stacktrace.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IDiagnosticService.StackTrace">
+            <summary>
+                Returns the stacktrace in a human readable format.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Logger.IFileStorageService">
+            <summary>
+                This interface provides methods to access the file storage of the operating system.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IFileStorageService.GetAllFilesInDownloadFolder">
+            <summary>
+                Returns the all the file names in the download directory.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IFileStorageService.GetAllFilesInSpecialFolder(System.String)">
+            <summary>
+                Returns all the file names in the special directory.
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IFileStorageService.ReadLines(System.String)">
+            <summary>
+                Return all lines of the specified file.
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IFileStorageService.ReadText(System.String)">
+            <summary>
+                Returns the text of the specified file.
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IFileStorageService.StoreText(System.String,System.String,System.String)">
+            <summary>
+                Writes the text into the specified file.
+            </summary>
+            <param name="fileName"></param>
+            <param name="text"></param>
+            <param name="path"></param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IFileStorageService.StoreTextToDownloadFolder(System.String,System.String)">
+            <summary>
+                Writes the provided text into a new file and stores it into the download folder.
+            </summary>
+            <param name="fileName"></param>
+            <param name="text"></param>
+        </member>
+        <member name="T:WSA.Foundation.Logger.ILog">
+            <summary>
+                This interface provides all functionality related to the log.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.ILog.AppCenterTracker">
+            <summary>
+                Returns the registered instance of <see cref="T:WSA.Foundation.Logger.IAppCenterTracker"/>.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.ILog.CurrentLogChannels">
+            <summary>
+                Returns the configured <see cref="T:WSA.Foundation.Logger.LogChannels"/>.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.ILog.Diagnostic">
+            <summary>
+                Returns the registered instance of <see cref="T:WSA.Foundation.Logger.IDiagnosticService"/>.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.ILog.LogConfigurator">
+            <summary>
+                Returns the registered instance of <see cref="T:WSA.Foundation.Logger.ILogEntryConfigurator"/>.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.ILog.Output">
+            <summary>
+                Returns the registered instance of <see cref="T:WSA.Foundation.Logger.IOutput"/>.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.ILog.Repository">
+            <summary>
+                Returns the registered instance of <see cref="T:WSA.Foundation.Logger.ILogRepository"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILog.ClearEntries(System.Int32)">
+            <summary>
+                Clear all logs that are older than <paramref name="daysToKeep"/> days.
+                If <paramref name="daysToKeep"/> == 0 all logs will be cleared.
+            </summary>
+            <param name="daysToKeep">Number of days that shall be kept when clearing logs.</param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILog.CreateLogMessage(System.String,System.String,WSA.Foundation.Logger.LogChannels)">
+            <summary>
+                Creates a new log message and passes it to the configured <see cref="T:WSA.Foundation.Logger.LogChannels"/>.
+            </summary>
+            <param name="type"></param>
+            <param name="message"></param>
+            <param name="forcedLogChannels"></param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILog.ErrorNonStatic(System.String,WSA.Foundation.Logger.LogChannels)">
+            <summary>
+                Creates a new error log message and passes it to the configured <see cref="T:WSA.Foundation.Logger.LogChannels"/>.
+            </summary>
+            <param name="errorMessage"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILog.GetAllEntries">
+            <summary>
+                Returns all log messages which are stored.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILog.InitializeAppCenterNonStatic(System.String)">
+            <summary>
+                Initializes the registered instance of <see cref="T:WSA.Foundation.Logger.IAppCenterTracker"/> with the passed <paramref name="key"/>.
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILog.IsChannelAvailable(WSA.Foundation.Logger.LogChannels)">
+            <summary>
+                Returns whether the <see cref="T:WSA.Foundation.Logger.LogChannels"/> is available.
+            </summary>
+            <param name="logChannelToCheckFor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILog.IsChannelForced(WSA.Foundation.Logger.LogChannels,WSA.Foundation.Logger.LogChannels)">
+            <summary>
+                Returns whether the <see cref="T:WSA.Foundation.Logger.LogChannels"/> is forced.
+            </summary>
+            <param name="logChannel"></param>
+            <param name="logChannelToCheckFor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILog.IsChannelForcedOrAvailable(WSA.Foundation.Logger.LogChannels,WSA.Foundation.Logger.LogChannels)">
+            <summary>
+                Returns whether the <see cref="T:WSA.Foundation.Logger.LogChannels"/> are forced or available.
+            </summary>
+            <param name="forcedLogChannels"></param>
+            <param name="logChannelToCheckFor"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Logger.ILogEntryConfigurator">
+            <summary>
+                This interface provides access to the <see cref="T:WSA.Foundation.Logger.LogEntryConfiguration"/>.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.ILogEntryConfigurator.Configurations">
+            <summary>
+                Returns a collection of all <see cref="T:WSA.Foundation.Logger.LogEntryConfiguration"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILogEntryConfigurator.CreateEntry(WSA.Foundation.Logger.LogEntryConfiguration)">
+            <summary>
+                Creates a new entry with the passed <paramref name="configuration"/>.
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILogEntryConfigurator.ResolveConfiguration(System.String)">
+            <summary>
+                Resolves the configuration for the passed <paramref name="type"/>.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILogEntryConfigurator.UpdateEntry(WSA.Foundation.Logger.LogEntryConfiguration)">
+            <summary>
+                Updates the <see cref="T:WSA.Foundation.Logger.LogEntryConfiguration"/> with the passed <paramref name="newConfiguration"/>.
+            </summary>
+            <param name="newConfiguration"></param>
+        </member>
+        <member name="T:WSA.Foundation.Logger.ILogHelper">
+            <summary>
+                This interface provides some helper for the log.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILogHelper.ClearEntries(System.Int32)">
+            <inheritdoc cref="M:WSA.Foundation.Logger.ILog.ClearEntries(System.Int32)"/>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILogHelper.Export">
+            <summary>
+                Exports the log to the download folder.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILogHelper.GetLogMessagesFromLog">
+            <summary>
+                Returns all log messages.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Logger.ILogRepository">
+            <summary>
+                This interface provides method for the log repository.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILogRepository.ClearAllEntries">
+            <summary>
+                Deletes all entries which are currently stored.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILogRepository.ClearOldEntries">
+            <summary>
+                Deletes all old entries in the storage.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILogRepository.ClearOldEntries(System.Int32)">
+            <summary>
+                Clear all logs from repository that are older than <paramref name="daysToKeep"/> days.
+            </summary>
+            <param name="daysToKeep">Number of days that shall be kept when clearing logs.</param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILogRepository.GetAllEntries">
+            <summary>
+                Returns all persisted log entries.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.ILogRepository.StoreEntry(WSA.Foundation.Logger.LogMessage)">
+            <summary>
+                Store the passed <paramref name="logMessage"/>.
+            </summary>
+            <param name="logMessage"></param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.Internals.LoggerBase.Init(WSA.Foundation.Locator.Basic.IBasicServiceCollection,WSA.Foundation.Locator.Basic.IBasicLocator)">
+            <summary>
+            
+            </summary>
+            <param name="collection"></param>
+            <param name="basicLocator"></param>
+        </member>
+        <member name="T:WSA.Foundation.Logger.IOutput">
+            <summary>
+                This interface provides methods for the generic output.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.IOutput.Write(WSA.Foundation.Logger.LogMessage)">
+            <summary>
+                Passes the <paramref name="message"/> to the implementing output.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:WSA.Foundation.Logger.Log">
+            <summary>
+                This static class provides all methods for logging.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.#ctor(WSA.Foundation.Logger.LogChannels)">
+            <summary>
+                Creates a new instance of the log with the passed <paramref name="logChannels"/>.
+            </summary>
+            <param name="logChannels"></param>
+        </member>
+        <member name="P:WSA.Foundation.Logger.Log.Instance">
+            <summary>
+                Returns the currently active instance of the <see cref="T:WSA.Foundation.Logger.Log"/>.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.Log.Output">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Logger.Log.Repository">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Logger.Log.Diagnostic">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Logger.Log.AppCenterTracker">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Logger.Log.LogConfigurator">
+            <inheritdoc />
+        </member>
+        <member name="P:WSA.Foundation.Logger.Log.CurrentLogChannels">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.Initialize(WSA.Foundation.Logger.LogChannels)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Logger.Log"/> with the passed <paramref name="channelsToLogTo"/> and assigns it to <see cref="P:WSA.Foundation.Logger.Log.Instance"/> for future usage.
+            </summary>
+            <param name="channelsToLogTo"></param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.InitializeAppCenter(System.String)">
+            <inheritdoc cref="M:WSA.Foundation.Logger.ILog.InitializeAppCenterNonStatic(System.String)"/>
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.InitializeAppCenterNonStatic(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.GetAllEntries">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.ClearEntries(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.ErrorNonStatic(System.String,WSA.Foundation.Logger.LogChannels)">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.Error(System.String,System.String,WSA.Foundation.Logger.LogChannels)">
+            <summary>
+                Creates a new <see cref="T:WSA.Foundation.Logger.LogMessage"/> with the type <see cref="F:WSA.Foundation.Logger.LogMessageType.Error"/>.
+            </summary>
+            <param name="errorMessage"></param>
+            <param name="header"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.Exception(System.Exception,System.Collections.Generic.IDictionary{System.String,System.String},WSA.Foundation.Logger.LogChannels,System.String)">
+            <summary>
+                Creates a new <see cref="T:WSA.Foundation.Logger.LogMessage"/> with the type <see cref="F:WSA.Foundation.Logger.LogMessageType.Exception"/>.
+            </summary>
+            <param name="exceptionToLog"></param>
+            <param name="properties"></param>
+            <param name="forcedLogChannels"></param>
+            <param name="header"></param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.CreateLogMessage(System.String,System.String,WSA.Foundation.Logger.LogChannels)">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.IsChannelForcedOrAvailable(WSA.Foundation.Logger.LogChannels,WSA.Foundation.Logger.LogChannels)">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.IsChannelForced(WSA.Foundation.Logger.LogChannels,WSA.Foundation.Logger.LogChannels)">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.IsChannelAvailable(WSA.Foundation.Logger.LogChannels)">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.Warning(System.String,System.String,WSA.Foundation.Logger.LogChannels)">
+            <summary>
+                Creates a new <see cref="T:WSA.Foundation.Logger.LogMessage"/> with the type <see cref="F:WSA.Foundation.Logger.LogMessageType.Warning"/>.
+            </summary>
+            <param name="warningMessage"></param>
+            <param name="header"></param>
+            <param name="forcedLogChannels"></param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.TestAutomation(System.String,System.String,WSA.Foundation.Logger.LogChannels)">
+            <inheritdoc cref="M:WSA.Foundation.Logger.Log.TestAutomationNonStatic(System.String,WSA.Foundation.Logger.LogChannels)" />
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.Performance(System.String,System.Int64,WSA.Foundation.Logger.LogChannels)">
+            <summary>
+                Creates a new <see cref="T:WSA.Foundation.Logger.LogMessage"/> with the type <see cref="F:WSA.Foundation.Logger.LogMessageType.Performance"/>.
+            </summary>
+            <param name="actionName"></param>
+            <param name="elapsedTimeInMs"></param>
+            <param name="forcedLogChannels"></param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.Message(System.String,System.String,WSA.Foundation.Logger.LogChannels)">
+            <summary>
+                Creates a new <see cref="T:WSA.Foundation.Logger.LogMessage"/> with the type <see cref="F:WSA.Foundation.Logger.LogMessageType.Log"/>.
+            </summary>
+            <param name="messageContent"></param>
+            <param name="header"></param>
+            <param name="forcedLogChannels"></param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.Log.Trace(System.String,System.String,WSA.Foundation.Logger.LogChannels)">
+            <summary>
+                Creates a new <see cref="T:WSA.Foundation.Logger.LogMessage"/> with the type <see cref="F:WSA.Foundation.Logger.LogMessageType.Trace"/>.
+            </summary>
+            <param name="messageContent"></param>
+            <param name="header"></param>
+            <param name="forcedLogChannels"></param>
+        </member>
+        <member name="T:WSA.Foundation.Logger.LogChannels">
+            <summary>
+                Flags containing all log output channels.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.LogChannels.None">
+            <summary>
+                None.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.LogChannels.Console">
+            <summary>
+                Console.
+            </summary>
+            
+        </member>
+        <member name="F:WSA.Foundation.Logger.LogChannels.Database">
+            <summary>
+                Database.
+            </summary>
+            
+        </member>
+        <member name="F:WSA.Foundation.Logger.LogChannels.Remote">
+            <summary>
+                Remote.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.LogChannels.All">
+            <summary>
+                All channels combined.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Logger.LogEntryConfiguration">
+            <summary>
+                This class contains all possible log configuration.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.LogEntryConfiguration.ColorCode">
+            <summary>
+                Returns the color code in RGBA format.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.LogEntryConfiguration.ShouldShowInLog">
+            <summary>
+                Returns if the log should be filtered out.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.LogEntryConfiguration.Type">
+            <summary>
+                Returns the type of the configuration.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.LogEntryConfiguration.#ctor">
+            <summary>
+                Default constructor for <see cref="T:WSA.Foundation.Logger.LogEntryConfiguration"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.LogEntryConfiguration.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Logger.LogEntryConfiguration"/>.
+            </summary>
+            <param name="type"></param>
+            <param name="colorCode"></param>
+            <param name="shouldShowInLog"></param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.LogEntryConfiguration.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Logger.LogEntryConfiguration.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:WSA.Foundation.Logger.LogMessage">
+            <summary>
+                This class contains all data about a log message.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.LogMessage.Content">
+            <summary>
+                Content of the log message.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.LogMessage.Type">
+            <summary>
+                Type of the log message.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Logger.LogMessage.Timestamp">
+            <summary>
+                Timestamp of the log message.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.LogMessage.FromString(System.String)">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Logger.LogMessage"/> with the passed <paramref name="message"/>.
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.LogMessage.FromBytes(System.Byte[])">
+            <summary>
+                Creates a new instance of <see cref="T:WSA.Foundation.Logger.LogMessage"/> with the passed <paramref name="bytes"/> which is interpreted as UTF8 string.
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.LogMessage.op_Implicit(System.String)~WSA.Foundation.Logger.LogMessage">
+            <summary>
+                implicit converter.
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.LogMessage.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:WSA.Foundation.Logger.LogMessage.LogMessageTypeFromString(System.String)">
+            <summary>
+                Converts the passed <paramref name="type"/> to a <see cref="T:WSA.Foundation.Logger.LogMessageType"/>.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Logger.LogMessageType">
+            <summary>
+                The possible log message types.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.LogMessageType.None">
+            <summary>
+                None.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.LogMessageType.Log">
+            <summary>
+                Log.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.LogMessageType.Warning">
+            <summary>
+                Warning.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.LogMessageType.Error">
+            <summary>
+                Error.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.LogMessageType.Exception">
+            <summary>
+                Exception.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.LogMessageType.CriticalError">
+            <summary>
+                Critical Error.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.LogMessageType.TestAutomation">
+            <summary>
+                Test Automation.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.LogMessageType.Performance">
+            <summary>
+                Performance.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.LogMessageType.Trace">
+            <summary>
+                Trace.
+            </summary>
+        </member>
+    </members>
+</doc>

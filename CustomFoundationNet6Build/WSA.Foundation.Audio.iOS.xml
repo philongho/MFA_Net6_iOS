@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Audio.iOS</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.Audio.iOS.Audio">
+            <summary>
+                Entry point of the Audio component. This class provides methods to initialize this component.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.iOS.Audio.Init(WSA.Foundation.Locator.Basic.IBasicServiceCollection,WSA.Foundation.Locator.Basic.IBasicLocator)">
+            <summary>
+                Initializes the Audio component and it's dependencies.
+            </summary>
+            <param name="serviceCollection"></param>
+            <param name="locator"></param>
+        </member>
+        <member name="T:WSA.Foundation.Audio.iOS.Internal.WaveformCreator">
+            <summary>
+                Class containing the wave form creation.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.iOS.Internal.WaveformCreator.#ctor(System.Int32,System.Int32,System.Int32,System.Byte[])">
+            <summary>
+                Wave form creator constructor.
+            </summary>
+            <param name="sr"></param>
+            <param name="bps"></param>
+            <param name="numOfSmp"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:WSA.Foundation.Audio.iOS.Internal.WaveformCreator.CreateWave">
+            <summary>
+                Method used to create wave.
+            </summary>
+            <returns>Byte Array.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.iOS.Internal.WaveformCreator.Short2ByteArray(System.Int16)">
+            <summary>
+                Method used to convert short to byte array.
+            </summary>
+            <param name="data"></param>
+            <returns>Byte Array.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.iOS.Internal.WaveformCreator.Int2ByteArray(System.Int32)">
+            <summary>
+                Method used to convert int to byte array.
+            </summary>
+            <param name="data"></param>
+            <returns>Byte Array.</returns>
+        </member>
+    </members>
+</doc>

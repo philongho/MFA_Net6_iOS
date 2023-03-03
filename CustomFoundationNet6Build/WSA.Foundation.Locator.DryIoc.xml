@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Locator.DryIoc</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter">
+            <summary>
+            	This class provides an implementation of DryIoc container.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter.#ctor(DryIoc.Container)">
+            <summary>
+            	A constructor for <see cref="T:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter"/> to instantiate ioc container.
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter.CreateInstance``1">
+            <inheritdoc cref ="M:WSA.Foundation.Locator.Basic.IBasicLocator.CreateInstance``1"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter.DeregisterFromLocatorIsInitialized(System.Action{WSA.Foundation.Locator.Basic.IBasicLocator})">
+            <inheritdoc cref ="M:WSA.Foundation.Locator.Basic.IBasicLocator.DeregisterFromLocatorIsInitialized(System.Action{WSA.Foundation.Locator.Basic.IBasicLocator})"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter.GetAllOnInitializedListener">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicLocator.GetAllOnInitializedListener"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter.IsRegistered``1">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicLocator.IsRegistered``1"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter.RegisterOnLocatorIsInitialized(System.Action{WSA.Foundation.Locator.Basic.IBasicLocator})">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicLocator.RegisterOnLocatorIsInitialized(System.Action{WSA.Foundation.Locator.Basic.IBasicLocator})"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter.Resolve``1">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicLocator.Resolve``1"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter.Register``2">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.Register``2"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter.Register``1">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.Register``1"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter.RegisterInstance``1(``0)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.RegisterInstance``1(``0)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter.RegisterManySingleton``1(System.Type[])">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.RegisterManySingleton``1(System.Type[])"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter.RegisterSingleton``2">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.RegisterSingleton``2"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.DryIoc.DryIocLocatorAdapter.RegisterSingleton``1">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.RegisterSingleton``1"/>
+        </member>
+    </members>
+</doc>

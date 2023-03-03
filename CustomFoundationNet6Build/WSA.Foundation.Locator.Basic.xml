@@ -1,0 +1,480 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Locator.Basic</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.Locator.Basic.BasicLocator">
+            <summary>
+                Entry point of the Basic Locator component. This class provides methods to initialize this component.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Locator.Basic.BasicLocator.CurrentBasic">
+            <summary>
+                Property indicating Current Basic Locator.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.BasicLocator.#ctor">
+            <summary>
+                A default constructor for <see cref="T:WSA.Foundation.Locator.Basic.BasicLocator"/>.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.BasicLocator.Initialize(WSA.Foundation.Locator.Basic.IBasicLocator)">
+            <summary>
+                Initializes the locator <see cref="P:WSA.Foundation.Locator.Basic.BasicLocator.CurrentBasic"/> with the provided <paramref name="basicLocator"/>.
+            </summary>
+            <remarks>
+                Foundation offers DryIoc and Autofac which can be directly instantiated and passed.
+                Any other custom IOC container that is needed to be initialized must implement of <see cref="T:WSA.Foundation.Locator.Basic.IBasicLocator"/>".
+            </remarks>
+            <param name="basicLocator"></param>
+        </member>
+        <member name="T:WSA.Foundation.Locator.Basic.IBasicLocator">
+            <summary>
+                This interface provides APIs to create and resolve services.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.IBasicLocator.CreateInstance``1">
+            <summary>
+                Returns an instance of the <typeparamref name="TService"/> from the container.
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.IBasicLocator.DeregisterFromLocatorIsInitialized(System.Action{WSA.Foundation.Locator.Basic.IBasicLocator})">
+            <summary>
+                Deregisters action when locator is initialized.
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.IBasicLocator.GetAllOnInitializedListener">
+            <summary>
+                Returns all listeners that listen on the initialization.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.IBasicLocator.IsRegistered``1">
+            <summary>
+                Returns whether <typeparamref name="TService"/> is registered in container or not.
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.IBasicLocator.RegisterOnLocatorIsInitialized(System.Action{WSA.Foundation.Locator.Basic.IBasicLocator})">
+            <summary>
+                Registers action when locator is initialized.
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.IBasicLocator.Resolve``1">
+            <summary>
+               Resolves instance of type <typeparamref name="TService"/> from container.
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Locator.Basic.IBasicServiceCollection">
+            <summary>
+                This interface provides functionality for registering services.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.Register``2">
+            <summary>
+            	Registers class of <typeparamref name="TClass"/> type implemented by <typeparamref name="TInterface"/> type.
+            </summary>
+            <typeparam name="TInterface"></typeparam>
+            <typeparam name="TClass"></typeparam>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.Register``1">
+            <summary>
+            	Registers implementation type.
+            </summary>
+            <typeparam name="TClass"></typeparam>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.RegisterInstance``1(``0)">
+            <summary>
+               Registers a passed <paramref name="instance"/> of <typeparamref name="TService"/>.
+            </summary>
+            <param name="instance"></param>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.RegisterManySingleton``1(System.Type[])">
+            <summary>
+                Registers the implementation <typeparamref name="TService"/> with a collection of <see cref="T:System.Type"/> passed as <paramref name="types"/>.
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <param name="types"></param>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.RegisterSingleton``2">
+            <summary>
+               Registers class <typeparamref name="TClass"/> implemented by <typeparamref name="TInterface"/> as singleton.
+            </summary>
+            <typeparam name="TInterface"></typeparam>
+            <typeparam name="TClass"></typeparam>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.RegisterSingleton``1">
+            <summary>
+                Registers the <typeparamref name="TClass"/> as a singleton.
+            </summary>
+            <typeparam name="TClass"></typeparam>
+        </member>
+        <member name="T:WSA.Foundation.Locator.Basic.ILocator">
+            <summary>
+                This interface provides all additional APIs to register and resolve the services.
+            </summary>
+            <remarks>
+                Eg. The ones offered by Autofac, more in future.
+            </remarks>
+        </member>
+        <member name="P:WSA.Foundation.Locator.Basic.ILocator.IsInitialized">
+            <summary>
+                Returns true if the container containing registrations is already built or  initialized.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.Build">
+            <summary>
+                Create a new container with the component registrations that have been made.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.IsRegisteredWithKey``1(System.Object)">
+            <summary>
+                Returns whether the specified service of type <typeparamref name="TInterface"/> is registered based on passed
+                <paramref name="key"/>.
+            </summary>
+            <param name="key"></param>
+            <typeparam name="TInterface"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.IsRegisteredWithKey(System.Object,System.Type)">
+            <summary>
+                Returns whether the specified <paramref name="type"/> is registered with the passed <paramref name="key"/>.
+            </summary>
+            <param name="key"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.IsRegisteredWithName``1(System.String)">
+            <summary>
+                Returns whether the specified service is registered based on the passed <paramref name="name"/>.
+            </summary>
+            <param name="name"></param>
+            <typeparam name="TInterface"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.IsRegisteredWithName(System.String,System.Type)">
+            <summary>
+                Returns whether the specified <paramref name="type"/> is registered based on the passed <paramref name="name"/>.
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.RegisterGenericInstance(System.Type)">
+            <summary>
+                Registers an un-parameterized <paramref name="myType"/>.
+                Concrete types will be made as they are requested.
+            </summary>
+            <param name="myType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.RegisterInstance``1(``0)">
+            <summary>
+                Register an instance as a component.
+            </summary>
+            <param name="instance"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.RegisterType``1">
+            <summary>
+                Registers <typeparamref name="TService"/> as a specific Type.
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.Resolve``1(System.Object[])">
+            <summary>
+                Returns a service based on the passed <paramref name="parameters"/>.
+            </summary>
+            <param name="parameters"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.Resolve(System.Type)">
+            <summary>
+                Returns the component instance that provides the service for the passed <paramref name="type"/>.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.Resolve(System.Type,System.Object[])">
+            <summary>
+                Returns the component instance that provides the service for the passed <paramref name="type"/> based on the
+                <paramref name="parameters"/>.
+            </summary>
+            <param name="type"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.ResolveKeyed``1(System.Object)">
+            <summary>
+                Returns a
+                <typeparam name="TService"></typeparam>
+                for the passed <paramref name="serviceKey"/>.
+            </summary>
+            <param name="serviceKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.ResolveKeyed``1(System.Object,System.Object[])">
+            <summary>
+                Returns a
+                <typeparam name="TService"></typeparam>
+                for the passed <paramref name="serviceKey"/> and <paramref name="parameters"/>.
+            </summary>
+            <param name="serviceKey"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.ResolveKeyed(System.Object,System.Type)">
+            <summary>
+                Returns the component instance that provides the service based on passed <paramref name="serviceKey"/> and
+                <paramref name="type"/>.
+            </summary>
+            <param name="serviceKey"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.ResolveKeyed(System.Object,System.Type,System.Object[])">
+            <summary>
+                Returns the component instance that provides the service based on passed <paramref name="serviceKey"/>,
+                <paramref name="type"/> and <paramref name="parameters"/>.
+            </summary>
+            <param name="serviceKey"></param>
+            <param name="type"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.ResolveNamed``1(System.String)">
+            <summary>
+                Returns a
+                <typeparam name="TService"></typeparam>
+                based on passed <paramref name="serviceName"/>.
+            </summary>
+            <param name="serviceName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.ResolveNamed``1(System.String,System.Object[])">
+            <summary>
+                Returns a
+                <typeparam name="TService"></typeparam>
+                based on passed <paramref name="serviceName"/> and <paramref name="parameters"/>.
+            </summary>
+            <param name="serviceName"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.ResolveNamed(System.String,System.Type)">
+            <summary>
+                Returns the component instance that provides the service based on <paramref name="serviceName"/>,
+                <paramref name="type"/>.
+            </summary>
+            <param name="serviceName"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.ResolveNamed(System.String,System.Type,System.Object[])">
+            <summary>
+                Returns the component instance that provides the service based on <paramref name="serviceName"/>,
+                <paramref name="type"/> and <paramref name="parameters"/>.
+            </summary>
+            <param name="serviceName"></param>
+            <param name="type"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.SetContainer(System.Object)">
+            <summary>
+                Sets passed <paramref name="container"/> as the current container to register all the services into.
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocator.TearDown">
+            <summary>
+                Disposes the current registered container.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1">
+            <summary>
+                An interface that contains fluent APIs to configure an IoC container.
+            </summary>
+            <typeparam name="TService"></typeparam>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.As``1">
+            <summary>
+            	Configures that the <typeparamref name="TService"/> is registered as Interface.
+            </summary>
+            <typeparam name="TInterface"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.As(System.Type)">
+            <summary>
+            	Configures that the <typeparamref name="TService"/> is registered as specified Type.
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.ExternallyOwned">
+            <summary>
+                Configures the component so that instances are never disposed by the container.
+            </summary>
+            <returns> ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.IfNotRegistered(System.Type)">
+            <summary>
+                Configures the component so that registration is only made if <paramref name="type"/> is not already registered.
+            </summary>
+            <param name="type"></param>
+            <returns> ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.InstancePerDependency">
+            <summary>
+                Configures the component so that every dependent component or call to Resolve() gets a new, unique instance.
+            </summary>
+            <returns> ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.InstancePerLifetimeScope">
+            <summary>
+                Configures the component so that every dependent component or call to Resolve within a single lifetime scope gets
+                the same, shared instance. Dependent components different lifetime scopes will get different instances.
+            </summary>
+            <returns> ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.InstancePerMatchingLifetimeScope">
+            <summary>
+                Configures the component so that every dependent component or call to Resolve() within dependent components will
+                share the parent's instance based on the parameters passed.
+            </summary>
+            <returns> ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.InstancePerOwned(System.Type)">
+            <summary>
+                Configures the component so that every dependent component or call to Resolve() within a lifetime scope created by
+                an owned instance gets the same, shared instance based on the parameters passed.
+            </summary>
+            <param name="serviceType"></param>
+            <returns>ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.InstancePerOwned(System.Object,System.Type)">
+            <summary>
+                Configures the component so that every dependent component or call to Resolve() within a lifetime scope created by
+                an owned instance gets the same, shared instance based on the parameters passed.
+            </summary>
+            <param name="serviceKey"></param>
+            <param name="serviceType"></param>
+            <returns>ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.InstancePerOwned``1">
+            <summary>
+                Configures the component so that every dependent component or call to Resolve() within a lifetime scope created by
+                an owned instance gets the same, shared instance based on the parameters passed.
+            </summary>
+            <typeparam name="TServiceType"></typeparam>
+            <returns>ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.InstancePerOwned``1(System.Object)">
+            <summary>
+                Configures the component so that every dependent component or call to Resolve() within a lifetime scope created by
+                an owned instance gets the same, shared instance based on the parameters passed.
+            </summary>
+            <param name="serviceKey"></param>
+            <typeparam name="TServiceType"></typeparam>
+            <returns>ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.Keyed(System.Object,System.Type)">
+            <summary>
+                Configures the component such that the passed <paramref name="serviceKey"/> can be used to retrieve the
+                <typeparamref name="TService"/>.
+            </summary>
+            <param name="serviceKey"></param>
+            <param name="serviceType"></param>
+            <returns>ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.Keyed``1(System.Object)">
+            <summary>
+                Configures the component such that the passed <paramref name="serviceKey"/> can be used to retrieve the
+                <typeparamref name="TService"/>.
+            </summary>
+            <param name="serviceKey"></param>
+            <typeparam name="TServiceType"></typeparam>
+            <returns>ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.Named(System.String,System.Type)">
+            <summary>
+                Configures the component such that the passed <paramref name="serviceName"/> can be used to retrieve the
+                <typeparamref name="TService"/>.
+            </summary>
+            <param name="serviceName"></param>
+            <param name="serviceType"></param>
+            <returns>ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.Named``1(System.String)">
+            <summary>
+                Configures the component such that a textual name passed as <paramref name="serviceName"/> can be used to retrieve
+                the <typeparamref name="TService"/>.
+            </summary>
+            <param name="serviceName"></param>
+            <typeparam name="TServiceType"></typeparam>
+            <returns>ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.SingleInstance">
+            <summary>
+                Configures the component so that every dependent component or call to Resolve()
+                gets the same, shared instance.
+            </summary>
+            <returns>ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.WithMetadata(System.String,System.Object)">
+            <summary>
+            	Associates meta data <paramref name="value"/> with the <paramref name="key"/> with which service is registered.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns>ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.WithMetadata(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})">
+            <summary>
+            	Associates meta data <paramref name="values"/>.
+            </summary>
+            <param name="values"></param>
+            <returns>ILocatorDependencyBuilder allowing further configuration of the component.</returns>
+        </member>
+        <member name="T:WSA.Foundation.Locator.Basic.LocatorBasicServiceCollectionAdapter">
+            <summary>
+                A class that implements functionality to register the services.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.LocatorBasicServiceCollectionAdapter.#ctor(WSA.Foundation.Locator.Basic.ILocator)">
+            <summary>
+                A constructor for <see cref="T:WSA.Foundation.Locator.Basic.LocatorBasicServiceCollectionAdapter"/>.
+            </summary>
+            <param name="locator"></param>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.LocatorBasicServiceCollectionAdapter.Register``2">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.Register``2"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.LocatorBasicServiceCollectionAdapter.Register``1">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.Register``1"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.LocatorBasicServiceCollectionAdapter.RegisterInstance``1(``0)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.RegisterInstance``1(``0)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.LocatorBasicServiceCollectionAdapter.RegisterManySingleton``1(System.Type[])">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.RegisterManySingleton``1(System.Type[])"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.LocatorBasicServiceCollectionAdapter.RegisterSingleton``2">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.RegisterSingleton``2"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Basic.LocatorBasicServiceCollectionAdapter.RegisterSingleton``1">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicServiceCollection.RegisterSingleton``1"/>
+        </member>
+    </members>
+</doc>

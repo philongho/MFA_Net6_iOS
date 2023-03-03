@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Locator.Autofac</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.Locator.Autofac.AutofacDependencyDictionary`2">
+            <summary>
+                This class contains Abstraction of Autofac IIndex interface based on: https://dotnetfalcon.com/using-ireadonlydictionary-instead-of-iindex-with-autofac.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacDependencyDictionary`2.#ctor(Autofac.IComponentContext)">
+            <summary>
+                A constructor for <see cref="T:WSA.Foundation.Locator.Autofac.AutofacDependencyDictionary`2"/>.
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacDependencyDictionary`2.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc cref="M:System.Collections.IEnumerable.GetEnumerator"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacDependencyDictionary`2.GetEnumerator">
+            <inheritdoc cref="M:System.Collections.IEnumerable.GetEnumerator"/>
+        </member>
+        <member name="P:WSA.Foundation.Locator.Autofac.AutofacDependencyDictionary`2.Count">
+            <summary>
+                Returns the number of services registered in the current context.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacDependencyDictionary`2.ContainsKey(`0)">
+            <summary>
+                Returns whether the specified service is available in the context.
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="P:WSA.Foundation.Locator.Autofac.AutofacDependencyDictionary`2.Item(`0)">
+            <summary>
+                Retrieves a service from the context.
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:WSA.Foundation.Locator.Autofac.AutofacDependencyDictionary`2.Keys">
+            <summary>
+                Returns a collection of keys for the services that are registered as identifiable with a key.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacDependencyDictionary`2.TryGetValue(`0,`1@)">
+            <summary>
+                Returns whether a service can be retrieved from the context.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:WSA.Foundation.Locator.Autofac.AutofacDependencyDictionary`2.Values">
+            <summary>
+                Returns a collection of services that are retrieved from the current context.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3">
+            <summary>
+                A class containing implementation of fluent APIs.
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TLimit"></typeparam>
+            <typeparam name="TActivator"></typeparam>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.#ctor(Autofac.Builder.IRegistrationBuilder{`0,`1,`2})">
+            <summary>
+                A constructor for <see cref="T:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3"/>.
+            </summary>
+            <param name="registrationBuilder"></param>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.As``1">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.As``1"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.As(System.Type)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.As(System.Type)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.ExternallyOwned">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.ExternallyOwned"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.IfNotRegistered(System.Type)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.IfNotRegistered(System.Type)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.InstancePerDependency">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.InstancePerDependency"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.InstancePerLifetimeScope">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.InstancePerLifetimeScope"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.InstancePerMatchingLifetimeScope">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.InstancePerMatchingLifetimeScope"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.InstancePerOwned(System.Type)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.InstancePerOwned(System.Type)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.InstancePerOwned(System.Object,System.Type)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.InstancePerOwned(System.Object,System.Type)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.InstancePerOwned``1">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.InstancePerOwned``1"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.InstancePerOwned``1(System.Object)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.InstancePerOwned``1(System.Object)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.Keyed``1(System.Object)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.Keyed``1(System.Object)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.Keyed(System.Object,System.Type)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.Keyed(System.Object,System.Type)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.Named(System.String,System.Type)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.Named(System.String,System.Type)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.Named``1(System.String)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.Named``1(System.String)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.SingleInstance">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.SingleInstance"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.WithMetadata(System.String,System.Object)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.WithMetadata(System.String,System.Object)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.WithMetadata(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1.WithMetadata(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.FromAutofac(Autofac.Builder.IRegistrationBuilder{`0,`1,`2})">
+            <summary>
+                Returns <see cref="T:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1"/> to build the container fluently.
+            </summary>
+            <param name="registrationBuilder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorDependencyBuilder`3.FromAutofac(Autofac.Builder.IRegistrationBuilder{System.Object,Autofac.Builder.ReflectionActivatorData,Autofac.Builder.DynamicRegistrationStyle})">
+            <summary>
+                Returns <see cref="T:WSA.Foundation.Locator.Basic.ILocatorDependencyBuilder`1"/> to build the container fluently.
+            </summary>
+            <param name="registerBuilder"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Locator.Autofac.AutofacLocatorService">
+            <summary>
+                Implementation of the ILocator for AutoFac. Do not use this class by creating an instance or by a static reference.
+                Do always use the ILocator interface.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.#ctor">
+            <summary>
+                A default constructor for <see cref="T:WSA.Foundation.Locator.Autofac.AutofacLocatorService"/>.
+                This is creating a new instance of <see cref="T:Autofac.ContainerBuilder"/>. And uses it internally.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.#ctor(Autofac.ContainerBuilder)">
+            <summary>
+                A constructor for <see cref="T:WSA.Foundation.Locator.Autofac.AutofacLocatorService"/>.
+            </summary>
+            <param name="containerBuilder"></param>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.#ctor(Autofac.IContainer)">
+            <summary>
+                A constructor for <see cref="T:WSA.Foundation.Locator.Autofac.AutofacLocatorService"/>.
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.CreateInstance``1">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicLocator.CreateInstance``1"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.DeregisterFromLocatorIsInitialized(System.Action{WSA.Foundation.Locator.Basic.IBasicLocator})">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicLocator.DeregisterFromLocatorIsInitialized(System.Action{WSA.Foundation.Locator.Basic.IBasicLocator})"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.GetAllOnInitializedListener">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicLocator.GetAllOnInitializedListener"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.RegisterOnLocatorIsInitialized(System.Action{WSA.Foundation.Locator.Basic.IBasicLocator})">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicLocator.RegisterOnLocatorIsInitialized(System.Action{WSA.Foundation.Locator.Basic.IBasicLocator})"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.Resolve``1">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicLocator.Resolve``1"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.Build">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.Build"/>
+        </member>
+        <member name="P:WSA.Foundation.Locator.Autofac.AutofacLocatorService.IsInitialized">
+            <inheritdoc cref="P:WSA.Foundation.Locator.Basic.ILocator.IsInitialized"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.IsRegisteredWithKey``1(System.Object)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.IsRegisteredWithKey``1(System.Object)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.IsRegisteredWithKey(System.Object,System.Type)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.IsRegisteredWithKey(System.Object,System.Type)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.IsRegisteredWithName``1(System.String)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.IsRegisteredWithName``1(System.String)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.IsRegisteredWithName(System.String,System.Type)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.IsRegisteredWithName(System.String,System.Type)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.RegisterGenericInstance(System.Type)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.RegisterGenericInstance(System.Type)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.RegisterInstance``1(``0)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.RegisterInstance``1(``0)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.RegisterType``1">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.RegisterType``1"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.Resolve``1(System.Object[])">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.Resolve``1(System.Object[])"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.Resolve(System.Type)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.Resolve(System.Type)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.Resolve(System.Type,System.Object[])">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.Resolve(System.Type,System.Object[])"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.ResolveKeyed``1(System.Object)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.ResolveKeyed``1(System.Object)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.ResolveKeyed``1(System.Object,System.Object[])">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.ResolveKeyed``1(System.Object,System.Object[])"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.ResolveKeyed(System.Object,System.Type)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.ResolveKeyed(System.Object,System.Type)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.ResolveKeyed(System.Object,System.Type,System.Object[])">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.ResolveKeyed(System.Object,System.Type,System.Object[])"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.ResolveNamed``1(System.String)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.ResolveNamed``1(System.String)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.ResolveNamed``1(System.String,System.Object[])">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.ResolveNamed``1(System.String,System.Object[])"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.ResolveNamed(System.String,System.Type)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.ResolveNamed(System.String,System.Type)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.ResolveNamed(System.String,System.Type,System.Object[])">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.ResolveNamed(System.String,System.Type,System.Object[])"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.SetContainer(System.Object)">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.SetContainer(System.Object)"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.TearDown">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.ILocator.TearDown"/>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.IsRegistered(System.Type)">
+            <summary>
+                Returns if Type is registered with the container.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.AutofacLocatorService.IsRegistered``1">
+            <inheritdoc cref="M:WSA.Foundation.Locator.Basic.IBasicLocator.IsRegistered``1"/>
+        </member>
+        <member name="T:WSA.Foundation.Locator.Autofac.Locator">
+            <summary>
+            	This class initializes Autofac locator.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Locator.Autofac.Locator.Current">
+            <summary>
+            	Property indicating AutoFac container.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Locator.Autofac.Locator.#ctor">
+            <summary>
+            	A default constructor for <see cref="T:WSA.Foundation.Locator.Autofac.Locator"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

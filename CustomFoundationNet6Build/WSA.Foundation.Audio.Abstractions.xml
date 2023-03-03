@@ -1,0 +1,564 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Audio.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Contracts.IAcousticAdapter">
+            <summary>
+                This interface provides methods about playing audio files and tones.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.IAcousticAdapter.PlayToneAsync(System.Byte[],System.Threading.CancellationToken)">
+            <summary>
+                Plays the passed audio file or tone.
+            </summary>
+            <param name="tone"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Contracts.IRoutingService">
+            <summary>
+                This interface provides methods about modifying the audio routing.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.IRoutingService.SetRouting(WSA.Foundation.Audio.Abstractions.Models.Routing)">
+            <summary>
+                Sets the routing of the operating system for played tones to the passed <see cref="T:WSA.Foundation.Audio.Abstractions.Models.Routing"/> value.
+                Only applicable for Android.
+            </summary>
+            <param name="routing"></param>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager">
+            <summary>
+                This interface provides methods about the tone play status and to modify the output channel.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.GetDeviceStream">
+            <summary>
+                Gets the currently set out put stream
+                Not applicable for iOS - will return default.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.GetPlayStatus">
+            <summary>
+                Tells whether the phone can play an acoustic command via speaker
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetDeviceStream(WSA.Foundation.Audio.Abstractions.Models.OutputStream)">
+            <summary>
+                Sets the out put stream
+                Not applicable for iOS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetTonePlayCheck(WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck)">
+            <summary>
+                Set for which tone playing status a check should be performed.
+            </summary>
+            <param name="tonePlayCheck"></param>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.GetTonePlayCheck">
+            <summary>
+            	Get for which tone playing status a check should be performed.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetVolumeTooHighThreshold(System.Int32)">
+            <summary>
+            	Sets the threshold for the volume too high check.
+            </summary>
+            <param name="percentage">A value between 0 and 100</param>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.GetVolumeTooHighThreshold">
+            <summary>
+            	Gets the threshold for the volume too high check.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.SetVolumeTooLowThreshold(System.Int32)">
+            <summary>
+            	Sets the threshold for the volume too low check.
+            </summary>
+            <param name="percentage">A value between 0 and 100</param>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.ISoundPlayManager.GetVolumeTooLowThreshold">
+            <summary>
+            	Gets the threshold for the volume too low check.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Contracts.IToneGenerationConfigurator">
+            <summary>
+                This interface provides properties to modify the tones which are generated for the Acoustical interface.
+            </summary>
+        </member>
+        <member name="P:WSA.Foundation.Audio.Abstractions.Contracts.IToneGenerationConfigurator.BroadcastLevel">
+            <summary>
+                The loudness (Altitude) of the generated curve.
+            </summary>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if set to not defined</exception>
+        </member>
+        <member name="P:WSA.Foundation.Audio.Abstractions.Contracts.IToneGenerationConfigurator.Frequency">
+            <summary>
+                The frequency of the generated curve.
+            </summary>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if set to not defined</exception>
+        </member>
+        <member name="P:WSA.Foundation.Audio.Abstractions.Contracts.IToneGenerationConfigurator.FrequencyBandSpace">
+            <summary>
+                The band space for individual curves.
+            </summary>
+            <exception cref="T:WSA.Foundation.Shared.Abstractions.Exceptions.ValueIsInvalidException">Thrown if set to not defined</exception>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.IToneGenerationConfigurator.ResetToDefault">
+            <summary>
+                Resets all values to the default, which are specified in the Acoustic Remote Control (ARC) interface specification.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Contracts.IToneService">
+            <summary>
+                This interface provides methods to play acoustic tones, which are as specified by the Acoustic Remote Control (ARC) interface specification.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.IToneService.SendBroadcastToneAsync(System.Byte,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+                Sends a high-frequency tone as a Broadcast (ARC Address=<c>"0xFF"</c>) with the provided commandId.
+            </summary>
+            <param name="commandId">Command which needs to be played.</param>
+            <param name="cancellationToken">Token for cancelling the queued tone playing sequence.</param>
+            <param name="withSniffSuspendTone">
+                A static tone sequence indicating the device to stop sniffing. Used for very few
+                commands. See ARC specification for details on that.
+            </param>
+            <returns>Task indicating if playing succeeded.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.IToneService.SendBroadcastTonesAsync(System.Collections.Generic.IEnumerable{System.Byte},System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+                Sends a sequence of high-frequency tone as a Broadcast (ARC Address=<c>"0xFF"</c>) with the provided commandId.
+            </summary>
+            <param name="commandIds">Commands which needs to be played.</param>
+            <param name="cancellationToken">Token for cancelling the queued tone playing sequence.</param>
+            <param name="withSniffSuspendTone">
+                A static tone sequence indicating the device to stop sniffing. Used for very few
+                commands. See ARC specification for details on that.
+            </param>
+            <returns>Task indicating if playing succeeded.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.IToneService.SendToneAsync(System.Byte,System.Byte,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+                Sends a high-frequency tone for the provided address and the corresponding commands.
+            </summary>
+            <param name="commandId">Command which needs to be played.</param>
+            <param name="fullQualifiedArcAddress">
+                Consists of both the Brand and the ARC Address.
+            </param>
+            <param name="cancellationToken">Token for cancelling the queued tone playing sequence.</param>
+            <param name="withSniffSuspendTone">
+                A static tone sequence indicating the device to stop sniffing. Used for very few
+                commands. See ARC specification for details on that.
+            </param>
+            <returns>Task indicating if playing succeeded.</returns>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Contracts.IToneService.SendTonesAsync(System.Collections.Generic.IEnumerable{System.Byte},System.Byte,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+                Sends a sequence of high-frequency tone for the provided address and the corresponding commands.
+            </summary>
+            <param name="commandIds">Commands which needs to be played.</param>
+            <param name="fullQualifiedArcAddress">
+                Consists of both the Brand and the ARC Address.
+            </param>
+            <param name="cancellationToken">Token for cancelling the queued tone playing sequence.</param>
+            <param name="withSniffSuspendTone">
+                A static tone sequence indicating the device to stop sniffing. Used for very few
+                commands. See ARC specification for details on that.
+            </param>
+            <returns>Task indicating if playing succeeded.</returns>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Exception.AudioCallInProgressException">
+            <summary>
+                Audio Call In Progress Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Exception.AudioCallInProgressException.#ctor">
+            <summary>
+                Audio Call In Progress Exception.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Exception.AudioException">
+            <summary>
+                Base Audio Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Exception.AudioException.#ctor(System.String)">
+            <summary>
+                Base Audio Exception.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Exception.DoNotDisturbModeActivatedException">
+            <summary>
+                Do Not Disturb Mode Activated Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Exception.DoNotDisturbModeActivatedException.#ctor">
+            <summary>
+                Do Not Disturb Mode Activated Exception.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Exception.ExternalAudioHeadsetConnectedException">
+            <summary>
+                External Audio Headset Connected Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Exception.ExternalAudioHeadsetConnectedException.#ctor">
+            <summary>
+                External Audio Headset Connected Exception.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException">
+            <summary>
+            	Tone Generation failed.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Exception.ToneGenerationFailedException.#ctor(System.String)">
+            <summary>
+            	Tone Generation failed.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException">
+            <summary>
+                Tone Status Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Exception.ToneStatusException.#ctor(WSA.Foundation.Audio.Abstractions.Models.AcousticToneStatus)">
+            <summary>
+                Tone Status Exception.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Exception.UnknownTonePlayingFailureException">
+            <summary>
+                Unknown Tone Playing Failure Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Exception.UnknownTonePlayingFailureException.#ctor">
+            <summary>
+                Unknown Tone Playing Failure Exception.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Exception.VolumeTooHighException">
+            <summary>
+                Volume Too High Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Exception.VolumeTooHighException.#ctor">
+            <summary>
+                Volume Too High Exception.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Exception.VolumeTooLowException">
+            <summary>
+                Volume Too Low Exception.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Audio.Abstractions.Exception.VolumeTooLowException.#ctor">
+            <summary>
+                Volume Too Low Exception.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Models.AcousticToneStatus">
+            <summary>
+                Tells status of the tone
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.AcousticToneStatus.Success">
+            <summary>
+                Tone playing was Successful.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.AcousticToneStatus.VolumeTooLow">
+            <summary>
+                Phone Volume is Too Low.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.AcousticToneStatus.VolumeTooHigh">
+            <summary>
+                Phone Volume is Too High.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.AcousticToneStatus.HeadsetConnected">
+            <summary>
+                Headset Connected to the Phone.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.AcousticToneStatus.BluetoothAudioConnected">
+            <summary>
+                Bluetooth Audio Connected to the Phone.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.AcousticToneStatus.CallInProgress">
+            <summary>
+                Phone Call is In Progress.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.AcousticToneStatus.ExternalAudioConnected">
+            <summary>
+                External Audio Connected to the Phone.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.AcousticToneStatus.DoNotDisturb">
+            <summary>
+                Phone is in Do Not Disturb mode.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.AcousticToneStatus.UndefinedError">
+            <summary>
+                Tone playing failed due to an Undefined Error.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Models.BroadcastLevel">
+            <summary>
+                Represents the defined altitudes of the generated tone curve.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.BroadcastLevel.NotDefined">
+            <summary>
+                Altitude is at a Not Defined value.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.BroadcastLevel.Low">
+            <summary>
+                Low altitude.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.BroadcastLevel.Medium">
+            <summary>
+                Medium altitude.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.BroadcastLevel.High">
+            <summary>
+                High altitude.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Models.Frequency">
+            <summary>
+                Represents the defined frequencies of the curve in Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.NotDefined">
+            <summary>
+                Frequency is at a Not Defined range.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz3840">
+            <summary>
+                3840 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz5120">
+            <summary>
+                5120 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz6400">
+            <summary>
+                6400 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz7680">
+            <summary>
+                7680 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz8960">
+            <summary>
+                8960 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz10240">
+            <summary>
+                10240 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz11520">
+            <summary>
+                11520 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz12800">
+            <summary>
+                12800 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz14080">
+            <summary>
+                14080 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz15360">
+            <summary>
+                15360 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz16640">
+            <summary>
+                16640 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz17920">
+            <summary>
+                17920 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz19200">
+            <summary>
+                19200 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz20480">
+            <summary>
+                20480 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz21760">
+            <summary>
+                21760 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Frequency.Hz23040">
+            <summary>
+                23040 Hertz.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Models.FrequencyBandSpace">
+            <summary>
+                Represents the defined Frequency Brand Space of the curve in Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.FrequencyBandSpace.NotDefined">
+            <summary>
+                Frequency Band Space is currently at a not defined value.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.FrequencyBandSpace.Hz512">
+            <summary>
+                512 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.FrequencyBandSpace.Hz1024">
+            <summary>
+                1024 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.FrequencyBandSpace.Hz1536">
+            <summary>
+                1536 Hertz.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.FrequencyBandSpace.Hz2048">
+            <summary>
+                2048 Hertz.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Models.OutputStream">
+            <summary>
+                Represents the Output Streams of the Operating System.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.OutputStream.Media">
+            <summary>
+                Media stream.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.OutputStream.Ring">
+            <summary>
+                Ring stream.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Models.Routing">
+            <summary>
+                Represents the Routing values of the Operating System.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Routing.Default">
+            <summary>
+                Uses the Default routing which the user currently has active.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.Routing.Speaker">
+            <summary>
+                Forces the routing to go to the Speaker.
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Models.SoundPlayStatus">
+            <summary>
+                Represents the Sound Play Status of a tone.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.SoundPlayStatus.Success">
+            <summary>
+                Success.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.SoundPlayStatus.VolumeTooLow">
+            <summary>
+                Phone Volume is Too Low.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.SoundPlayStatus.VolumeTooHigh">
+            <summary>
+                Phone Volume is Too High.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.SoundPlayStatus.WiredHeadsetConnected">
+            <summary>
+                Wired Headset is Connected to the phone.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.SoundPlayStatus.CallInProgress">
+            <summary>
+                Call is in progress
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.SoundPlayStatus.DoNotDisturb">
+            <summary>
+                Do not disturb mode is active
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck">
+            <summary>
+                Represents the defined Tone Play Check statuses checks.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck.None">
+            <summary>
+                No Check will be applied.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck.VolumeTooLow">
+            <summary>
+                 Volume is Too Low check will be applied.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck.VolumeTooHigh">
+            <summary>
+                Volume is Too High check will be applied.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck.HeadsetConnected">
+            <summary>
+                Headset is Connected check will be applied.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck.CallInProgress">
+            <summary>
+                Call In Progress check will be applied.
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Audio.Abstractions.Models.TonePlayCheck.DoNotDisturb">
+            <summary>
+                 Do Not Disturb check will be applied.
+            </summary>
+        </member>
+    </members>
+</doc>

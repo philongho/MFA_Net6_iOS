@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSA.Foundation.Logger.iOS</name>
+    </assembly>
+    <members>
+        <member name="T:WSA.Foundation.Logger.iOS.CryptoBase">
+            <summary>
+                Base Class for CryptoEncoder and CryptoDecoder. Since this is just a basic encryption, password is not secured
+                (e.g. private/public keyshare)
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.iOS.CryptoBase.NceBits">
+            <summary>
+                Properties for AES encryption
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.iOS.CryptoBase.RandomValue">
+            <summary>
+                A secure random value is needed
+            </summary>
+        </member>
+        <member name="F:WSA.Foundation.Logger.iOS.CryptoBase.SaltBits">
+            <summary>
+                SaltBits size and encryption iterations
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.iOS.CryptoBase.#ctor(System.String)">
+            <summary>
+                BaseConstructor
+            </summary>
+            <param name="passKey">CryptoKey</param>
+        </member>
+        <member name="T:WSA.Foundation.Logger.iOS.CryptoEncoder">
+            <summary>
+                Encoder class to encode strings into AES
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.iOS.CryptoEncoder.#ctor(System.String)">
+            <summary>
+                Generate Encoder by passing Key
+            </summary>
+            <param name="passKey"></param>
+        </member>
+        <member name="M:WSA.Foundation.Logger.iOS.CryptoEncoder.Encrypt(System.String)">
+            <summary>
+                Method to encrypt the given text
+            </summary>
+            <param name="text">Text to encrypt</param>
+            <returns>Encoded Text as Base64</returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.iOS.CryptoEncoder.Encrypt_Byte(System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+                Encrpyt on byte level
+            </summary>
+            <param name="text">Text to encrypt</param>
+            <param name="key">Generated Key</param>
+            <param name="payload">Possible payload</param>
+            <returns>Ciphered Text as ByteArray</returns>
+        </member>
+        <member name="M:WSA.Foundation.Logger.iOS.CryptoEncoder.Encrypt_Byte_PWD(System.Byte[],System.Byte[])">
+            <summary>
+                Method to generate the salted/text
+            </summary>
+            <param name="text">Text as byteArray</param>
+            <param name="nonSecretPayload"></param>
+            <returns>Ciphered Text as bytes</returns>
+        </member>
+        <member name="T:WSA.Foundation.Logger.iOS.CryptoOutput">
+            <summary>
+            	Crypto Output
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Logger.iOS.ICryptoEncoder">
+            <summary>
+                Interface for encryption
+            </summary>
+        </member>
+        <member name="T:WSA.Foundation.Logger.iOS.Logger">
+            <summary>
+                Entry point of the Logger component. This class provides methods to initialize this component.
+            </summary>
+        </member>
+        <member name="M:WSA.Foundation.Logger.iOS.Logger.Init(WSA.Foundation.Locator.Basic.IBasicServiceCollection,WSA.Foundation.Locator.Basic.IBasicLocator)">
+            <summary>
+                Initializes Logger Component and its dependencies.
+            </summary>
+            <param name="serviceCollection"></param>
+            <param name="basicLocator"></param>
+        </member>
+    </members>
+</doc>

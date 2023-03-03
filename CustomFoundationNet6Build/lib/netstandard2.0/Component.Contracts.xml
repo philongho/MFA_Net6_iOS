@@ -1,0 +1,1054 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Component.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:Component.Contracts.Commands.IAsyncCommand">
+            <summary>
+            An interface expanding <see cref="T:Component.Contracts.Commands.ICommand"/> to support asynchronous operations.
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.Commands.IAsyncCommand.ExecuteAsync(System.Object)">
+            <summary>
+            Provides a more specific version of <see cref="M:System.Windows.Input.ICommand.Execute(System.Object)"/>,
+            also returning the <see cref="T:System.Threading.Tasks.Task"/> representing the async operation being executed.
+            </summary>
+            <param name="parameter">The input parameter.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> representing the async operation being executed.</returns>
+        </member>
+        <member name="T:Component.Contracts.Commands.IAsyncCommand`1">
+            <summary>
+            A generic interface representing a more specific version of <see cref="T:Component.Contracts.Commands.IAsyncCommand"/>.
+            </summary>
+            <typeparam name="T">The type used as argument for the interface methods.</typeparam>
+            <remarks>This interface is needed to solve the diamond problem with base classes.</remarks>
+        </member>
+        <member name="M:Component.Contracts.Commands.IAsyncCommand`1.ExecuteAsync(`0)">
+            <summary>
+            Provides a strongly-typed variant of <see cref="M:Component.Contracts.Commands.IAsyncCommand.ExecuteAsync(System.Object)"/>.
+            </summary>
+            <param name="parameter">The input parameter.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> representing the async operation being executed.</returns>
+        </member>
+        <member name="T:Component.Contracts.Commands.ICommand">
+            <summary>
+            An interface expanding <see cref="T:Component.Contracts.Commands.ICommand"/> with the ability to raise
+            the <see cref="!:ICommand.CanExecuteChanged"/> event externally.
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.Commands.ICommand.NotifyCanExecuteChanged">
+            <summary>
+            Notifies that the <see cref="!:ICommand.CanExecute"/> property has changed.
+            </summary>
+        </member>
+        <member name="T:Component.Contracts.Commands.ICommand`1">
+            <summary>
+            A generic interface representing a more specific version of <see cref="T:Component.Contracts.Commands.ICommand"/>.
+            </summary>
+            <typeparam name="T">The type used as argument for the interface methods.</typeparam>
+        </member>
+        <member name="M:Component.Contracts.Commands.ICommand`1.CanExecute(`0)">
+            <summary>
+            Provides a strongly-typed variant of <see cref="!:ICommand.CanExecute(object)"/>.
+            </summary>
+            <param name="parameter">The input parameter.</param>
+            <returns>Whether or not the current command can be executed.</returns>
+            <remarks>Use this overload to avoid boxing, if <typeparamref name="T"/> is a value type.</remarks>
+        </member>
+        <member name="M:Component.Contracts.Commands.ICommand`1.Execute(`0)">
+            <summary>
+            Provides a strongly-typed variant of <see cref="!:ICommand.Execute(object)"/>.
+            </summary>
+            <param name="parameter">The input parameter.</param>
+            <remarks>Use this overload to avoid boxing, if <typeparamref name="T"/> is a value type.</remarks>
+        </member>
+        <member name="T:Component.Contracts.IAlertService">
+            <summary>
+            The contract is used for showing alerts.
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.IAlertService.CreateAlert(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creating an alert.
+            </summary>
+            <param name="message">Message of alert</param>
+            <param name="title">Title of alert</param>
+            <param name="acceptText">Accept Text</param>
+            <param name="cancelText">Cancel Text</param>
+            <param name="iconName">Name of icon e.g. Volume.png, Sound.png etc.</param>
+            <returns>Return true, if accept selected otherwise false</returns>
+        </member>
+        <member name="M:Component.Contracts.IAlertService.ShowInputAlert(System.String,System.Action{System.String},System.String,System.String)">
+            <summary>
+            Show input alert
+            </summary>
+            <param name="message">Message of alert</param>
+            <param name="callBack">Action callback</param>
+            <param name="title">Title of alert</param>
+            <param name="cancelText">Cancel text</param>
+            <returns>Task</returns>
+        </member>
+        <member name="M:Component.Contracts.IAlertService.ShowActionAlert(System.Collections.Generic.IReadOnlyList{System.String},System.Action{System.String},System.String)">
+            <summary>
+            Show action alert.
+            </summary>
+            <param name="actions">List of actions</param>
+            <param name="callback">Action callback</param>
+            <param name="title">Title of alert</param>
+            <returns>Return true, if accept selected otherwise false</returns>
+            <returns>Task</returns>
+        </member>
+        <member name="M:Component.Contracts.IApplicationFeatureService.GetApplicationFeatureStatus(System.String)">
+            <summary>
+                Returns the <see cref="T:Component.Contracts.Models.FeatureStatus" /> of the requested feature.
+            </summary>
+            <param name="featureName">The name of the feature.</param>
+            <returns>The status of the feature.</returns>
+        </member>
+        <member name="T:Component.Contracts.IApplicationLifecycle">
+            <summary>
+            The contract is used for determining the state of the client by the component.
+            </summary>
+        </member>
+        <member name="E:Component.Contracts.IApplicationLifecycle.LifecycleStateChanged">
+            <summary>
+            The client will have to trigger the event, while the components would be observing for the state change.
+            This will help the components to determine when the state of the client changes and act accordingly.
+            </summary>
+        </member>
+        <member name="T:Component.Contracts.IAuthenticationService">
+            <summary>
+              <see cref="T:Component.Contracts.IAuthenticationService"/> is used to provide authentication tokens for various scopes,
+              e.g. <c>telecare</c> or <c>adb2c</c>
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.IAuthenticationService.GetToken(System.String,System.Boolean)">
+            <summary>
+              Acquire a new token from one of the available token providers based on the scope.
+            </summary>
+            <param name="scope">
+              The scope defines the known WSA domain that can provide tokens e.g. <c>telecare</c> or <c>adb2c</c>.
+            </param>
+            <param name="silent">
+              Set to <c>true</c> to explicitly ask for a silent token generation. This might not work for all token
+              providers all the time though. I.e. if the token provider would require user interaction to create
+              or refresh the token it might fail with silent being <c>true</c>. Hence choose silent only if your
+              code can also continue without a token, e.g. background sync operations.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Component.Contracts.IAuthenticationService.RegisterTokenProvider``1(System.String)">
+            <summary>
+                Register a new token provider of a specific <typeparamref name="TTokenProvider"/>
+                for the specified <paramref name="scope"/>. Whenever someone calls <see cref="M:Component.Contracts.IAuthenticationService.GetToken(System.String,System.Boolean)"/>
+                afterwards on the given scope, the providers <see cref="M:Component.Contracts.IAuthenticationTokenProvider.GetToken(System.Boolean)"/> will be called.
+            </summary>
+            <param name="scope">
+                The authentication scope identifier. Ideally one word and lowercase. E.g. <c>telecare</c>, <c>adb2c</c>, ...
+            </param>
+            <typeparam name="TTokenProvider">Token provider type to register for this <see cref="!:scope"/></typeparam>
+            <exception cref="T:System.ArgumentException">
+              If another <see cref="T:Component.Contracts.IAuthenticationTokenProvider"/> is already registered on this <see cref="!:scope"/>
+            </exception>
+        </member>
+        <member name="T:Component.Contracts.IAuthenticationTokenProvider">
+            <summary>
+            The actual interface that controls the way a token is provided to the calling client.
+            The token provider implementation should contain all the needed details to ensure that a valid token gets provider
+            The token provider should be used in combination with the IAuthenticationService
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.IAuthenticationTokenProvider.GetToken(System.Boolean)">
+            <summary>
+            Acquire a new valid token from the provider.
+            </summary>
+            <param name="silent">Option to control the auth flow for requesting a new token or forcing the user to provide credentials</param>
+            <returns>The authentication token which includes the value as well as other meta data e.g. expiration, error etc</returns>
+        </member>
+        <member name="M:Component.Contracts.IBleConnectionService.RegisterConnectionObserver(Component.Contracts.IConnectionStateObserver)">
+            <summary>
+                Register for connection changes.
+            </summary>
+            <param name="connectionStateObserver"></param>
+        </member>
+        <member name="M:Component.Contracts.IBleConnectionService.UnRegisterConnectionObserver(Component.Contracts.IConnectionStateObserver)">
+            <summary>
+                Un register for connection changes.
+            </summary>
+            <param name="connectionStateObserver"></param>
+        </member>
+        <member name="T:Component.Contracts.IBrandingService">
+            <summary>
+            Contract for getting brand related data from client
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.IBrandingService.GetBrandColors">
+            <summary>
+            Get brand colors
+            </summary>
+            <returns>Brand colors</returns>
+        </member>
+        <member name="T:Component.Contracts.IColorRepository">
+            <summary>
+              <para>
+                Colors are provided by <see cref="T:Component.Contracts.IColorRepository"/> from contracts. In order to prevent name clashes of 
+                only key-based configuration properties a small wrapper class is used for color keys.
+              </para>
+              <para>
+                Convention: All <see cref="T:Component.Contracts.Models.ColorKey"/> for a component should be placed in a top level class 
+                called <c>ColorKeys</c>. This allows consumers of the component to understand which parts
+                 could be tinted in different colors.
+              </para>
+            </summary>
+            <example>
+               <code>
+                 public static class ColorKeys
+                 {
+                     public const string ServiceName = "MyService";
+                     public static readonly ColorKey BackgroundColor = new ColorKey(ServiceName, "BackgroundColor", Color.White);
+                     public static readonly ColorKey TextColor = new ColorKey(ServiceName, "TextColor", Color.Black);
+                     public static readonly ColorKey AccentColor = new ColorKey(ServiceName, "AccentColor", ColorConverters.FromHex("#FF0400"));
+                     public static readonly ColorKey ButtonColor = new ColorKey(ServiceName, "ButtonColor", ColorConverters.FromHex("#B4B4B4"));
+                 }
+                 
+                 public class MyApplication
+                 {
+                     public MyService(IColorRepository colorRepository)
+                     {
+                         _colorRepository = colorRepository;
+                     }
+                 
+                     private async Task TurnOnDarkMode()
+                     {
+                         _colorRepository.Set(ColorKeys.BackgroundColor, Color.Black);
+                         _colorRepository.Set(ColorKeys.TextColor, Color.White);
+                     }
+                 }
+               </code>
+            </example>
+        </member>
+        <member name="M:Component.Contracts.IColorRepository.Retrieve(Component.Contracts.Models.ColorKey)">
+            <summary>
+              Retrieve a specific color value based on a defined key.
+            </summary>
+            <param name="key">the  <see cref="T:Component.Contracts.Models.ColorKey"/> to retrieve the color for</param>
+        </member>
+        <member name="M:Component.Contracts.IColorRepository.Set(Component.Contracts.Models.ColorKey,System.Drawing.Color)">
+            <summary>
+              Set a color to a new value. Calling this method replaces any previous color value for the given key.
+            </summary>
+            <param name="key">the color key to change</param>
+            <param name="color">the new  color to  be effective from now on</param>    
+        </member>
+        <member name="T:Component.Contracts.IConfigurationService">
+            <summary>
+              <para>
+                Configuration is provided by <see cref="T:Component.Contracts.IConfigurationService"/> from contracts. In order to prevent name clashes of 
+                only key-based configuration properties a small wrapper class needs to be used for configuration keys.
+              </para>
+              <para>
+                Convention: All <see cref="T:Component.Contracts.Models.ConfigurationKey`1"/> for a component should be placed in a top level class 
+                called <see cref="T:Component.Contracts.Models.ConfigurationKey`1"/>.
+                This allows consumers of the component to understand how it may be configured.
+              </para>
+            </summary>
+            <example>
+               <code>
+                 public static class ConfigurationKeys
+                 {
+                   public const string ComponentName = "GitHubInteraction";
+                 
+                   public static readonly ConfigurationKey&lt;string&gt; ApiBaseUrl
+                     = CreateConfigurationKey&lt;uint&gt;("ApiBaseUrl");
+                 
+                   private static ConfigurationKey&lt;T&gt; CreateConfigurationKey&lt;T&gt;(string configName)
+                   {
+                     return new ConfigurationKey&lt;T&gt;(ComponentName, configName);
+                   }
+                 }
+                 
+                 public class MyService
+                 {
+                     public MyService(IConfigurationService configurationService)
+                     {
+                         _configurationService = configurationService;
+                     }
+                 
+                     private async Task ReadConfig()
+                     {
+                         var pageSize = await _configurationService.GetConfiguration(ConfigurationKeys.QueryPageSize);
+                     }
+                 
+                     private async Task ChangeConfig()
+                     {
+                         await _configurationService.SetConfiguration(ConfigurationKeys.QueryPageSize, 20);
+                     }
+                 }
+               </code>
+            </example>
+        </member>
+        <member name="M:Component.Contracts.IConfigurationService.GetConfiguration``1(Component.Contracts.Models.ConfigurationKey{``0})">
+            <summary>
+              Retrieve a specific configuration value based on a key you already defined.
+            </summary>
+            <param name="key">the configuration key to retrieve the configuration</param>        
+        </member>
+        <member name="M:Component.Contracts.IConfigurationService.SetConfiguration``1(Component.Contracts.Models.ConfigurationKey{``0},``0)">
+            <summary>
+              Set a configuration value based on the key parameter.
+            </summary>
+            <param name="key">the configuration key to set the configuration</param>
+            <param name="value">the actual value of the configuration to be associated with the key</param>                
+        </member>
+        <member name="M:Component.Contracts.IConfigurationService.ContainsConfiguration``1(Component.Contracts.Models.ConfigurationKey{``0})">
+            <summary>
+              Checks if the configuration key already exists.
+            </summary>
+            <param name="key">the configuration key to check the configuration</param>  
+        </member>
+        <member name="M:Component.Contracts.IConfigurationService.DeleteConfiguration``1(Component.Contracts.Models.ConfigurationKey{``0})">
+            <summary>
+              Deletes the configuration value based on the key parameter.
+            </summary>
+            <param name="key">the configuration key to delete the configuration</param>  
+        </member>
+        <member name="E:Component.Contracts.IConfigurationService.ConfigurationChanged">
+            <summary>
+              An event gets triggered when a configuration value is changed.
+              Used to observe the change and react based on the handler.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Component.Contracts.IConnectionStateObserver.ConnectionStateChanged(Component.Contracts.Models.HearingSystemCommunicationState)" -->
+        <member name="T:Component.Contracts.ICultureInfoService">
+            <summary>
+            The contract is used for performing CultureInfo related operations.
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.ICultureInfoService.GetCurrentCulture">
+            <summary>
+            Returns culture info.
+            </summary>
+            <returns>Culture info</returns>
+        </member>
+        <member name="T:Component.Contracts.IDataTrackingService">
+            <summary>
+                The contract is used for tracking data via Sivantos Data Collection Service
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.IDataTrackingService.TrackEvent(Component.Contracts.Models.DataTrackingEvent)">
+            <summary>
+                The method will send a specific event to data collection.
+            </summary>
+            <param name="dataTrackingEvent">Event to track, must not be <c>null</c></param>
+        </member>
+        <member name="M:Component.Contracts.IDataTrackingService.TrySendingDataToRemote(System.Boolean)">
+            <summary>
+            The method will try sending the data in storage to the remote.
+            </summary>
+            <param name="forceSend">When true, this parameter ensures data is sent to remote even when interval threshold isn't reached.</param>
+        </member>
+        <member name="P:Component.Contracts.IDateTimeProvider.Now">
+            <summary>
+            Gets the current datetime on this device expressed as local time
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.IDateTimeProvider.UtcNow">
+            <summary>
+            Gets the current datetime on this device expressed as the Coordinated Universal Time (UTC)
+            </summary>
+        </member>
+        <member name="E:Component.Contracts.IInternetConnectivityWatchdog.InternetConnectivityChanged">
+            <summary>
+            Event handler invoked when the internet connection state changes.
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.IInternetConnectivityWatchdog.IsInternetConnected">
+            <summary>
+                Method to check whether interent is connected or not.
+            </summary>
+            <returns>True - Internet connected. False - Internet not connected.</returns>
+        </member>
+        <member name="T:Component.Contracts.ILocalizationService">
+            <summary>
+              <see cref="T:Component.Contracts.ILocalizationService"/> is responsible to retrieve translated values for localized strings.
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.ILocalizationService.GetLocalizedString(System.String,System.String[])">
+             <summary>
+               Returns a localized text for the given key.  the format items in a string with the string representation of two specified objects.
+             </summary>
+             <param name="key">A localization key</param>
+             <param name="args">Placeholder arguments to be filled into the localized text</param>
+             <returns>A string fully localized to the current language where all placeholders arguments are inserted</returns>
+             <example>
+               <code>
+                 // Assume there is a localization key "Greeting" with a english value "Hello {0}"
+            
+                 // Pseudo code
+                 class WelcomePageViewModel : IViewModelFactory
+                 {
+                   private string _greetingLabel;
+             
+                   public string TargetLabel
+                   {
+                     get => _greetingLabel;
+                     set => SetValue(ref _greetingLabel, value);
+                   }
+                   
+                   public WelcomePageViewModel(ILocalizationService localizationService, IUserService userService)
+                   {
+                     TargetLabel = _localizationService.GetLocalizedString("Greeting", userService.CurrentUser):
+                   }
+                 }
+               </code>
+             </example>
+        </member>
+        <member name="T:Component.Contracts.INavigatedAware">
+            <summary>
+            Provides a way for ViewModels involved in navigation to be notified of navigation activities after the target Page has been added to the navigation stack.
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.INavigatedAware.OnNavigatedTo(Component.Contracts.Models.INavigationParameters)">
+            <summary>
+            Called when the implementer has been navigated to.
+            </summary>
+            <param name="parameters">The navigation parameters.</param>
+        </member>
+        <member name="T:Component.Contracts.INavigationService">
+            <summary>
+            Navigation interface is as of now tailored to easily adapt to
+            RT App implementation.
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.INavigationService.NavigateAsync(System.String,Component.Contracts.Models.INavigationParameters)">
+            <summary>
+            Initiates navigation to the target specified by the <paramref name="viewPath"/>.
+            </summary>
+            <param name="viewPath">The name of the target to navigate to.</param>
+            <param name="parameters">The navigation parameters</param>
+        </member>
+        <member name="M:Component.Contracts.INavigationService.GoBackAsync">
+            <summary>
+            Navigates to the most recent entry in the back navigation history by popping the calling Page off the navigation stack.
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.INavigationService.SetRootView(System.String,Component.Contracts.Models.INavigationParameters,System.Boolean)">
+            <summary>
+            Set root view to target specified by the <paramref name="viewPath"/>
+            </summary>
+            <param name="viewPath">The name of the target</param>
+            <param name="parameters">The navigation parameters</param>
+            <param name="withNavigation">If <c>true</c> create navigation stack, if <c>false</c> don't create navigation stack</param>
+        </member>
+        <member name="T:Component.Contracts.IOnboardingService">
+            <summary>
+              <see cref="T:Component.Contracts.IOnboardingService"/> is responsible to present onboarding pages (i.e. how to use the application)
+              to users who do not yet seen them (i.e. first time users, users returning after update, ...)
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.IOnboardingService.RegisterOnboardingPages(System.String,System.String[])">
+            <summary>
+              Registers one or many views to be shown during new user onboarding. Use case for this is either to present
+              new features to first time users or to inform existing users about updates. Each <paramref name="viewsPaths"/>
+              is treated as a key. <see cref="T:Component.Contracts.IOnboardingService"/> views were already presented to a users, hence will not
+              show them twice.
+            </summary>
+            <param name="group">
+              Group where to put view in, should be unique. Onboarding groups are shown in alphabetical order.
+            </param>
+            <param name="viewsPaths">
+              Views paths stored in <see cref="T:Component.Contracts.IViewRepository"/>. In order as they should be shown during onboarding. Must not be empty.
+              <see cref="T:Component.Contracts.IOnboardingService"/> remembers view paths already presented to a user and will not show them again. 
+            </param>
+            <exception cref="T:System.ArgumentException">If a group of same name is already registered.</exception>
+            <exception cref="T:System.ArgumentException">If any of the <paramref name="viewsPaths"/> are already registered.</exception>
+            <returns></returns>
+        </member>
+        <member name="M:Component.Contracts.IOnboardingService.UnregisterOnboardingPages(System.String,System.String[])">
+            <summary>
+              Unregisters one or many views to be not shown anymore during new user onboarding. Each <paramref name="viewsPaths"/>
+              is treated as a key. <see cref="T:Component.Contracts.IOnboardingService"/> In general views which were already presented to a users will not be presented twice.
+              But it is possible to show all onboarding pages again when "show onboarding" is triggered from the help menu.
+              If we do not want to show an onboarding page again through the help menu entry we can unregister a page with this method.
+            </summary>
+            <param name="group"></param>
+            <param name="viewsPaths"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Component.Contracts.IOnboardingService.RegisterWelcomePage(System.String)">
+            <summary>
+              Register page to be shown to welcome new users. Not mandatory.
+            </summary>
+            <param name="viewsPath">Path to a view stored in <see cref="T:Component.Contracts.IViewRepository"/></param>
+            <exception cref="T:System.ArgumentException">If another welcome page is already registered.</exception>
+            <returns></returns>
+        </member>
+        <member name="M:Component.Contracts.IOnboardingService.Show(Component.Contracts.Models.OnboardingScope)">
+            <summary>
+              Show onboarding pages.
+            </summary>
+            <param name="scope">Defines the <see cref="T:Component.Contracts.Models.OnboardingScope"/>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Component.Contracts.IPopupNavigationService.ShowPopupAsync(System.String,System.Object,System.Boolean)">
+            <summary>
+            To show popup
+            </summary>
+            <param name="viewPath">
+            A path syntax following some consistency for each component, e.g. "/component.shop/",
+            "/component.shop/view"</param>
+            <param name="viewModel">ViewModel instance to be taken as BindingContext. Defaults to null.</param>
+            <param name="animate">To show animation while navigation</param>
+            <returns>A task object</returns>
+        </member>
+        <member name="M:Component.Contracts.IPopupNavigationService.RemovePopupAsync(System.Boolean)">
+            <summary>
+            Remove a popup from popup stack
+            </summary>
+            <param name="animate">To show animation while navigation</param>
+            <returns>A task object</returns>
+        </member>
+        <member name="M:Component.Contracts.IPopupNavigationService.RemoveAllPopupAsync(System.Boolean)">
+            <summary>
+            Remove all popups from popup stack
+            </summary>
+            <param name="animate">To show animation while navigation</param>
+            <returns>A task object</returns>
+        </member>
+        <member name="T:Component.Contracts.IRepository">
+            <summary>
+            The contract is used for performing CRUD operations
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.IRepository.Upsert``2(``0)">
+            <summary>
+            Inserts the given object (and updates its
+            auto incremented unique id if it has one).
+            or Update in case of record pre exists(based on <see cref="!:TId"/>)
+            </summary>
+            <param name="record">The object to insert or update.</param>
+            <returns>The number of items added/Updated </returns>
+        </member>
+        <member name="M:Component.Contracts.IRepository.GetById``2(``1)">
+            <summary>
+            Get record that match with given id.
+            </summary>
+            <returns>
+            record that match with given id
+            </returns>
+        </member>
+        <member name="M:Component.Contracts.IRepository.Get``2(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Get records that match the given filter.
+            In case of no filter, It returns all records in <see cref="!:T"/>
+            </summary>
+            <param name="filter">Predicate for filtering results</param>
+            <returns>
+            The readonly list of records of <see cref="!:T"/>.
+            Null in case objects not found.
+            </returns>
+        </member>
+        <member name="M:Component.Contracts.IRepository.Delete``2(``0)">
+            <summary>
+            Delete record in <see cref="!:T"/>.
+            </summary>
+            <param name="record">record to be deleted</param>
+            <returns>The number of records deleted.</returns>
+        </member>
+        <member name="M:Component.Contracts.IRepository.Delete``2(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Delete all filtered records of <see cref="!:T"/> match the given filter.
+            </summary>
+            <param name="filter">Predicate for filtering records to be deleted</param>
+            <returns>The number of records deleted.</returns>
+        </member>
+        <member name="T:Component.Contracts.ISecureConfigurationService">
+            <summary>
+            The contract is used for storage and retrieval of secure key-value pairs eg. sensitive data like username, password etc.
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.ISecureConfigurationService.GetConfiguration``1(Component.Contracts.Models.ConfigurationKey{``0})">
+            <summary>
+            Fetches secure configuration based on key
+            </summary>
+            <param name="key">secure configuration key</param>
+            <returns>configuration based on key</returns>
+        </member>
+        <member name="M:Component.Contracts.ISecureConfigurationService.SetConfiguration``1(Component.Contracts.Models.ConfigurationKey{``0},``0)">
+            <summary>
+            Sets secure configuration based on key-value.
+            </summary>
+            <param name="key">secure configuration key</param>
+            <param name="value">secure configuration value</param>
+        </member>
+        <member name="M:Component.Contracts.ISecureConfigurationService.RemoveConfiguration``1(Component.Contracts.Models.ConfigurationKey{``0})">
+            <summary>
+            Remove secure configuration based on key.
+            </summary>
+            <param name="key">secure configuration key</param>
+            <returns>true if key is deleted. Else returns false</returns>
+        </member>
+        <member name="M:Component.Contracts.ISecureConfigurationService.RemoveAllConfigurations">
+            <summary>
+            Remove all secure configurations.
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.ITaskService.Run(System.Action,System.Threading.CancellationToken)">
+            <summary>
+            Queues the specified work to run on the thread pool and returns a Task object that represents that work.
+            A cancellation token allows the work to be cancelled if it has not yet started.
+            </summary>
+            <param name="action">The work to execute asynchronously.</param>
+            <param name="cancellationToken">A cancellation token that can be used to cancel the work if it has not yet started.</param>
+            <returns>A task that represents the work queued to execute in the ThreadPool.</returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="action" /> parameter was <see langword="null" />.</exception>
+            <exception cref="T:System.Threading.Tasks.TaskCanceledException">The task has been canceled.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Threading.CancellationTokenSource" /> associated with <paramref name="cancellationToken" /> was disposed.</exception>
+        </member>
+        <member name="M:Component.Contracts.ITaskService.Run``1(System.Func{``0},System.Threading.CancellationToken)">
+            <summary>
+            Queues the specified work to run on the thread pool and returns a Task object that represents that work.
+            </summary>
+            <param name="function">The work to execute asynchronously.</param>
+            <param name="cancellationToken">A cancellation token that can be used to cancel the work if it has not yet started.</param>
+            <returns>A Task(TResult) that represents the work queued to execute in the thread pool.</returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="function" /> parameter is <see langword="null" />.</exception>
+            <exception cref="T:System.Threading.Tasks.TaskCanceledException">The task has been canceled.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Threading.CancellationTokenSource" /> associated with <paramref name="cancellationToken" /> was disposed.</exception>
+        </member>
+        <member name="M:Component.Contracts.ITaskService.Run``1(System.Func{System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)">
+            <summary>
+            Queues the specified work to run on the thread pool and returns a proxy for the Task(TResult) returned by function.
+            </summary>
+            <typeparam name="TResult">The type of the result returned by the proxy task.</typeparam>
+            <param name="function">The work to execute asynchronously.</param>
+            <param name="cancellationToken">A cancellation token that can be used to cancel the work if it has not yet started.</param>
+            <returns>A Task(TResult) that represents a proxy for the Task(TResult) returned by function.</returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="function" /> parameter was <see langword="null" />.</exception>
+            <exception cref="T:System.Threading.Tasks.TaskCanceledException">The task has been canceled.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Threading.CancellationTokenSource" /> associated with <paramref name="cancellationToken" /> was disposed.</exception>
+        </member>
+        <member name="M:Component.Contracts.ITaskService.Delay(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Creates a cancellable task that completes after a specified number of milliseconds.
+            </summary>
+            <param name="delayInMilliseconds">The number of milliseconds to wait before completing the returned task, or -1 to wait indefinitely.</param>
+            <param name="cancellationToken">A cancellation token to observe while waiting for the task to complete.</param>
+            <returns>A task that represents the time delay.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="millisecondsDelay" /> argument is less than -1.</exception>
+            <exception cref="T:System.Threading.Tasks.TaskCanceledException">The task has been canceled.</exception>
+            <exception cref="T:System.ObjectDisposedException">The provided <paramref name="cancellationToken" /> has already been disposed.</exception>
+        </member>
+        <member name="T:Component.Contracts.ITimer">
+            <summary>Generates an event after a set interval, with an option to generate recurring events.</summary>
+        </member>
+        <member name="E:Component.Contracts.ITimer.Elapsed">
+            <summary>Occurs when the interval elapses.</summary>
+        </member>
+        <member name="P:Component.Contracts.ITimer.AutoReset">
+            <summary>Gets or sets a Boolean indicating whether the <see cref="T:Component.Contracts.ITimer" /> should raise the <see cref="E:Component.Contracts.ITimer.Elapsed" /> event only once (<see langword="false" />) or repeatedly (<see langword="true" />).</summary>
+            <returns>
+            <see langword="true" /> if the <see cref="T:Component.Contracts.ITimer" /> should raise the <see cref="E:Component.Contracts.ITimer.Elapsed" /> event each time the interval elapses; <see langword="false" /> if it should raise the <see cref="E:System.Timers.Timer.Elapsed" /> event only once, after the first time the interval elapses. The default is <see langword="true" />.</returns>
+        </member>
+        <member name="P:Component.Contracts.ITimer.Enabled">
+            <summary>Gets or sets a value indicating whether the <see cref="T:Component.Contracts.ITimer" /> should raise the <see cref="E:Component.Contracts.ITimer.Elapsed" /> event.</summary>
+            <returns>
+            <see langword="true" /> if the <see cref="T:Component.Contracts.ITimer" /> should raise the <see cref="E:Component.Contracts.ITimer.Elapsed" /> event; otherwise, <see langword="false" />. The default is <see langword="false" />.</returns>
+            <exception cref="T:System.ObjectDisposedException">This property cannot be set because the timer has been disposed.</exception>
+            <exception cref="T:System.ArgumentException">The <see cref="P:Component.Contracts.ITimer.Interval" /> property was set to a value greater than <see cref="F:System.Int32.MaxValue" /> before the timer was enabled.</exception>
+        </member>
+        <member name="P:Component.Contracts.ITimer.Interval">
+            <summary>Gets or sets the interval, expressed in milliseconds, at which to raise the <see cref="E:Component.Contracts.ITimer.Elapsed" /> event.</summary>
+            <returns>The time, in milliseconds, between <see cref="E:Component.Contracts.ITimer.Elapsed" /> events. The value must be greater than zero, and less than or equal to <see cref="F:System.Int32.MaxValue" />. The default is 100 milliseconds.</returns>
+            <exception cref="T:System.ArgumentException">The interval is less than or equal to zero.
+            -or-
+            The interval is greater than <see cref="F:System.Int32.MaxValue" />, and the timer is currently enabled. (If the timer is not currently enabled, no exception is thrown until it becomes enabled.)</exception>
+        </member>
+        <member name="M:Component.Contracts.ITimer.Start">
+            <summary>Starts raising the <see cref="E:Component.Contracts.ITimer.Elapsed" /> event by setting <see cref="P:System.Timers.Timer.Enabled" /> to <see langword="true" />.</summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">The <see cref="T:Component.Contracts.ITimer.Timer" /> is created with an interval equal to or greater than <see cref="F:System.Int32.MaxValue" /> + 1, or set to an interval less than zero.</exception>
+        </member>
+        <member name="M:Component.Contracts.ITimer.Stop">
+            <summary>Stops raising the <see cref="E:Component.Contracts.ITimer.Elapsed" /> event by setting <see cref="P:System.Timers.Timer.Enabled" /> to <see langword="false" />.</summary>
+        </member>
+        <member name="M:Component.Contracts.ITimer.Close">
+            <summary>Releases the resources used by the <see cref="T:Component.Contracts.ITimer" />.</summary>
+        </member>
+        <member name="T:Component.Contracts.ITimerFactory">
+            <summary>Factory to create instances implementing the ITimer interface for a given scope.</summary>
+        </member>
+        <member name="M:Component.Contracts.ITimerFactory.GetTimer(System.String)">
+            <summary>
+                Creates a new instance for ITimer for a given scope.
+                For a scope of null (default) or whitespace, a new instance is returned on every invocation.
+                For a specified scope, a new instance is returned on first invocation and the same instance is returned on every subsequent invocation for that scope.
+            </summary>
+        </member>
+        <member name="T:Component.Contracts.IUiThreadService">
+            <summary>
+              The <see cref="T:Component.Contracts.IUiThreadService"/> allows applications to run code on the main thread (UI thread) of execution
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.IUiThreadService.ExecuteOnUiThread(System.Action)">
+            <summary>
+            Invokes an action on the main thread of the application.
+            </summary>
+            <param name="action">Action to execute.</param>
+            <returns>A task that can be awaited</returns>
+        </member>
+        <member name="T:Component.Contracts.IViewModelFactory">
+             <summary>
+               <see cref="T:Component.Contracts.IViewModelFactory"/> is used to dynamically provide view model instances for specific
+               view paths during runtime.
+             </summary>
+             <example>
+               <code>
+                 // Usage of ViewModelFactory together with ViewRepository:
+                 // Same view is registered with different view models based on path and
+                 // only registering component knows how to create the view models based on path
+                 viewRepository.Register&lt;FaqView,FaqViewModelFactory&gt;("/faq/page1");
+                 viewRepository.Register&lt;FaqView,FaqViewModelFactory&gt;("/faq/page2");
+            
+                 // Pseudo code
+                 class FaqViewModelFactory : IViewModelFactory
+                 {
+                    public Task&lt;object&gt; CreateViewModel(string viewPath)
+                    {
+                        switch (viewPath)
+                        {
+                            case "/faq/page1": return Task.FromResult(new FaqViewModel("faq-page-1.json"));
+                            case "/faq/page2": return Task.FromResult(new FaqViewModel("faq-page-2.json"));
+                        }
+                    
+                        throw new ArgumentException($"Unknown view path: {viewPath}", nameof(viewPath));
+                    }
+                 }
+               </code>
+             </example>
+        </member>
+        <member name="M:Component.Contracts.IViewModelFactory.CreateViewModel(System.String)">
+            <summary>
+              Creates a view model for that specific path
+            </summary>
+            <param name="viewPath">View path for which this factory was registered on</param>
+            <exception cref="T:System.ArgumentException">
+              If this view model factory does not know how to create a view model
+              for the given <paramref name="viewPath"/>
+            </exception>
+            <returns>Task with a resulting view model instance, never <c>null</c></returns>
+        </member>
+        <member name="T:Component.Contracts.IViewRepository">
+            <summary>
+              <see cref="T:Component.Contracts.IViewRepository"/> is used to register views at specific paths and retrieve them later
+              during runtime. It provides ways to define view model resolution.
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.IViewRepository.Register``2(System.String)">
+            <summary>
+              Register a new view of a specific <typeparamref name="TView"/> under a unique
+              <paramref name="viewPath"/>. Whenever someone calls <see cref="M:Component.Contracts.IViewRepository.Retrieve``1(System.String,System.Object)"/>
+              afterwards an instance of that view type is returned. <typeparamref name="TViewModelFactory" />
+              is used to construct a corresponding viewmodel instance to be injected into the view.
+            </summary>
+            <example>
+              <code>
+                // Usage of ViewModelFactory:
+                // Same view is registered with different view models based on path and
+                // only registering component knows how to create the view models based on path
+                Register&lt;FaqView,FaqViewModelFactory&gt;("/faq/page1");
+                Register&lt;FaqView,FaqViewModelFactory&gt;("/faq/page2");
+              </code>
+            </example>
+            <param name="viewPath">
+                A path syntax following some consistency for each component, e.g. "/component.shop/",
+                "/component.shop/item"
+            </param>
+            <typeparam name="TView">View type to register at this <see cref="!:viewPath"/></typeparam>
+            <typeparam name="TViewModelFactory">
+               The view model factory to create a view model on runtime. Use <see cref="M:Component.Contracts.IViewRepository.Register``1(System.String)"/>
+               to register a view without <see cref="T:Component.Contracts.IViewModelFactory"/>.
+            </typeparam>
+            <exception cref="T:System.ArgumentException">If <see cref="!:viewPath"/> is already registered</exception>
+        </member>
+        <member name="M:Component.Contracts.IViewRepository.Register``1(System.String)">
+            <summary>
+                Register a new view of a specific <typeparamref name="TView"/> under a unique
+                <paramref name="viewPath"/>. Whenever someone calls <see cref="M:Component.Contracts.IViewRepository.Retrieve``1(System.String,System.Object)"/>
+                afterwards an instance of that view type is returned.
+            </summary>
+            <example>
+              <code>
+                // Usage:
+                // Single views are registered by type. View model can be resolved during runtime via DI.
+                Register&lt;WelcomeView&gt;("/welcome");
+                Register&lt;AdminView&gt;("/admin");
+              </code>
+            </example>
+            <param name="viewPath">
+                A path syntax following some consistency for each component, e.g. "/component.shop/",
+                "/component.shop/item"
+            </param>
+            <typeparam name="TView">View type to register at this <see cref="!:viewPath"/></typeparam>
+            <exception cref="T:System.ArgumentException">If <see cref="!:viewPath"/> is already registered</exception>
+        </member>
+        <member name="M:Component.Contracts.IViewRepository.Retrieve``1(System.String,System.Object)">
+            <summary>
+              Returns view instance for which  <see cref="M:Component.Contracts.IViewRepository.Register``1(System.String)"/> or
+              <see cref="M:Component.Contracts.IViewRepository.Register``2(System.String)"/> was called with corresponding <c>viewPath</c>.
+              If a <see cref="T:Component.Contracts.IViewModelFactory"/> was provided during registration, it is used to retrieve
+              the view model. If a <param name="bindingContext"></param> is provided, it is used as view model.
+              The <paramref name="bindingContext"/> always overrides any view model provided
+              by <see cref="T:Component.Contracts.IViewModelFactory"/> or by DI.
+            </summary>
+            <example>
+              <code>
+                // Use case with binding context:
+                viewRepository.Retrieve("/general/warning", new Warning { Title="Something went wrong", Message = "Bla bla" })
+                // I.e. the view is generic but the view model is only known during runtime.
+              </code>
+            </example>
+            <param name="viewPath">Well known path where a view is registered at</param>
+            <param name="bindingContext">Optional view model instance to be used with that view</param>
+            <typeparam name="TView">View type to retrieve</typeparam>
+            <exception cref="T:System.InvalidOperationException">
+              If no view is found at specific path or the <typeparamref name="TView"/> type does not match
+            </exception>
+        </member>
+        <member name="T:Component.Contracts.Models.AuthenticationScope">
+            <summary>
+            Authentitcation scope to be used by authentictaion provider
+            </summary>
+        </member>
+        <member name="F:Component.Contracts.Models.AuthenticationScope.Basic">
+            <summary>
+             Basic Authention using Username:Password
+             use it to define the scope for basic authentication provider
+            </summary>
+        </member>
+        <member name="F:Component.Contracts.Models.AuthenticationScope.Telecare">
+            <summary>
+            Bearer token authentictaion
+            use it to define the scope for telecare authentictaion provider
+            </summary>
+        </member>
+        <member name="T:Component.Contracts.Models.AuthenticationToken">
+            <summary>
+            The result object after calling the IAuthentication service.
+            Contains the token generated as well as the authentication type e.g. bearer, basic
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.AuthenticationToken.Token">
+            <summary>
+            the actual token value
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.AuthenticationToken.AuthType">
+            <summary>
+            the token type
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.AuthenticationToken.ExpiresIn">
+            <summary>
+            the expiration of the token in TimeSpan format. 
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.AuthenticationToken.Error">
+            <summary>
+            In case of failure it will have a description of the error. In case of success will be empty
+            </summary>
+        </member>
+        <member name="T:Component.Contracts.Models.BrandColors">
+            <summary>
+            Brand colors palettes class
+            Color palettes are based on <see href="https://material.io/design/color/the-color-system.html#color-theme-creation"/>
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.BrandColors.PrimaryColor">
+            <summary>
+            The color displayed most frequently across your app
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.BrandColors.PrimaryVariantColor">
+            <summary>
+            A tonal variation of the primary color.
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.BrandColors.SecondaryColor">
+            <summary>
+            The secondary color used in your app
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.BrandColors.TertiaryColor">
+            <summary>
+            The tertiary color used in your app
+            (e.g. target settings color in ActiveHealth component)
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.BrandColors.PrimaryTextColor">
+            <summary>
+            The color displayed most frequently for text
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.BrandColors.SecondaryTextColor">
+            <summary>
+            The secondary color displayed most frequently for text
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.BrandColors.ControlBackgroundColor">
+            <summary>
+            The background color appears behind control
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.BrandColors.BackgroundColor">
+            <summary>
+            The background color appears behind the app
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.BrandColors.PrimaryIconColor">
+            <summary>
+            The color displayed most frequently for the icon
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.DataTrackingEvent.EventType">
+            <summary>
+            Event type as defined with data collection team
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.DataTrackingEvent.Fields">
+            <summary>
+            Event payload fields as defined with data collection team
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.Models.DataTrackingEvent.#ctor(System.String)">
+            <summary>
+            Creates a new data tracking event with an specific event type. The type should be
+            aligned with data collection team. The available values can be found
+            <see href="https://tfs.audiology-solutions.net/tfs/Prod/Audiology/_git/CloudServices_Infrastructure_DataCollection?path=%2FDataCollectionContract.md&amp;_a=preview">here</see>
+            </summary>
+            <example>
+              <code>
+              var event = new DataTrackingEvent("AppStart")
+              {
+                  {"DeviceModel", "Google Pixel 2"},
+                  {"OsType", "Android"}
+              };
+              </code>
+            </example>
+            <param name="eventType">Event type as defined with data collection team</param>
+        </member>
+        <member name="M:Component.Contracts.Models.DataTrackingEvent.GetEnumerator">
+            <summary>
+            Returns an enumerator of all payload fields of this event
+            </summary>
+            <returns>An enumerator that can be used to iterate the fields of this event</returns>
+        </member>
+        <member name="M:Component.Contracts.Models.DataTrackingEvent.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator of all payload fields of this event
+            </summary>
+            <returns>An enumerator that can be used to iterate the fields of this event</returns>
+        </member>
+        <member name="M:Component.Contracts.Models.DataTrackingEvent.Add(System.String,System.Object)">
+            <summary>
+            Adds an event payload field to the event
+            </summary>
+            <param name="fieldName">Payload field as defined with data collection team</param>
+            <param name="value">
+              Payload value which provides a suitable <see cref="M:System.Object.ToString"/> representation to be sent to data collection
+            </param>
+            <exception cref="T:System.ArgumentException">The field name is <c>null</c>, empty, or whitespace</exception>
+            <exception cref="T:System.ArgumentException">An field with the same name already exists in the <see cref="T:Component.Contracts.Models.DataTrackingEvent"></see>.</exception>
+        </member>
+        <member name="T:Component.Contracts.Models.FeatureStatus">
+            <summary>
+            The status of a feature. Currently used in <see cref="T:Component.Contracts.Models.IHearingSystemFeature"/> as well as in <seealso cref="!:IApplicationFeature"/>.
+            </summary>
+        </member>
+        <member name="F:Component.Contracts.Models.GlobalConfigurationKeys.Environment">
+            <summary>
+            This configuration key can be used to get/set the app <see cref="T:Component.Contracts.Models.Environment">environment</see>.
+            The client app should take care of setting it by whatever means (e.g. some debug menu switch) and the components can use this to e.g. set base urls to backend services.
+            If the key is not set by client app, <see cref="F:Component.Contracts.Models.Environment.Staging">staging environment</see> is returned as a default.
+             </summary>
+        </member>
+        <member name="T:Component.Contracts.Models.IEntity`1">
+            <summary>
+            Base interface for entity
+            Here, <see cref="!:T"/> can be of any type which is unique id of entity.
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.IEntity`1.Id">
+            <summary>
+            Unique id of entity
+            </summary>
+        </member>
+        <member name="T:Component.Contracts.Models.INavigationParameters">
+            <summary>
+            Provides a way for the <see cref="T:Component.Contracts.INavigationService"/> to pass parameters during navigation.
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.Models.INavigationParameters.Add(System.String,System.Object)">
+            <summary>
+            Adds the key and value to the parameters collection
+            </summary>
+            <param name="key">The key to reference this value in the parameters collection.</param>
+            <param name="value">The value of the parameter to store</param>
+        </member>
+        <member name="M:Component.Contracts.Models.INavigationParameters.ContainsKey(System.String)">
+            <summary>
+            Checks collection for presense of key
+            </summary>
+            <param name="key">The key to check in the Collection</param>
+            <returns><c>true</c> if key exists; else returns <c>false</c>.</returns>
+        </member>
+        <member name="P:Component.Contracts.Models.INavigationParameters.Count">
+            <summary>
+            Count of the collection
+            </summary>
+        </member>
+        <member name="P:Component.Contracts.Models.INavigationParameters.Keys">
+            <summary>
+            Keys of the collection
+            </summary>
+        </member>
+        <member name="M:Component.Contracts.Models.INavigationParameters.GetValue``1(System.String)">
+            <summary>
+            Returns the value of the member referenced by key
+            </summary>
+            <typeparam name="T">The type of object to be returned</typeparam>
+            <param name="key">The key for the value to be returned</param>
+            <returns>Returns a matching parameter of <typeparamref name="T"/> if one exists in the collection otherwise null</returns>
+        </member>
+        <member name="M:Component.Contracts.Models.INavigationParameters.TryGetValue``1(System.String,``0@)">
+            <summary>
+            Get the value of the member referenced by key in out parameter
+            </summary>
+            <typeparam name="T">The type of object to be returned</typeparam>
+            <param name="key">The key for the value to be returned</param>
+            <returns><c>true</c> if fetching successful; if fetching unsuccessful <c>false</c></returns>
+        </member>
+        <member name="T:Component.Contracts.Models.InternetConnectivityState">
+            <summary>
+                Connectivity state.
+            </summary>
+        </member>
+        <member name="F:Component.Contracts.Models.OnboardingScope.New">
+            <summary>
+            Only show onboarding pages that have not been shown to the user before.
+            Welcome page will only be shown on first call.
+            </summary>
+        </member>
+        <member name="F:Component.Contracts.Models.OnboardingScope.All">
+            <summary>
+            Show all registered onboarding pages.
+            </summary>
+        </member>
+        <member name="F:Component.Contracts.Models.OnboardingScope.AllWithWelcome">
+            <summary>
+            Show all registered onboarding pages including the welcome page.
+            Used for debug/demo purpose.
+            </summary>
+        </member>
+    </members>
+</doc>

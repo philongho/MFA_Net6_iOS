@@ -11,7 +11,6 @@ using UIKit;
 
 namespace test
 {
-    [Register ("ViewController")]
     partial class ViewController
     {
     }
